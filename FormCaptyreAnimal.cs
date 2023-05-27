@@ -53,5 +53,23 @@ namespace CatchGraphPlan
 
             form.Show();
         }
+
+        private void реестрОрганизацийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new FormCompany();
+
+            this.Hide();
+
+            form.Show();
+        }
+
+        private void реестрМуниципальныхКонтрактовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new FormMunicipalContract();
+
+            this.Hide();
+
+            form.Show();
+        }
     }
 }

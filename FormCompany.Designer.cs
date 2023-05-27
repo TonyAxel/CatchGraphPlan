@@ -82,18 +82,21 @@ namespace CatchGraphPlan
             this.реестрПлановГрафиковToolStripMenuItem.Name = "реестрПлановГрафиковToolStripMenuItem";
             this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.реестрПлановГрафиковToolStripMenuItem.Text = "Реестр планов - графиков";
+            this.реестрПлановГрафиковToolStripMenuItem.Click += new System.EventHandler(this.реестрПлановГрафиковToolStripMenuItem_Click);
             // 
             // реестрАктовОтловаToolStripMenuItem
             // 
             this.реестрАктовОтловаToolStripMenuItem.Name = "реестрАктовОтловаToolStripMenuItem";
             this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.реестрАктовОтловаToolStripMenuItem.Text = "Реестр актов - отлова";
+            this.реестрАктовОтловаToolStripMenuItem.Click += new System.EventHandler(this.реестрАктовОтловаToolStripMenuItem_Click);
             // 
             // карточкаОтловленногоЖивотногоToolStripMenuItem
             // 
             this.карточкаОтловленногоЖивотногоToolStripMenuItem.Name = "карточкаОтловленногоЖивотногоToolStripMenuItem";
             this.карточкаОтловленногоЖивотногоToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.карточкаОтловленногоЖивотногоToolStripMenuItem.Text = "Карточка отловленного животного";
+            this.карточкаОтловленногоЖивотногоToolStripMenuItem.Click += new System.EventHandler(this.карточкаОтловленногоЖивотногоToolStripMenuItem_Click);
             // 
             // реестрОрганизацийToolStripMenuItem
             // 
@@ -106,6 +109,7 @@ namespace CatchGraphPlan
             this.реестрМуниципальныхКонтрактовToolStripMenuItem.Name = "реестрМуниципальныхКонтрактовToolStripMenuItem";
             this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.реестрМуниципальныхКонтрактовToolStripMenuItem.Text = "Реестр муниципальных контрактов";
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Click += new System.EventHandler(this.реестрМуниципальныхКонтрактовToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -210,6 +214,7 @@ namespace CatchGraphPlan
             this.BTNUpdate.TabIndex = 31;
             this.BTNUpdate.Text = "Изменить";
             this.BTNUpdate.UseVisualStyleBackColor = true;
+            this.BTNUpdate.Click += new System.EventHandler(this.BTNUpdate_Click);
             // 
             // BTNDelete
             // 
@@ -228,6 +233,7 @@ namespace CatchGraphPlan
             this.BTNAdd.TabIndex = 29;
             this.BTNAdd.Text = "Добавить";
             this.BTNAdd.UseVisualStyleBackColor = true;
+            this.BTNAdd.Click += new System.EventHandler(this.BTNAdd_Click);
             // 
             // FormCompany
             // 
@@ -245,7 +251,7 @@ namespace CatchGraphPlan
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormCompany";
-            this.Text = "FormCompany";
+            this.Text = "Реестр организаций";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -69,7 +69,7 @@ namespace CatchGraphPlan
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.comboBox1);
             this.Name = "FormCaptyrePlanUpdate";
-            this.Text = "FormCaptyrePlanUpdate";
+            this.Text = "Изменить план-график";
             this.ResumeLayout(false);
 
         }

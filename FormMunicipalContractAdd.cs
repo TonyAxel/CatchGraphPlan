@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace CatchGraphPlan
 {
-    public partial class FormCompanyUpdate : Form
+    public partial class FormMunicipalContractAdd : Form
     {
-        public FormCompanyUpdate()
+        public FormMunicipalContractAdd()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BTNAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormCompany();
+            var form = new FormMunicipalContract();
 
             this.Hide();
 

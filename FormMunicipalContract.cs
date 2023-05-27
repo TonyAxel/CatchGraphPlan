@@ -10,27 +10,16 @@ using System.Windows.Forms;
 
 namespace CatchGraphPlan
 {
-    public partial class FormCapturePlan : Form
+    public partial class FormMunicipalContract : Form
     {
-        public FormCapturePlan()
+        public FormMunicipalContract()
         {
             InitializeComponent();
-
-            //реестрПлановГрафиковToolStripMenuItem.Visible = false;
         }
 
-        private void BTNAdd_Click(object sender, EventArgs e)
+        private void реестрПлановГрафиковToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyrePlanAdd();
-
-            this.Hide();
-
-            form.Show();
-        }
-
-        private void BTNUpdate_Click(object sender, EventArgs e)
-        {
-            var form = new FormCaptyrePlanUpdate();
+            var form = new FormCapturePlan();
 
             this.Hide();
 
@@ -64,14 +53,22 @@ namespace CatchGraphPlan
             form.Show();
         }
 
-        private void реестрМуниципальныхКонтрактовToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BTNAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormMunicipalContract();
+            var form = new FormMunicipalContractAdd();
 
             this.Hide();
 
             form.Show();
         }
 
+        private void BTNUpdate_Click(object sender, EventArgs e)
+        {
+            var form = new FormMunicipalContractUpdate();
+
+            this.Hide();
+
+            form.Show();
+        }
     }
 }
