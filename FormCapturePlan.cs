@@ -45,5 +45,28 @@ namespace CatchGraphPlan
 
             form.Show();
         }
+
+        private void карточкаОтловленногоЖивотногоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new FormCaptyreAnimal();
+
+            this.Hide();
+
+            form.Show();
+        }
+
+        private void реестрОрганизацийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new FormCompanyAdd();
+
+            this.Hide();
+
+            form.Show();
+        }
+
+        private void реестрМуниципальныхКонтрактовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

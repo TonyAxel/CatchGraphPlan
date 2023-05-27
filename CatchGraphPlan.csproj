@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCaptyreAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCaptyreAnimal.Designer.cs">
+      <DependentUpon>FormCaptyreAnimal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAuth.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAuth.Designer.cs">
       <DependentUpon>FormAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCaptureAnimalAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCaptureAnimalAdd.Designer.cs">
+      <DependentUpon>FormCaptureAnimalAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCaptyreAct.cs">
       <SubType>Form</SubType>
@@ -76,6 +88,12 @@
     <Compile Include="FormCaptyreActUpdate.Designer.cs">
       <DependentUpon>FormCaptyreActUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCaptyreAnimalUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCaptyreAnimalUpdate.Designer.cs">
+      <DependentUpon>FormCaptyreAnimalUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCaptyrePlanAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +106,32 @@
     <Compile Include="FormCaptyrePlanUpdate.Designer.cs">
       <DependentUpon>FormCaptyrePlanUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompany.Designer.cs">
+      <DependentUpon>FormCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompanyAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompanyAdd.Designer.cs">
+      <DependentUpon>FormCompanyAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCompanyUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCompanyUpdate.Designer.cs">
+      <DependentUpon>FormCompanyUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCaptureAnimalAdd.resx">
+      <DependentUpon>FormCaptureAnimalAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCaptyreAnimal.resx">
+      <DependentUpon>FormCaptyreAnimal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAuth.resx">
       <DependentUpon>FormAuth.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,11 +147,23 @@
     <EmbeddedResource Include="FormCaptyreActUpdate.resx">
       <DependentUpon>FormCaptyreActUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCaptyreAnimalUpdate.resx">
+      <DependentUpon>FormCaptyreAnimalUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCaptyrePlanAdd.resx">
       <DependentUpon>FormCaptyrePlanAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCaptyrePlanUpdate.resx">
       <DependentUpon>FormCaptyrePlanUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompany.resx">
+      <DependentUpon>FormCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompanyAdd.resx">
+      <DependentUpon>FormCompanyAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCompanyUpdate.resx">
+      <DependentUpon>FormCompanyUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

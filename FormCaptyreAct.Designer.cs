@@ -51,6 +51,9 @@ namespace CatchGraphPlan
             this.captyre_goal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mynicipality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mynicipal_contract = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрОрганизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -143,7 +146,10 @@ namespace CatchGraphPlan
             // 
             this.реестрыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.реестрПлановГрафиковToolStripMenuItem,
-            this.реестрАктовОтловаToolStripMenuItem});
+            this.реестрАктовОтловаToolStripMenuItem,
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem,
+            this.реестрОрганизацияToolStripMenuItem,
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem});
             this.реестрыToolStripMenuItem.Name = "реестрыToolStripMenuItem";
             this.реестрыToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.реестрыToolStripMenuItem.Text = "Реестры";
@@ -151,14 +157,14 @@ namespace CatchGraphPlan
             // реестрПлановГрафиковToolStripMenuItem
             // 
             this.реестрПлановГрафиковToolStripMenuItem.Name = "реестрПлановГрафиковToolStripMenuItem";
-            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.реестрПлановГрафиковToolStripMenuItem.Text = "Реестр планов - графиков";
             this.реестрПлановГрафиковToolStripMenuItem.Click += new System.EventHandler(this.реестрПлановГрафиковToolStripMenuItem_Click);
             // 
             // реестрАктовОтловаToolStripMenuItem
             // 
             this.реестрАктовОтловаToolStripMenuItem.Name = "реестрАктовОтловаToolStripMenuItem";
-            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.реестрАктовОтловаToolStripMenuItem.Text = "Реестр актов - отлова";
             // 
             // dataGridView1
@@ -243,6 +249,25 @@ namespace CatchGraphPlan
             this.mynicipal_contract.ReadOnly = true;
             this.mynicipal_contract.Width = 180;
             // 
+            // карточкиОтловленныхЖивотныхToolStripMenuItem
+            // 
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Name = "карточкиОтловленныхЖивотныхToolStripMenuItem";
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Text = "карточка отловленного животного";
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Click += new System.EventHandler(this.карточкиОтловленныхЖивотныхToolStripMenuItem_Click);
+            // 
+            // реестрОрганизацияToolStripMenuItem
+            // 
+            this.реестрОрганизацияToolStripMenuItem.Name = "реестрОрганизацияToolStripMenuItem";
+            this.реестрОрганизацияToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрОрганизацияToolStripMenuItem.Text = "Реестр организация";
+            // 
+            // реестрМуниципальныхКонтрактовToolStripMenuItem
+            // 
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Name = "реестрМуниципальныхКонтрактовToolStripMenuItem";
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Text = "Реестр муниципальных контрактов";
+            // 
             // FormCaptyreAct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,5 +317,8 @@ namespace CatchGraphPlan
         private System.Windows.Forms.DataGridViewTextBoxColumn captyre_goal;
         private System.Windows.Forms.DataGridViewTextBoxColumn mynicipality;
         private System.Windows.Forms.DataGridViewTextBoxColumn mynicipal_contract;
+        private System.Windows.Forms.ToolStripMenuItem карточкиОтловленныхЖивотныхToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem реестрОрганизацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem реестрМуниципальныхКонтрактовToolStripMenuItem;
     }
 }
