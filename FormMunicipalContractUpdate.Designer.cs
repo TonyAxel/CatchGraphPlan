@@ -42,14 +42,14 @@ namespace CatchGraphPlan
             // 
             // action_date
             // 
-            this.action_date.Location = new System.Drawing.Point(240, 33);
+            this.action_date.Location = new System.Drawing.Point(236, 24);
             this.action_date.Name = "action_date";
             this.action_date.Size = new System.Drawing.Size(200, 20);
             this.action_date.TabIndex = 64;
             // 
             // sign_date
             // 
-            this.sign_date.Location = new System.Drawing.Point(9, 33);
+            this.sign_date.Location = new System.Drawing.Point(5, 24);
             this.sign_date.Name = "sign_date";
             this.sign_date.Size = new System.Drawing.Size(200, 20);
             this.sign_date.TabIndex = 63;
@@ -57,7 +57,7 @@ namespace CatchGraphPlan
             // BTNAdd
             // 
             this.BTNAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BTNAdd.Location = new System.Drawing.Point(163, 127);
+            this.BTNAdd.Location = new System.Drawing.Point(159, 118);
             this.BTNAdd.Name = "BTNAdd";
             this.BTNAdd.Size = new System.Drawing.Size(98, 30);
             this.BTNAdd.TabIndex = 62;
@@ -69,7 +69,7 @@ namespace CatchGraphPlan
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(237, 65);
+            this.label6.Location = new System.Drawing.Point(233, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 16);
             this.label6.TabIndex = 61;
@@ -78,7 +78,7 @@ namespace CatchGraphPlan
             // customer
             // 
             this.customer.FormattingEnabled = true;
-            this.customer.Location = new System.Drawing.Point(238, 84);
+            this.customer.Location = new System.Drawing.Point(234, 75);
             this.customer.Name = "customer";
             this.customer.Size = new System.Drawing.Size(122, 21);
             this.customer.TabIndex = 60;
@@ -87,7 +87,7 @@ namespace CatchGraphPlan
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(8, 65);
+            this.label5.Location = new System.Drawing.Point(4, 56);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 16);
             this.label5.TabIndex = 59;
@@ -96,7 +96,7 @@ namespace CatchGraphPlan
             // contractor_company
             // 
             this.contractor_company.FormattingEnabled = true;
-            this.contractor_company.Location = new System.Drawing.Point(11, 84);
+            this.contractor_company.Location = new System.Drawing.Point(7, 75);
             this.contractor_company.Name = "contractor_company";
             this.contractor_company.Size = new System.Drawing.Size(122, 21);
             this.contractor_company.TabIndex = 58;
@@ -105,7 +105,7 @@ namespace CatchGraphPlan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(237, 14);
+            this.label2.Location = new System.Drawing.Point(233, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 16);
             this.label2.TabIndex = 56;
@@ -115,7 +115,7 @@ namespace CatchGraphPlan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(6, 14);
+            this.label1.Location = new System.Drawing.Point(2, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 55;
@@ -125,7 +125,7 @@ namespace CatchGraphPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 172);
+            this.ClientSize = new System.Drawing.Size(443, 159);
             this.Controls.Add(this.action_date);
             this.Controls.Add(this.sign_date);
             this.Controls.Add(this.BTNAdd);

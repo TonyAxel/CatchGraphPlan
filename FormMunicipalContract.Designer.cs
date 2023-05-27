@@ -134,7 +134,7 @@ namespace CatchGraphPlan
             this.реестрыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(553, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(543, 24);
             this.menuStrip1.TabIndex = 37;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -193,7 +193,7 @@ namespace CatchGraphPlan
             this.action_date,
             this.contractor_company,
             this.customer});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 116);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(543, 215);
             this.dataGridView1.TabIndex = 46;
@@ -231,7 +231,7 @@ namespace CatchGraphPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 331);
+            this.ClientSize = new System.Drawing.Size(543, 331);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
