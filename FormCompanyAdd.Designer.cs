@@ -157,6 +157,7 @@ namespace CatchGraphPlan
             this.BTNAdd.TabIndex = 39;
             this.BTNAdd.Text = "Добавить";
             this.BTNAdd.UseVisualStyleBackColor = true;
+            this.BTNAdd.Click += new System.EventHandler(this.BTNAdd_Click);
             // 
             // FormCompanyAdd
             // 
@@ -177,7 +178,7 @@ namespace CatchGraphPlan
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NameOrg);
             this.Name = "FormCompanyAdd";
-            this.Text = "FormCompanyAdd";
+            this.Text = "Добавить организацию";
             this.ResumeLayout(false);
             this.PerformLayout();
 

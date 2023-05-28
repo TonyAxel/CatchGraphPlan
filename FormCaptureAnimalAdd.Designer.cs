@@ -329,7 +329,7 @@ namespace CatchGraphPlan
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CategoryAnimal);
             this.Name = "FormCaptureAnimalAdd";
-            this.Text = "FormCaptureAnimalAdd";
+            this.Text = "Добавить карточку отловленного животного";
             this.ResumeLayout(false);
             this.PerformLayout();
 

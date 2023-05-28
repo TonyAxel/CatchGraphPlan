@@ -16,5 +16,14 @@ namespace CatchGraphPlan
         {
             InitializeComponent();
         }
+
+        private void BTNAdd_Click(object sender, EventArgs e)
+        {
+            var form = new FormCompany();
+
+            this.Hide();
+
+            form.Show();
+        }
     }
 }

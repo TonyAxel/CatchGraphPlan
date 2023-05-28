@@ -41,6 +41,9 @@ namespace CatchGraphPlan
             this.реестрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрПлановГрафиковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрАктовОтловаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрОрганизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.number_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dogs_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +54,6 @@ namespace CatchGraphPlan
             this.captyre_goal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mynicipality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mynicipal_contract = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.реестрОрганизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -157,15 +157,36 @@ namespace CatchGraphPlan
             // реестрПлановГрафиковToolStripMenuItem
             // 
             this.реестрПлановГрафиковToolStripMenuItem.Name = "реестрПлановГрафиковToolStripMenuItem";
-            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.реестрПлановГрафиковToolStripMenuItem.Text = "Реестр планов - графиков";
             this.реестрПлановГрафиковToolStripMenuItem.Click += new System.EventHandler(this.реестрПлановГрафиковToolStripMenuItem_Click);
             // 
             // реестрАктовОтловаToolStripMenuItem
             // 
             this.реестрАктовОтловаToolStripMenuItem.Name = "реестрАктовОтловаToolStripMenuItem";
-            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.реестрАктовОтловаToolStripMenuItem.Text = "Реестр актов - отлова";
+            // 
+            // карточкиОтловленныхЖивотныхToolStripMenuItem
+            // 
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Name = "карточкиОтловленныхЖивотныхToolStripMenuItem";
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Text = "карточка отловленного животного";
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Click += new System.EventHandler(this.карточкиОтловленныхЖивотныхToolStripMenuItem_Click);
+            // 
+            // реестрОрганизацияToolStripMenuItem
+            // 
+            this.реестрОрганизацияToolStripMenuItem.Name = "реестрОрганизацияToolStripMenuItem";
+            this.реестрОрганизацияToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрОрганизацияToolStripMenuItem.Text = "Реестр организация";
+            this.реестрОрганизацияToolStripMenuItem.Click += new System.EventHandler(this.реестрОрганизацияToolStripMenuItem_Click);
+            // 
+            // реестрМуниципальныхКонтрактовToolStripMenuItem
+            // 
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Name = "реестрМуниципальныхКонтрактовToolStripMenuItem";
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Text = "Реестр муниципальных контрактов";
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Click += new System.EventHandler(this.реестрМуниципальныхКонтрактовToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -248,25 +269,6 @@ namespace CatchGraphPlan
             this.mynicipal_contract.Name = "mynicipal_contract";
             this.mynicipal_contract.ReadOnly = true;
             this.mynicipal_contract.Width = 180;
-            // 
-            // карточкиОтловленныхЖивотныхToolStripMenuItem
-            // 
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Name = "карточкиОтловленныхЖивотныхToolStripMenuItem";
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Text = "карточка отловленного животного";
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Click += new System.EventHandler(this.карточкиОтловленныхЖивотныхToolStripMenuItem_Click);
-            // 
-            // реестрОрганизацияToolStripMenuItem
-            // 
-            this.реестрОрганизацияToolStripMenuItem.Name = "реестрОрганизацияToolStripMenuItem";
-            this.реестрОрганизацияToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.реестрОрганизацияToolStripMenuItem.Text = "Реестр организация";
-            // 
-            // реестрМуниципальныхКонтрактовToolStripMenuItem
-            // 
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Name = "реестрМуниципальныхКонтрактовToolStripMenuItem";
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Text = "Реестр муниципальных контрактов";
             // 
             // FormCaptyreAct
             // 

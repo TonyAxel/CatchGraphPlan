@@ -178,7 +178,7 @@ namespace CatchGraphPlan
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NameOrg);
             this.Name = "FormCompanyUpdate";
-            this.Text = "FormCompanyUpdate";
+            this.Text = "Изменить организацию";
             this.ResumeLayout(false);
             this.PerformLayout();
 

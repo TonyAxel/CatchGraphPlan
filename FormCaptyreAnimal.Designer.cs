@@ -33,6 +33,9 @@ namespace CatchGraphPlan
             this.реестрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрПлановГрафиковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрАктовОтловаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрОрганизацийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -55,9 +58,6 @@ namespace CatchGraphPlan
             this.electronic_chip_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.municipality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.captyre_act = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.реестрОрганизацийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -87,16 +87,36 @@ namespace CatchGraphPlan
             // реестрПлановГрафиковToolStripMenuItem
             // 
             this.реестрПлановГрафиковToolStripMenuItem.Name = "реестрПлановГрафиковToolStripMenuItem";
-            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.реестрПлановГрафиковToolStripMenuItem.Text = "Реестр планов - графиков";
             this.реестрПлановГрафиковToolStripMenuItem.Click += new System.EventHandler(this.реестрПлановГрафиковToolStripMenuItem_Click);
             // 
             // реестрАктовОтловаToolStripMenuItem
             // 
             this.реестрАктовОтловаToolStripMenuItem.Name = "реестрАктовОтловаToolStripMenuItem";
-            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.реестрАктовОтловаToolStripMenuItem.Text = "Реестр актов - отлова";
             this.реестрАктовОтловаToolStripMenuItem.Click += new System.EventHandler(this.реестрАктовОтловаToolStripMenuItem_Click);
+            // 
+            // карточкиОтловленныхЖивотныхToolStripMenuItem
+            // 
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Name = "карточкиОтловленныхЖивотныхToolStripMenuItem";
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Text = "Карточки отловленных животных";
+            // 
+            // реестрОрганизацийToolStripMenuItem
+            // 
+            this.реестрОрганизацийToolStripMenuItem.Name = "реестрОрганизацийToolStripMenuItem";
+            this.реестрОрганизацийToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрОрганизацийToolStripMenuItem.Text = "Реестр организаций";
+            this.реестрОрганизацийToolStripMenuItem.Click += new System.EventHandler(this.реестрОрганизацийToolStripMenuItem_Click);
+            // 
+            // реестрМуниципальныхКонтрактовToolStripMenuItem
+            // 
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Name = "реестрМуниципальныхКонтрактовToolStripMenuItem";
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Text = "Реестр муниципальных контрактов";
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Click += new System.EventHandler(this.реестрМуниципальныхКонтрактовToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -290,24 +310,6 @@ namespace CatchGraphPlan
             this.captyre_act.ReadOnly = true;
             this.captyre_act.Width = 80;
             // 
-            // карточкиОтловленныхЖивотныхToolStripMenuItem
-            // 
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Name = "карточкиОтловленныхЖивотныхToolStripMenuItem";
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Text = "Карточки отловленных животных";
-            // 
-            // реестрОрганизацийToolStripMenuItem
-            // 
-            this.реестрОрганизацийToolStripMenuItem.Name = "реестрОрганизацийToolStripMenuItem";
-            this.реестрОрганизацийToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
-            this.реестрОрганизацийToolStripMenuItem.Text = "Реестр организаций";
-            // 
-            // реестрМуниципальныхКонтрактовToolStripMenuItem
-            // 
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Name = "реестрМуниципальныхКонтрактовToolStripMenuItem";
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Text = "Реестр муниципальных контрактов";
-            // 
             // FormCaptyreAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,7 +326,7 @@ namespace CatchGraphPlan
             this.Controls.Add(this.BTNAdd);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormCaptyreAnimal";
-            this.Text = "CaptyreAnimal";
+            this.Text = "Карточки отловленных животных";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

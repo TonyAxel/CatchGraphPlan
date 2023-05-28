@@ -129,6 +129,24 @@
     <Compile Include="FormCompanyUpdate.Designer.cs">
       <DependentUpon>FormCompanyUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMunicipalContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMunicipalContract.Designer.cs">
+      <DependentUpon>FormMunicipalContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMunicipalContractAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMunicipalContractAdd.Designer.cs">
+      <DependentUpon>FormMunicipalContractAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMunicipalContractUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMunicipalContractUpdate.Designer.cs">
+      <DependentUpon>FormMunicipalContractUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCaptureAnimalAdd.resx">
@@ -169,6 +187,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCompanyUpdate.resx">
       <DependentUpon>FormCompanyUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMunicipalContract.resx">
+      <DependentUpon>FormMunicipalContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMunicipalContractAdd.resx">
+      <DependentUpon>FormMunicipalContractAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMunicipalContractUpdate.resx">
+      <DependentUpon>FormMunicipalContractUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
