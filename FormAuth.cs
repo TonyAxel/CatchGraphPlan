@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CatchGraphPlan.DataBase;
 
 namespace CatchGraphPlan
 {
     public partial class AuthForm : Form
     {
+        DB db;
+
         public AuthForm()
         {
             InitializeComponent();
@@ -19,11 +22,11 @@ namespace CatchGraphPlan
 
         private void BTNauth_Click(object sender, EventArgs e)
         {
+            var a = db.query("S");
             //если авторизовался => 
-            this.Hide();
-            // => 
+            /*this.Hide();
             var form = new FormCapturePlan();
-            form.Show();
+            form.Show();*/
         }
     }
 }
