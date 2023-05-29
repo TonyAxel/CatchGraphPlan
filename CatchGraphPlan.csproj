@@ -50,6 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capture\Company.cs" />
+    <Compile Include="Capture\CompanySign.cs" />
+    <Compile Include="Capture\CompanyType.cs" />
+    <Compile Include="Controllers\AuthorizeController.cs" />
     <Compile Include="DataBase\DB.cs" />
     <Compile Include="FormCaptyreAnimal.cs">
       <SubType>Form</SubType>
@@ -147,6 +151,11 @@
     <Compile Include="FormMunicipalContractUpdate.Designer.cs">
       <DependentUpon>FormMunicipalContractUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="PM\Account.cs" />
+    <Compile Include="PM\Municipality.cs" />
+    <Compile Include="PM\Omsy.cs" />
+    <Compile Include="PM\PermissionsManager.cs" />
+    <Compile Include="PM\Role.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCaptureAnimalAdd.resx">
@@ -219,9 +228,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
