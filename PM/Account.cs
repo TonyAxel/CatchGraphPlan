@@ -7,14 +7,14 @@ using CatchGraphPlan.Capture;
 
 namespace CatchGraphPlan.PM
 {
-    class Account
+    public class Account
     {
         int id;
         string login;
         string password;
-        Role role;
+        public Role role;
         Omsy omsy;
-        Company company;
+        public Company company;
 
         public Account(int id, string login, string password, Role role, Omsy omsy, Company company)
         {

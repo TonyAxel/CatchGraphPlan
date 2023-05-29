@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CatchGraphPlan.PM
 {
-    class Role
+    public class Role
     {
         int id;
-        string name;
+        public string name;
 
         public Role(int id, string name)
         {

@@ -7,19 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CatchGraphPlan.PM;
+
 
 namespace CatchGraphPlan
 {
     public partial class FormCompanyUpdate : Form
     {
-        public FormCompanyUpdate()
+        PM.PM pm;
+        public FormCompanyUpdate(PM.PM pm)
         {
             InitializeComponent();
+            this.pm = pm;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = new FormCompany();
+            var form = new FormCompany(pm);
 
             this.Hide();
 

@@ -54,6 +54,7 @@
     <Compile Include="Capture\CompanySign.cs" />
     <Compile Include="Capture\CompanyType.cs" />
     <Compile Include="Controllers\AuthorizeController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="DataBase\DB.cs" />
     <Compile Include="FormCaptyreAnimal.cs">
       <SubType>Form</SubType>
@@ -155,6 +156,8 @@
     <Compile Include="PM\Municipality.cs" />
     <Compile Include="PM\Omsy.cs" />
     <Compile Include="PM\PermissionsManager.cs" />
+    <Compile Include="PM\PermManFactory.cs" />
+    <Compile Include="PM\PM.cs" />
     <Compile Include="PM\Role.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

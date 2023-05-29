@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace CatchGraphPlan.Capture
 {
-    class CompanyType
+    public class CompanyType
     {
         int id;
         string name;
+        public CompanyType(int id, string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
     }
 }

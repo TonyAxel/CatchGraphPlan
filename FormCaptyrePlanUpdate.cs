@@ -7,19 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CatchGraphPlan.PM;
+
 
 namespace CatchGraphPlan
 {
     public partial class FormCaptyrePlanUpdate : Form
     {
-        public FormCaptyrePlanUpdate()
+        PM.PM pm;
+        public FormCaptyrePlanUpdate(PM.PM pm)
         {
             InitializeComponent();
+            this.pm = pm;
         }
 
         private void BTNUpdate_Click(object sender, EventArgs e)
         {
-            var form = new FormCapturePlan();
+            var form = new FormCapturePlan(pm);
 
             this.Hide();
 

@@ -7,21 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CatchGraphPlan.PM;
 
 namespace CatchGraphPlan
 {
     public partial class FormCapturePlan : Form
     {
-        public FormCapturePlan()
+        PM.PM pm;
+        public FormCapturePlan(PM.PM pm)
         {
             InitializeComponent();
-
+            this.pm = pm;
+            
             //реестрПлановГрафиковToolStripMenuItem.Visible = false;
         }
 
         private void BTNAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyrePlanAdd();
+            var form = new FormCaptyrePlanAdd(pm);
 
             this.Hide();
 
@@ -30,7 +33,7 @@ namespace CatchGraphPlan
 
         private void BTNUpdate_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyrePlanUpdate();
+            var form = new FormCaptyrePlanUpdate(pm);
 
             this.Hide();
 
@@ -39,7 +42,7 @@ namespace CatchGraphPlan
 
         private void реестрАктовОтловаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAct();
+            var form = new FormCaptyreAct(pm);
 
             this.Hide();
 
@@ -48,7 +51,7 @@ namespace CatchGraphPlan
 
         private void карточкаОтловленногоЖивотногоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAnimal();
+            var form = new FormCaptyreAnimal(pm);
 
             this.Hide();
 
@@ -57,7 +60,7 @@ namespace CatchGraphPlan
 
         private void реестрОрганизацийToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCompany();
+            var form = new FormCompany(pm);
 
             this.Hide();
 
@@ -66,8 +69,7 @@ namespace CatchGraphPlan
 
         private void реестрМуниципальныхКонтрактовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormMunicipalContract();
-
+            var form = new FormMunicipalContract(pm);
             this.Hide();
 
             form.Show();

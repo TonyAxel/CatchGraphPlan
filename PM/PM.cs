@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace CatchGraphPlan.PM
 {
-    public class Municipality
+    public class PM:PermissionsManager
     {
-        int id;
-        string name;
-        public Municipality(int id, string name)
+        public PM(Account account)
         {
-            this.id = id;
-            this.name = name;
+            this.Account = account;
         }
     }
 }

@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace CatchGraphPlan.PM
 {
-    class Omsy
+    public class Omsy
     {
         int id;
         string name;
         Municipality municipality;
+        public Omsy (int id, string name, Municipality municipality)
+        {
+            this.id = id;
+            this.name = name;
+            this.municipality = municipality;
+        }
     }
 }
