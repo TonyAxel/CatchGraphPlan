@@ -9,12 +9,12 @@ namespace CatchGraphPlan.Capture
     public class Company
     {
         public int id;
-        string name;
-        int inn;
-        int kpp;
-        string registrationAdress;
-        CompanyType companyType;
-        CompanySign companySign;
+        public string name;
+        public int inn;
+        public int kpp;
+        public string registrationAdress;
+        public CompanyType companyType;
+        public CompanySign companySign;
         public Company()
         {
 

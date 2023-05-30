@@ -8,8 +8,8 @@ namespace CatchGraphPlan.Capture
 {
      public class CompanySign
     {
-        int id;
-        string name;
+        public int id;
+        public string name;
         public CompanySign(int id, string name)
         {
             this.id = id;

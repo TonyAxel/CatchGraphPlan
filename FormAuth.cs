@@ -15,7 +15,6 @@ namespace CatchGraphPlan
 {
     public partial class AuthForm : Form
     {
-        DB db;
         AuthorizeController AuthContoller = new AuthorizeController();
         PermManFactory pmfact = new PermManFactory();
 

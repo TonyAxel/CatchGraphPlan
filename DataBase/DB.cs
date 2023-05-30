@@ -23,14 +23,15 @@ namespace CatchGraphPlan.DataBase
 
         public MySqlDataReader getUser(string login, string password)
         {
-            MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM useraccount WHERE useraccount.login = '{login}' AND useraccount.password = '{password}'", connection());
-            return reader = command.ExecuteReader();
+            connection().Close();
+            return command.ExecuteReader();
         }
         public Role getRole(int id)
         {
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM role WHERE id={id}", connection());
+            connection().Close();
             reader = command.ExecuteReader();
             if (reader.HasRows)
             {
@@ -48,6 +49,7 @@ namespace CatchGraphPlan.DataBase
         {
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM municipality WHERE id={id}", connection());
+            connection().Close();
             reader = command.ExecuteReader();
             if (reader.HasRows)
             {
@@ -66,6 +68,7 @@ namespace CatchGraphPlan.DataBase
         {
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM company_sign WHERE id={id}", connection());
+            connection().Close();
             reader = command.ExecuteReader();
             if (reader.HasRows)
             {
@@ -84,6 +87,7 @@ namespace CatchGraphPlan.DataBase
         {
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM company_type WHERE id={id}", connection());
+            connection().Close();
             reader = command.ExecuteReader();
             if (reader.HasRows)
             {
@@ -102,6 +106,7 @@ namespace CatchGraphPlan.DataBase
         {
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM omsy WHERE id={id}", connection());
+            connection().Close();
             reader = command.ExecuteReader();
             if (reader.HasRows)
             {
@@ -120,6 +125,7 @@ namespace CatchGraphPlan.DataBase
         {
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM company WHERE id={id}", connection());
+            connection().Close();
             reader = command.ExecuteReader();
             if (reader.HasRows)
             {
@@ -140,20 +146,86 @@ namespace CatchGraphPlan.DataBase
                 return new Company(0, null, 0,0,null,null,null);
             }
         }
-        public MySqlDataReader getCompany(int id = 0)
+
+        public MySqlDataReader getCompany(int id = 0, string filter = null, string sort = null)
         {
-            MySqlDataReader reader;
             if (id == 0)
             {
-                MySqlCommand command = new MySqlCommand($"SELECT * FROM company", connection());
-                return reader = command.ExecuteReader();
+                if (filter != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM company WHERE {filter}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                if (sort != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM company ORDER BY {sort}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                if(filter != null && sort != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM company WHERE {filter} ORDER BY {sort}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                else
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM company", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
             }
             else {
-                MySqlCommand command = new MySqlCommand($"SELECT * FROM company WHERE id = '{id}'", connection());
-                return reader = command.ExecuteReader();
+                if (filter != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM company WHERE id = '{id}' AND WHERE {filter}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                if (sort != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM company WHERE id = '{id}' ORDER BY {sort}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                if (filter != null && sort != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM company WHERE id = '{id}' AND WHERE {filter} ORDER BY {sort}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                else
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM company WHERE id = '{id}'", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
             }
-        }
-        
 
+        }
+           
+
+        //company
+        public void addCompany(Company company)
+        {
+            MySqlCommand command = new MySqlCommand($"INSERT INTO company(name, inn, kpp, registation_adress, company_type, company_sign) VALUES ('{company.name}', '{company.inn}', '{company.kpp}', '{company.registrationAdress}', {company.companyType.id}, {company.companySign.id})", connection());
+            connection().Close();
+            command.ExecuteNonQuery();
+        }
+
+        public void deleteCompany(Company company)
+        {
+            MySqlCommand command = new MySqlCommand($"DELETE FROM company WHERE id = {company.id}" , connection());
+            connection().Close();
+            command.ExecuteNonQuery();
+        }
+
+        public void updateCompany(Company company)
+        {
+            MySqlCommand command = new MySqlCommand($"UPDATE company SET name = '{company.name}', inn = '{company.inn}', kpp = '{company.kpp}', registation_adress = '{company.registrationAdress}', company_type = {company.companyType.id}, company_sign = {company.companySign.id} WHERE id = {company.id};", connection());
+            connection().Close();
+            command.ExecuteNonQuery();
+        }
     }
 }

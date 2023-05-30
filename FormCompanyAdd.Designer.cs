@@ -46,9 +46,10 @@ namespace CatchGraphPlan
             // 
             // NameOrg
             // 
+            this.NameOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameOrg.Location = new System.Drawing.Point(10, 31);
             this.NameOrg.Name = "NameOrg";
-            this.NameOrg.Size = new System.Drawing.Size(211, 20);
+            this.NameOrg.Size = new System.Drawing.Size(211, 22);
             this.NameOrg.TabIndex = 27;
             // 
             // label1
@@ -57,7 +58,7 @@ namespace CatchGraphPlan
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(7, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 16);
+            this.label1.Size = new System.Drawing.Size(213, 16);
             this.label1.TabIndex = 28;
             this.label1.Text = "Полное название организации";
             // 
@@ -67,15 +68,16 @@ namespace CatchGraphPlan
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(238, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.Size = new System.Drawing.Size(37, 16);
             this.label2.TabIndex = 30;
             this.label2.Text = "ИНН";
             // 
             // Inn
             // 
+            this.Inn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Inn.Location = new System.Drawing.Point(241, 31);
             this.Inn.Name = "Inn";
-            this.Inn.Size = new System.Drawing.Size(211, 20);
+            this.Inn.Size = new System.Drawing.Size(211, 22);
             this.Inn.TabIndex = 29;
             // 
             // label3
@@ -84,15 +86,16 @@ namespace CatchGraphPlan
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(7, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 16);
+            this.label3.Size = new System.Drawing.Size(35, 16);
             this.label3.TabIndex = 32;
             this.label3.Text = "КПП";
             // 
             // Kpp
             // 
+            this.Kpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Kpp.Location = new System.Drawing.Point(10, 78);
             this.Kpp.Name = "Kpp";
-            this.Kpp.Size = new System.Drawing.Size(211, 20);
+            this.Kpp.Size = new System.Drawing.Size(211, 22);
             this.Kpp.TabIndex = 31;
             // 
             // label4
@@ -101,32 +104,37 @@ namespace CatchGraphPlan
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(238, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 16);
+            this.label4.Size = new System.Drawing.Size(134, 16);
             this.label4.TabIndex = 34;
             this.label4.Text = "Адрес регистрации";
             // 
             // AdressRegistration
             // 
+            this.AdressRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AdressRegistration.Location = new System.Drawing.Point(241, 78);
             this.AdressRegistration.Name = "AdressRegistration";
-            this.AdressRegistration.Size = new System.Drawing.Size(211, 20);
+            this.AdressRegistration.Size = new System.Drawing.Size(211, 22);
             this.AdressRegistration.TabIndex = 33;
             // 
             // Type
             // 
+            this.Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Type.FormattingEnabled = true;
-            this.Type.Location = new System.Drawing.Point(458, 30);
+            this.Type.ItemHeight = 16;
+            this.Type.Location = new System.Drawing.Point(10, 127);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(122, 21);
+            this.Type.Size = new System.Drawing.Size(442, 24);
             this.Type.TabIndex = 35;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(457, 11);
+            this.label5.Location = new System.Drawing.Point(9, 108);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 16);
+            this.label5.Size = new System.Drawing.Size(121, 16);
             this.label5.TabIndex = 36;
             this.label5.Text = "Тип организации";
             // 
@@ -134,24 +142,27 @@ namespace CatchGraphPlan
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(457, 59);
+            this.label6.Location = new System.Drawing.Point(11, 157);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 16);
+            this.label6.Size = new System.Drawing.Size(88, 16);
             this.label6.TabIndex = 38;
             this.label6.Text = "ИП/Юр. лицо";
             // 
             // Sign
             // 
+            this.Sign.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Sign.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Sign.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Sign.FormattingEnabled = true;
-            this.Sign.Location = new System.Drawing.Point(458, 78);
+            this.Sign.Location = new System.Drawing.Point(12, 176);
             this.Sign.Name = "Sign";
-            this.Sign.Size = new System.Drawing.Size(122, 21);
+            this.Sign.Size = new System.Drawing.Size(440, 24);
             this.Sign.TabIndex = 37;
             // 
             // BTNAdd
             // 
             this.BTNAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BTNAdd.Location = new System.Drawing.Point(241, 120);
+            this.BTNAdd.Location = new System.Drawing.Point(177, 222);
             this.BTNAdd.Name = "BTNAdd";
             this.BTNAdd.Size = new System.Drawing.Size(98, 30);
             this.BTNAdd.TabIndex = 39;
@@ -163,7 +174,7 @@ namespace CatchGraphPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 162);
+            this.ClientSize = new System.Drawing.Size(460, 268);
             this.Controls.Add(this.BTNAdd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Sign);
