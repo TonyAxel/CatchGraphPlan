@@ -1,28 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CatchGraphPlan.PM;
 using CatchGraphPlan.Capture;
 using CatchGraphPlan.Controllers;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using CatchGraphPlan.Role;
 
 namespace CatchGraphPlan
 {
     public partial class FormCompanyAdd : Form
     {
-        PM.PM pm;
+        PermissionsManager pm = PermManFactory.getInstance();
         CompanyController companyController = new CompanyController();
-        public FormCompanyAdd(PM.PM pm)
+        public FormCompanyAdd()
         {
             InitializeComponent();
-            this.pm = pm;
-            if(pm.canEditRegister(new Company()) == "Оператор ВетСлужбы")
+            if(pm.canEditRegister(new Company()))
             {
                 Type.DisplayMember = "Text";
                 Type.ValueMember = "Value";
@@ -43,7 +34,7 @@ namespace CatchGraphPlan
                 Type.DataSource = itemsType;
                 Sign.DataSource = itemsSign;
             }
-            if (pm.canEditRegister(new Company()) == "Оператор ОМСУ")
+            if (pm.canEditRegister(new Company()))
             {
                 Type.DisplayMember = "Text";
                 Type.ValueMember = "Value";
@@ -77,7 +68,7 @@ namespace CatchGraphPlan
                 Company company = new Company(0, NameOrg.Text, Convert.ToInt32(Inn.Text), Convert.ToInt32(Kpp.Text), AdressRegistration.Text, new CompanyType(Convert.ToInt32(Type.SelectedValue), Type.Text), new CompanySign(Convert.ToInt32(Sign.SelectedValue), Sign.Text));
                 companyController.addCompany(company);
 
-                var form = new FormCompany(pm);
+                var form = new FormCompany();
 
                 this.Hide();
 

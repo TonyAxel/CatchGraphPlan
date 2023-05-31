@@ -60,11 +60,12 @@ namespace CatchGraphPlan
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.реестрыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(643, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(812, 28);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,40 +78,40 @@ namespace CatchGraphPlan
             this.реестрОрганизацийToolStripMenuItem,
             this.реестрМуниципальныхКонтрактовToolStripMenuItem});
             this.реестрыToolStripMenuItem.Name = "реестрыToolStripMenuItem";
-            this.реестрыToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.реестрыToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.реестрыToolStripMenuItem.Text = "Реестры";
             // 
             // реестрПлановГрафиковToolStripMenuItem
             // 
             this.реестрПлановГрафиковToolStripMenuItem.Name = "реестрПлановГрафиковToolStripMenuItem";
-            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.реестрПлановГрафиковToolStripMenuItem.Text = "Реестр планов - графиков";
             this.реестрПлановГрафиковToolStripMenuItem.Click += new System.EventHandler(this.реестрПлановГрафиковToolStripMenuItem_Click);
             // 
             // реестрАктовОтловаToolStripMenuItem
             // 
             this.реестрАктовОтловаToolStripMenuItem.Name = "реестрАктовОтловаToolStripMenuItem";
-            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.реестрАктовОтловаToolStripMenuItem.Text = "Реестр актов - отлова";
             this.реестрАктовОтловаToolStripMenuItem.Click += new System.EventHandler(this.реестрАктовОтловаToolStripMenuItem_Click);
             // 
             // карточкаОтловленногоЖивотногоToolStripMenuItem
             // 
             this.карточкаОтловленногоЖивотногоToolStripMenuItem.Name = "карточкаОтловленногоЖивотногоToolStripMenuItem";
-            this.карточкаОтловленногоЖивотногоToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.карточкаОтловленногоЖивотногоToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.карточкаОтловленногоЖивотногоToolStripMenuItem.Text = "Карточка отловленного животного";
             this.карточкаОтловленногоЖивотногоToolStripMenuItem.Click += new System.EventHandler(this.карточкаОтловленногоЖивотногоToolStripMenuItem_Click);
             // 
             // реестрОрганизацийToolStripMenuItem
             // 
             this.реестрОрганизацийToolStripMenuItem.Name = "реестрОрганизацийToolStripMenuItem";
-            this.реестрОрганизацийToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрОрганизацийToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.реестрОрганизацийToolStripMenuItem.Text = "Реестр организаций";
             // 
             // реестрМуниципальныхКонтрактовToolStripMenuItem
             // 
             this.реестрМуниципальныхКонтрактовToolStripMenuItem.Name = "реестрМуниципальныхКонтрактовToolStripMenuItem";
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.реестрМуниципальныхКонтрактовToolStripMenuItem.Text = "Реестр муниципальных контрактов";
             this.реестрМуниципальныхКонтрактовToolStripMenuItem.Click += new System.EventHandler(this.реестрМуниципальныхКонтрактовToolStripMenuItem_Click);
             // 
@@ -140,58 +141,73 @@ namespace CatchGraphPlan
             this.dataGridView1.Location = new System.Drawing.Point(0, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(643, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(811, 150);
             this.dataGridView1.TabIndex = 28;
             // 
             // id
             // 
             this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
+            this.id.Width = 125;
             // 
             // name
             // 
             this.name.HeaderText = "Наименование организации";
+            this.name.MinimumWidth = 6;
             this.name.Name = "name";
             this.name.ReadOnly = true;
             this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.name.Width = 125;
             // 
             // inn
             // 
             this.inn.HeaderText = "ИНН";
+            this.inn.MinimumWidth = 6;
             this.inn.Name = "inn";
             this.inn.ReadOnly = true;
             this.inn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.inn.Width = 125;
             // 
             // kpp
             // 
             this.kpp.HeaderText = "КПП";
+            this.kpp.MinimumWidth = 6;
             this.kpp.Name = "kpp";
             this.kpp.ReadOnly = true;
             this.kpp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.kpp.Width = 125;
             // 
             // registration_adress
             // 
             this.registration_adress.HeaderText = "Адрес регистрации";
+            this.registration_adress.MinimumWidth = 6;
             this.registration_adress.Name = "registration_adress";
             this.registration_adress.ReadOnly = true;
             this.registration_adress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.registration_adress.Width = 125;
             // 
             // type
             // 
             this.type.HeaderText = "Тип организации";
+            this.type.MinimumWidth = 6;
             this.type.Name = "type";
             this.type.ReadOnly = true;
             this.type.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.type.Width = 125;
             // 
             // sign
             // 
             this.sign.HeaderText = "ИП/Юридическое лицо";
+            this.sign.MinimumWidth = 6;
             this.sign.Name = "sign";
             this.sign.ReadOnly = true;
             this.sign.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.sign.Width = 125;
             // 
             // label2
             // 
@@ -199,7 +215,7 @@ namespace CatchGraphPlan
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(153, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.Size = new System.Drawing.Size(122, 25);
             this.label2.TabIndex = 36;
             this.label2.Text = "Сортировка";
             // 
@@ -209,7 +225,7 @@ namespace CatchGraphPlan
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(7, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(101, 25);
             this.label1.TabIndex = 35;
             this.label1.Text = "Фильтры";
             // 
@@ -283,7 +299,7 @@ namespace CatchGraphPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 267);
+            this.ClientSize = new System.Drawing.Size(812, 267);
             this.Controls.Add(this.BTNAccept);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

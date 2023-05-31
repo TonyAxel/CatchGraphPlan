@@ -7,13 +7,14 @@ using CatchGraphPlan.DataBase;
 using CatchGraphPlan.PM;
 using CatchGraphPlan.Capture;
 using System.Windows.Forms;
+using CatchGraphPlan.Role;
 
 namespace CatchGraphPlan.Controllers
 {
     class CompanyController
     {
         DB db = new DB();
-        public List<Company> getCompany(PM.PM pm = null, string filter = null, string sort = null)
+        public List<Company> getCompany(PermissionsManager pm = null, string filter = null, string sort = null)
         {
             List < Company > listCompany = new List<Company>();
             if (pm == null)

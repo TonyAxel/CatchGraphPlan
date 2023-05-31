@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using CatchGraphPlan.PM;
 using CatchGraphPlan.Capture;
-using CatchGraphPlan.DataBase;
 using CatchGraphPlan.Controllers;
 using Excel = Microsoft.Office.Interop.Excel;
+using CatchGraphPlan.Role;
 
 namespace CatchGraphPlan
 {
     public partial class FormCompany : Form
     {
-        PM.PM pm;
+        PermissionsManager pm = PermManFactory.getInstance();
         CompanyController companyController = new CompanyController();
         string role;
 
-        public FormCompany(PM.PM pm)
+        public FormCompany()
         {
             InitializeComponent();
-            this.pm = pm;
 
             Filter.DisplayMember = "Text";
             Filter.ValueMember = "Value";
@@ -40,7 +38,7 @@ namespace CatchGraphPlan
             Filter.DataSource = itemsFilter;
             Sort.DataSource = itemsSort;
 
-            if (pm.canEditRegister(new Company()) == "Просмотр")
+            if (pm.canEditRegister(new Company()))
             {
                 this.role = "Просмотр";
                 BTNAdd.Enabled = false;
@@ -54,7 +52,7 @@ namespace CatchGraphPlan
                 }
 
             }
-            if(pm.canEditRegister(new Company()) == "Куратор ОМСУ")
+            if(pm.canEditRegister(new Company()))
             {
                 this.role = "Куратор ОМСУ";
 
@@ -68,7 +66,7 @@ namespace CatchGraphPlan
                     dataGridView1.Rows.Add(company.id, company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
                 }
             }
-            if(pm.canEditRegister(new Company()) == "Оператор ВетСлужбы" || pm.canEditRegister(new Company()) == "Оператор ОМСУ")
+            if(pm.canEditRegister(new Company()) || pm.canEditRegister(new Company()))
             {
                 this.role = "all";
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
@@ -84,7 +82,7 @@ namespace CatchGraphPlan
 
         private void реестрПлановГрафиковToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCapturePlan(pm);
+            var form = new FormCapturePlan();
 
             this.Hide();
 
@@ -93,7 +91,7 @@ namespace CatchGraphPlan
 
         private void реестрАктовОтловаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAct(pm);
+            var form = new FormCaptyreAct();
 
             this.Hide();
 
@@ -102,7 +100,7 @@ namespace CatchGraphPlan
 
         private void карточкаОтловленногоЖивотногоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAnimal(pm);
+            var form = new FormCaptyreAnimal();
 
             this.Hide();
 
@@ -111,7 +109,7 @@ namespace CatchGraphPlan
 
         private void реестрМуниципальныхКонтрактовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormMunicipalContract(pm);
+            var form = new FormMunicipalContract();
 
             this.Hide();
 
@@ -120,7 +118,7 @@ namespace CatchGraphPlan
 
         private void BTNAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormCompanyAdd(pm);
+            var form = new FormCompanyAdd();
 
             this.Hide();
 
@@ -131,7 +129,7 @@ namespace CatchGraphPlan
         {
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
 
-            var form = new FormCompanyUpdate(pm, id);
+            var form = new FormCompanyUpdate(id);
 
             this.Hide();
 
@@ -162,6 +160,10 @@ namespace CatchGraphPlan
 
         private void BTNExportExcel_Click(object sender, EventArgs e)
         {
+            SaveFileDialog sf = new SaveFileDialog();
+            sf.DefaultExt = "Excel"; // ???
+            DialogResult dr = sf.ShowDialog();
+            //(dr.)
             Excel.Application exApp = new Excel.Application();
 
             exApp.Workbooks.Add();
@@ -208,7 +210,7 @@ namespace CatchGraphPlan
                     dataGridView1.Rows.Add(company.id, company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
                 }
             }
-            if (pm.canEditRegister(new Company()) == "Оператор ВетСлужбы" || pm.canEditRegister(new Company()) == "Оператор ОМСУ")
+            if (pm.canEditRegister(new Company()) || pm.canEditRegister(new Company()))
             {
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();

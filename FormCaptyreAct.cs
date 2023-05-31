@@ -7,22 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CatchGraphPlan.PM;
 
 namespace CatchGraphPlan
 {
     public partial class FormCaptyreAct : Form
     {
-        PM.PM pm;
-        public FormCaptyreAct(PM.PM pm)
+        public FormCaptyreAct()
         {
             InitializeComponent();
-            this.pm = pm;
         }
 
         private void реестрПлановГрафиковToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCapturePlan(pm);
+            var form = new FormCapturePlan();
 
             this.Hide();
 
@@ -31,7 +28,7 @@ namespace CatchGraphPlan
 
         private void BTNAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreActAdd(pm);
+            var form = new FormCaptyreActAdd();
 
             this.Hide();
 
@@ -40,7 +37,7 @@ namespace CatchGraphPlan
 
         private void BTNUpdate_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreActUpdate(pm);
+            var form = new FormCaptyreActUpdate();
 
             this.Hide();
 
@@ -49,7 +46,7 @@ namespace CatchGraphPlan
 
         private void карточкиОтловленныхЖивотныхToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAnimal(pm);
+            var form = new FormCaptyreAnimal();
 
             this.Hide();
 
@@ -58,7 +55,7 @@ namespace CatchGraphPlan
 
         private void реестрОрганизацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCompany(pm);
+            var form = new FormCompany();
 
             this.Hide();
 
@@ -67,7 +64,7 @@ namespace CatchGraphPlan
 
         private void реестрМуниципальныхКонтрактовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormMunicipalContract(pm);
+            var form = new FormMunicipalContract();
 
             this.Hide();
 

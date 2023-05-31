@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CatchGraphPlan.DataBase;
 using CatchGraphPlan.Controllers;
 using CatchGraphPlan.PM;
+using CatchGraphPlan.Role;
+
 
 namespace CatchGraphPlan
 {
@@ -28,10 +22,10 @@ namespace CatchGraphPlan
             string Login = login.Text;
             string Password = password.Text;
             Account acc = AuthContoller.autorization(Login, Password); //проверить на пустоту
-            var PM = pmfact.getUserPermissions(acc);
+            pmfact.getUserPermissions(acc);
 
             this.Hide();
-            var form = new FormCapturePlan(PM);
+            var form = new FormCapturePlan();
             form.Show();
         }
     }

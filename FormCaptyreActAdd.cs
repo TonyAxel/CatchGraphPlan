@@ -7,22 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CatchGraphPlan.PM;
 
 namespace CatchGraphPlan
 {
     public partial class FormCaptyreActAdd : Form
     {
-        PM.PM pm;
-        public FormCaptyreActAdd(PM.PM pm)
+        public FormCaptyreActAdd()
         {
             InitializeComponent();
-            this.pm = pm;
         }
 
         private void BTNAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAct(pm);
+            var form = new FormCaptyreAct();
 
             this.Hide();
 

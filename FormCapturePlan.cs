@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CatchGraphPlan.Role;
 using CatchGraphPlan.PM;
 using CatchGraphPlan.Controllers;
 using CatchGraphPlan.Capture;
@@ -16,13 +11,13 @@ namespace CatchGraphPlan
 {
     public partial class FormCapturePlan : Form
     {
-        PM.PM pm;
+        PermissionsManager pm = PermManFactory.getInstance();
+
         CapturePlanController capturePlanController = new CapturePlanController();
         string role;
-        public FormCapturePlan(PM.PM pm)
+        public FormCapturePlan()
         {
             InitializeComponent();
-            this.pm = pm;
             Filter.DisplayMember = "Text";
             Filter.ValueMember = "Value";
 
@@ -43,7 +38,7 @@ namespace CatchGraphPlan
             Filter.DataSource = itemsFilter;
             Sort.DataSource = itemsSort;
 
-            if (pm.canEditRegister(new CapturePlan()) == "Просмотр")
+            if (!pm.canEditRegister(new CapturePlan()))
             {
                 this.role = "Просмотр";
                 BTNAdd.Enabled = false;
@@ -57,7 +52,7 @@ namespace CatchGraphPlan
                 }
 
             }
-            if (pm.canEditRegister(new CapturePlan()) == "Оператор ОМСУ")
+            if (pm.canEditRegister(new CapturePlan()))
             {
                 this.role = "Оператор ОМСУ";
 
@@ -65,13 +60,13 @@ namespace CatchGraphPlan
                 BTNDelete.Enabled = false;
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(pm, filter, sort);
+                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(filter, sort);
                 foreach (CapturePlan capturePlan in listCapturePlan)
                 {
                     dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year,capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);
                 }
             }
-            if (pm.canEditRegister(new CapturePlan()) == "Оператор по отлову")
+            if (pm.canEditRegister(new CapturePlan()))
             {
                 this.role = "Оператор по отлову";
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
@@ -86,7 +81,7 @@ namespace CatchGraphPlan
 
         private void BTNAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyrePlanAdd(pm);
+            var form = new FormCaptyrePlanAdd();
 
             this.Hide();
 
@@ -97,7 +92,7 @@ namespace CatchGraphPlan
         {
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
 
-            var form = new FormCaptyrePlanUpdate(pm);
+            var form = new FormCaptyrePlanUpdate();
 
             this.Hide();
 
@@ -106,7 +101,7 @@ namespace CatchGraphPlan
 
         private void реестрАктовОтловаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAct(pm);
+            var form = new FormCaptyreAct();
 
             this.Hide();
 
@@ -115,7 +110,7 @@ namespace CatchGraphPlan
 
         private void карточкаОтловленногоЖивотногоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAnimal(pm);
+            var form = new FormCaptyreAnimal();
 
             this.Hide();
 
@@ -124,7 +119,7 @@ namespace CatchGraphPlan
 
         private void реестрОрганизацийToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCompany(pm);
+            var form = new FormCompany();
 
             this.Hide();
 
@@ -133,7 +128,7 @@ namespace CatchGraphPlan
 
         private void реестрМуниципальныхКонтрактовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormMunicipalContract(pm);
+            var form = new FormMunicipalContract();
             this.Hide();
 
             form.Show();
@@ -201,7 +196,7 @@ namespace CatchGraphPlan
 
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(pm, filter, sort);
+                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(filter, sort);
                 foreach (CapturePlan capturePlan in listCapturePlan)
                 {
                     dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year, capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);

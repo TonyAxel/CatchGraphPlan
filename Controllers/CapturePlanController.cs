@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CatchGraphPlan.DataBase;
 using CatchGraphPlan.PM;
+using CatchGraphPlan.Role;
 using CatchGraphPlan.Capture;
 
 namespace CatchGraphPlan.Controllers
@@ -12,8 +13,9 @@ namespace CatchGraphPlan.Controllers
     class CapturePlanController
     {
         DB db = new DB();
+        PermissionsManager pm = PermManFactory.getInstance();
 
-        public List<CapturePlan> getCapturePlan(PM.PM pm = null, string filter = null, string sort = null)
+        public List<CapturePlan> getCapturePlan(string filter = null, string sort = null)
         {
             List<CapturePlan> listCompany = new List<CapturePlan>();
             if (pm == null)
@@ -84,7 +86,7 @@ namespace CatchGraphPlan.Controllers
             }
             return true;
         }
-        public List<Municipality> getMunicipality(PM.PM pm = null)
+        public List<Municipality> getMunicipality()
         {
             List<Municipality> listMunicipality = new List<Municipality>();
             var reader = db.getAllMunicipality();

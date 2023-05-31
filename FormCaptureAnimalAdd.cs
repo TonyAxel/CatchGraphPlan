@@ -7,21 +7,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CatchGraphPlan.PM;
+using CatchGraphPlan.Role;
 
 namespace CatchGraphPlan
 {
     public partial class FormCaptureAnimalAdd : Form
     {
-        PM.PM pm;
-        public FormCaptureAnimalAdd(PM.PM pm)
+        public FormCaptureAnimalAdd()
         {
             InitializeComponent();
-            this.pm = pm;
         }
 
         private void BTNAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAnimal(pm);
+            var form = new FormCaptyreAnimal();
 
             this.Hide();
 

@@ -13,16 +13,14 @@ namespace CatchGraphPlan
 {
     public partial class FormCaptyreAnimal : Form
     {
-        PM.PM pm;
-        public FormCaptyreAnimal(PM.PM pm)
+        public FormCaptyreAnimal()
         {
             InitializeComponent();
-            this.pm = pm;
         }
 
         private void BTNAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptureAnimalAdd(pm);
+            var form = new FormCaptureAnimalAdd();
 
             this.Hide();
 
@@ -31,7 +29,7 @@ namespace CatchGraphPlan
 
         private void реестрПлановГрафиковToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCapturePlan(pm);
+            var form = new FormCapturePlan();
 
             this.Hide();
 
@@ -41,7 +39,7 @@ namespace CatchGraphPlan
 
         private void реестрАктовОтловаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAct(pm);
+            var form = new FormCaptyreAct();
 
             this.Hide();
 
@@ -50,7 +48,7 @@ namespace CatchGraphPlan
 
         private void BTNUpdate_Click(object sender, EventArgs e)
         {
-            var form = new FormCaptyreAnimalUpdate(pm);
+            var form = new FormCaptyreAnimalUpdate();
 
             this.Hide();
 
@@ -59,7 +57,7 @@ namespace CatchGraphPlan
 
         private void реестрОрганизацийToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormCompany(pm);
+            var form = new FormCompany();
 
             this.Hide();
 
@@ -68,7 +66,7 @@ namespace CatchGraphPlan
 
         private void реестрМуниципальныхКонтрактовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new FormMunicipalContract(pm);
+            var form = new FormMunicipalContract();
 
             this.Hide();
 

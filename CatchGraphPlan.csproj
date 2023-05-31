@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capture\CaptureAnimalCard.cs" />
+    <Compile Include="Capture\CaptureAnimalControl.cs" />
+    <Compile Include="Capture\CaptureMunicipalContract.cs" />
     <Compile Include="Capture\CapturePlan.cs" />
     <Compile Include="Capture\Company.cs" />
     <Compile Include="Capture\CompanySign.cs" />
@@ -157,10 +160,20 @@
     </Compile>
     <Compile Include="PM\Account.cs" />
     <Compile Include="PM\Municipality.cs" />
+    <Compile Include="Role\OperatorAnimalControlPermissionManager.cs" />
+    <Compile Include="Role\OperatorOMSUPermissionsManager.cs" />
     <Compile Include="PM\Omsy.cs" />
-    <Compile Include="PM\PermissionsManager.cs" />
-    <Compile Include="PM\PermManFactory.cs" />
-    <Compile Include="PM\PM.cs" />
+    <Compile Include="Role\SignatoryAnimalControlPermissionManager.cs" />
+    <Compile Include="Role\SignatoryShelterPermissionManager.cs" />
+    <Compile Include="Role\SignatoryOMSUPermissionManager.cs" />
+    <Compile Include="Role\SignatoryVeterinaryPermissionManager.cs" />
+    <Compile Include="Role\TutorAnimalControlPermissionManager.cs" />
+    <Compile Include="Role\TutorOMSUPermissionManager.cs" />
+    <Compile Include="Role\TutorShelterPermissionManager.cs" />
+    <Compile Include="Role\TutorVeterinaryPermissionManager.cs" />
+    <Compile Include="Role\OperatorVeterinaryPermissionsManager.cs" />
+    <Compile Include="Role\PermissionsManager.cs" />
+    <Compile Include="Role\PermManFactory.cs" />
     <Compile Include="PM\Role.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CatchGraphPlan.PM;
+using CatchGraphPlan.Role;
 using CatchGraphPlan.Controllers;
 using CatchGraphPlan.Capture;
 
@@ -17,13 +12,13 @@ namespace CatchGraphPlan
 {
     public partial class FormCaptyrePlanAdd : Form
     {
-        PM.PM pm;
+        PermissionsManager pm = PermManFactory.getInstance();
+
         CapturePlanController capturePlanController = new CapturePlanController();
-        public FormCaptyrePlanAdd(PM.PM pm)
+        public FormCaptyrePlanAdd()
         {
             InitializeComponent();
-            this.pm = pm;
-            if (pm.canEditRegister(new CapturePlan()) == "Оператор по отлову")
+            if (pm.canEditRegister(new CapturePlan()))
             {
                 mynicipality.DisplayMember = "Text";
                 mynicipality.ValueMember = "Value";
@@ -48,7 +43,7 @@ namespace CatchGraphPlan
                 CapturePlan capturePlan = new CapturePlan(0, dateTimePicker1.Value, new Municipality(Convert.ToInt32(mynicipality.SelectedValue), mynicipality.Text));
                 capturePlanController.addCapturePlan(capturePlan);
 
-                var form = new FormCapturePlan(pm);
+                var form = new FormCapturePlan();
 
                 this.Hide();
 

@@ -11,30 +11,28 @@ using CatchGraphPlan.Capture;
 using CatchGraphPlan.Controllers;
 using CatchGraphPlan.DataBase;
 using CatchGraphPlan.PM;
-
+using CatchGraphPlan.Role;
 
 namespace CatchGraphPlan
 {
     public partial class FormCompanyUpdate : Form
     {
-        PM.PM pm;
+        PermissionsManager pm = PermManFactory.getInstance();
         DB db = new DB();
         int id;
         CompanyController companyController = new CompanyController();
-        public FormCompanyUpdate(PM.PM pm)
+        public FormCompanyUpdate()
         {
             InitializeComponent();
-            this.pm = pm;
         }
 
-        public FormCompanyUpdate(PM.PM pm, int id)
+        public FormCompanyUpdate(int id)
         {
             InitializeComponent();
-            this.pm = pm;
             this.id = id;
             Company company = db.getCompanyId(id);
 
-            if (pm.canEditRegister(new Company()) == "Оператор ВетСлужбы")
+            if (pm.canEditRegister(new Company()))
             {
                 Type.DisplayMember = "Text";
                 Type.ValueMember = "Value";
@@ -56,8 +54,9 @@ namespace CatchGraphPlan
 
                 Type.DataSource = itemsType;
                 Sign.DataSource = itemsSign;
+                BTNBack.Hide();
             }
-            if (pm.canEditRegister(new Company()) == "Оператор ОМСУ")
+            if (pm.canEditRegister(new Company()))
             {
                 Type.DisplayMember = "Text";
                 Type.ValueMember = "Value";
@@ -84,9 +83,10 @@ namespace CatchGraphPlan
 
                 Type.DataSource = itemsType;
                 Sign.DataSource = itemsSign;
+                BTNBack.Hide();
 
             }
-            if(pm.canEditRegister(new Company()) == "Куратор ОМСУ" || pm.canEditRegister(new Company()) == "Просмотр")
+            if(pm.canEditRegister(new Company()) || pm.canEditRegister(new Company()))
             {
                 Type.DisplayMember = "Text";
                 Type.ValueMember = "Value";
@@ -128,7 +128,7 @@ namespace CatchGraphPlan
                 Company company = new Company(this.id, NameOrg.Text, Convert.ToInt32(Inn.Text), Convert.ToInt32(Kpp.Text), AdressRegistration.Text, new CompanyType(Convert.ToInt32(Type.SelectedValue), Type.Text), new CompanySign(Convert.ToInt32(Sign.SelectedValue), Sign.Text));
                 companyController.updateCompany(company);
 
-                var form = new FormCompany(pm);
+                var form = new FormCompany();
 
                 this.Hide();
 
@@ -138,6 +138,15 @@ namespace CatchGraphPlan
             {
                 MessageBox.Show("Не удалось обновить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void BTNBack_Click(object sender, EventArgs e)
+        {
+            var form = new FormCompany();
+
+            this.Hide();
+
+            form.Show();
         }
     }
 }

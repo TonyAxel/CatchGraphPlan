@@ -27,7 +27,7 @@ namespace CatchGraphPlan.DataBase
             connection().Close();
             return command.ExecuteReader();
         }
-        public Role getRole(int id)
+        public PM.Role getRole(int id)
         {
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM role WHERE id={id}", connection());
@@ -36,13 +36,13 @@ namespace CatchGraphPlan.DataBase
             if (reader.HasRows)
             {
                 while (reader.Read()) { 
-                    return new Role(Convert.ToInt32(reader.GetString("id")), reader.GetString("role_name"));
+                    return new PM.Role(Convert.ToInt32(reader.GetString("id")), reader.GetString("role_name"));
                 }
-                return new Role('0', null);
+                return new PM.Role('0', null);
             }
             else
             {
-                return new Role('0', null);
+                return new PM.Role('0', null);
             }
         }
         public Municipality getMunicipality(int id)
