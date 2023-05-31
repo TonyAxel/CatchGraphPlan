@@ -29,6 +29,7 @@ namespace CatchGraphPlan
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Sort = new System.Windows.Forms.ComboBox();
@@ -45,12 +46,12 @@ namespace CatchGraphPlan
             this.реестрОрганизацийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BTNAccept = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.month = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mynicipality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BTNAccept = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@ namespace CatchGraphPlan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(780, 275);
+            this.label2.Location = new System.Drawing.Point(10, 153);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 25);
@@ -70,7 +71,7 @@ namespace CatchGraphPlan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(55, 275);
+            this.label1.Location = new System.Drawing.Point(274, 153);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 25);
@@ -79,28 +80,31 @@ namespace CatchGraphPlan
             // 
             // Sort
             // 
+            this.Sort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Sort.FormattingEnabled = true;
-            this.Sort.Location = new System.Drawing.Point(558, 51);
+            this.Sort.Location = new System.Drawing.Point(18, 194);
             this.Sort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Sort.Name = "Sort";
-            this.Sort.Size = new System.Drawing.Size(746, 17);
+            this.Sort.Size = new System.Drawing.Size(258, 28);
             this.Sort.TabIndex = 22;
             // 
             // Filter
             // 
+            this.Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Filter.FormattingEnabled = true;
-            this.Filter.Location = new System.Drawing.Point(15, 72);
+            this.Filter.Location = new System.Drawing.Point(281, 194);
             this.Filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(746, 17);
+            this.Filter.Size = new System.Drawing.Size(258, 28);
             this.Filter.TabIndex = 21;
             // 
             // BTNExportExcel
             // 
-            this.BTNExportExcel.Location = new System.Drawing.Point(1769, 113);
+            this.BTNExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTNExportExcel.Location = new System.Drawing.Point(658, 59);
             this.BTNExportExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTNExportExcel.Name = "BTNExportExcel";
-            this.BTNExportExcel.Size = new System.Drawing.Size(504, 116);
+            this.BTNExportExcel.Size = new System.Drawing.Size(260, 48);
             this.BTNExportExcel.TabIndex = 20;
             this.BTNExportExcel.Text = "Экспорт Excel";
             this.BTNExportExcel.UseVisualStyleBackColor = true;
@@ -108,10 +112,11 @@ namespace CatchGraphPlan
             // 
             // BTNUpdate
             // 
-            this.BTNUpdate.Location = new System.Drawing.Point(978, 113);
+            this.BTNUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTNUpdate.Location = new System.Drawing.Point(411, 59);
             this.BTNUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTNUpdate.Name = "BTNUpdate";
-            this.BTNUpdate.Size = new System.Drawing.Size(425, 116);
+            this.BTNUpdate.Size = new System.Drawing.Size(190, 48);
             this.BTNUpdate.TabIndex = 19;
             this.BTNUpdate.Text = "Изменить";
             this.BTNUpdate.UseVisualStyleBackColor = true;
@@ -119,10 +124,11 @@ namespace CatchGraphPlan
             // 
             // BTNDelete
             // 
-            this.BTNDelete.Location = new System.Drawing.Point(526, 113);
+            this.BTNDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTNDelete.Location = new System.Drawing.Point(215, 59);
             this.BTNDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTNDelete.Name = "BTNDelete";
-            this.BTNDelete.Size = new System.Drawing.Size(425, 116);
+            this.BTNDelete.Size = new System.Drawing.Size(190, 48);
             this.BTNDelete.TabIndex = 18;
             this.BTNDelete.Text = "Удалить";
             this.BTNDelete.UseVisualStyleBackColor = true;
@@ -130,10 +136,11 @@ namespace CatchGraphPlan
             // 
             // BTNAdd
             // 
-            this.BTNAdd.Location = new System.Drawing.Point(74, 113);
+            this.BTNAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTNAdd.Location = new System.Drawing.Point(18, 59);
             this.BTNAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTNAdd.Name = "BTNAdd";
-            this.BTNAdd.Size = new System.Drawing.Size(425, 116);
+            this.BTNAdd.Size = new System.Drawing.Size(190, 48);
             this.BTNAdd.TabIndex = 17;
             this.BTNAdd.Text = "Добавить";
             this.BTNAdd.UseVisualStyleBackColor = true;
@@ -147,7 +154,7 @@ namespace CatchGraphPlan
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1629, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(830, 38);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -160,7 +167,7 @@ namespace CatchGraphPlan
             this.реестрОрганизацийToolStripMenuItem,
             this.реестрМуниципальныхКонтрактовToolStripMenuItem});
             this.реестрыToolStripMenuItem.Name = "реестрыToolStripMenuItem";
-            this.реестрыToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.реестрыToolStripMenuItem.Size = new System.Drawing.Size(80, 36);
             this.реестрыToolStripMenuItem.Text = "Реестры";
             // 
             // реестрПлановГрафиковToolStripMenuItem
@@ -206,12 +213,32 @@ namespace CatchGraphPlan
             this.month,
             this.mynicipality,
             this.date});
-            this.dataGridView1.Location = new System.Drawing.Point(210, 315);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 326);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(551, 163);
+            this.dataGridView1.Size = new System.Drawing.Size(1031, 255);
             this.dataGridView1.TabIndex = 26;
+            // 
+            // BTNAccept
+            // 
+            this.BTNAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTNAccept.Location = new System.Drawing.Point(575, 194);
+            this.BTNAccept.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNAccept.Name = "BTNAccept";
+            this.BTNAccept.Size = new System.Drawing.Size(190, 44);
+            this.BTNAccept.TabIndex = 38;
+            this.BTNAccept.Text = "Применить";
+            this.BTNAccept.UseVisualStyleBackColor = true;
+            this.BTNAccept.Click += new System.EventHandler(this.BTNAccept_Click);
             // 
             // id
             // 
@@ -247,7 +274,7 @@ namespace CatchGraphPlan
             this.mynicipality.MinimumWidth = 6;
             this.mynicipality.Name = "mynicipality";
             this.mynicipality.ReadOnly = true;
-            this.mynicipality.Width = 180;
+            this.mynicipality.Width = 250;
             // 
             // date
             // 
@@ -258,22 +285,11 @@ namespace CatchGraphPlan
             this.date.Visible = false;
             this.date.Width = 125;
             // 
-            // BTNAccept
-            // 
-            this.BTNAccept.Location = new System.Drawing.Point(1769, 345);
-            this.BTNAccept.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.BTNAccept.Name = "BTNAccept";
-            this.BTNAccept.Size = new System.Drawing.Size(504, 116);
-            this.BTNAccept.TabIndex = 38;
-            this.BTNAccept.Text = "Применить";
-            this.BTNAccept.UseVisualStyleBackColor = true;
-            this.BTNAccept.Click += new System.EventHandler(this.BTNAccept_Click);
-            // 
             // FormCapturePlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 9F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1629, 556);
+            this.ClientSize = new System.Drawing.Size(664, 482);
             this.Controls.Add(this.BTNAccept);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
@@ -315,11 +331,11 @@ namespace CatchGraphPlan
         private System.Windows.Forms.ToolStripMenuItem карточкаОтловленногоЖивотногоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрОрганизацийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрМуниципальныхКонтрактовToolStripMenuItem;
+        private System.Windows.Forms.Button BTNAccept;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn year;
         private System.Windows.Forms.DataGridViewTextBoxColumn month;
         private System.Windows.Forms.DataGridViewTextBoxColumn mynicipality;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.Button BTNAccept;
     }
 }
