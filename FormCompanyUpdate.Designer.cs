@@ -61,7 +61,7 @@ namespace CatchGraphPlan
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(9, 159);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 16);
+            this.label6.Size = new System.Drawing.Size(89, 16);
             this.label6.TabIndex = 51;
             this.label6.Text = "ИП/Юр. лицо";
             // 
@@ -82,7 +82,7 @@ namespace CatchGraphPlan
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(9, 111);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 16);
+            this.label5.Size = new System.Drawing.Size(122, 16);
             this.label5.TabIndex = 49;
             this.label5.Text = "Тип организации";
             // 
@@ -103,7 +103,7 @@ namespace CatchGraphPlan
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(238, 61);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 16);
+            this.label4.Size = new System.Drawing.Size(135, 16);
             this.label4.TabIndex = 47;
             this.label4.Text = "Адрес регистрации";
             // 
@@ -121,7 +121,7 @@ namespace CatchGraphPlan
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(7, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 16);
+            this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 45;
             this.label3.Text = "КПП";
             // 
@@ -139,7 +139,7 @@ namespace CatchGraphPlan
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(238, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 16);
+            this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 43;
             this.label2.Text = "ИНН";
             // 
@@ -157,7 +157,7 @@ namespace CatchGraphPlan
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(7, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 16);
+            this.label1.Size = new System.Drawing.Size(214, 16);
             this.label1.TabIndex = 41;
             this.label1.Text = "Полное название организации";
             // 
@@ -188,7 +188,7 @@ namespace CatchGraphPlan
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NameOrg);
             this.Name = "FormCompanyUpdate";
-            this.Text = "Изменить организацию";
+            this.Text = "Посмотреть организацию";
             this.ResumeLayout(false);
             this.PerformLayout();
 

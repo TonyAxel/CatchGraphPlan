@@ -29,18 +29,18 @@ namespace CatchGraphPlan
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.mynicipality = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.BTNAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // mynicipality
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(75, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 0;
+            this.mynicipality.FormattingEnabled = true;
+            this.mynicipality.Location = new System.Drawing.Point(75, 100);
+            this.mynicipality.Name = "mynicipality";
+            this.mynicipality.Size = new System.Drawing.Size(200, 21);
+            this.mynicipality.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
@@ -67,7 +67,7 @@ namespace CatchGraphPlan
             this.ClientSize = new System.Drawing.Size(344, 241);
             this.Controls.Add(this.BTNAdd);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.mynicipality);
             this.Name = "FormCaptyrePlanAdd";
             this.Text = "Добавить план - график";
             this.ResumeLayout(false);
@@ -76,7 +76,7 @@ namespace CatchGraphPlan
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox mynicipality;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button BTNAdd;
     }

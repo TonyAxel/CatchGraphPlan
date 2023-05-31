@@ -45,12 +45,12 @@ namespace CatchGraphPlan
                 var itemsType = new[] {
                     new {Text = "Исполнительный орган гос. власти", Value = 1},
                     new {Text = "Орган местного самоуправления", Value = 2},
-                    new {Text = "Ветеринарная клиника: государственная", Value = 3},
+                    new {Text = "Ветеринарная клиника: государственная", Value = 7},
                 };
 
                 var itemsSign = new[] {
-                    new {Text = "Физ. лицо", Value = 2},
-                    new {Text = "Юр. лицо", Value = 3},
+                    new {Text = "Физ. лица", Value = 1},
+                    new {Text = "Юр. лица", Value = 2},
 
                 };
 
@@ -66,29 +66,52 @@ namespace CatchGraphPlan
                 Sign.ValueMember = "Value";
 
                 var itemsType = new[] {
-                    new {Text = "Тест тайп", Value = 1},
-                    new {Text = "Приют", Value = 2},
+                    new {Text = "Приют", Value = 3},
+                    new {Text = "Организация по отлову", Value = 4},
+                    new {Text = "Организация по отлову и приют", Value = 5},
+                    new {Text = "Организация по транспортировке", Value = 6},
+                    new {Text = "Ветеринарная клиника: государственная", Value = 7},
+                    new {Text = "Ветеринарная клиника: частная", Value = 9},
+                    new {Text = "Благотворительный фонд", Value = 10},
+                    new {Text = "Организация по продаже товаров и предоставлению услуг для животных", Value = 11},
                 };
 
                 var itemsSign = new[] {
-                    new {Text = "Тест сигн", Value = 1},
-                    new {Text = "Физ. лицо", Value = 2},
-                    new {Text = "Юр. лицо", Value = 3},
+                    new {Text = "Физ. лицо", Value = 1},
+                    new {Text = "Юр. лицо", Value = 2},
 
                 };
 
                 Type.DataSource = itemsType;
                 Sign.DataSource = itemsSign;
 
+            }
+            if(pm.canEditRegister(new Company()) == "Куратор ОМСУ" || pm.canEditRegister(new Company()) == "Просмотр")
+            {
+                Type.DisplayMember = "Text";
+                Type.ValueMember = "Value";
 
-                //Type.Items.Add(new {Text = "Приют", Value = 1});
-                /*Type.Items.Add("Организация по отлову");
-                Type.Items.Add("Организация по отлову и приют");
-                Type.Items.Add("Организация по транспортировке");
-                Type.Items.Add("Ветеринарная клиника: государственная");
-                Type.Items.Add("Ветеринарная клиника: частная");
-                Type.Items.Add("Благотворительный фонд");
-                Type.Items.Add("Огранизация по продаже товаров и предоставлению \n услуг для животных");*/
+                Sign.DisplayMember = "Text";
+                Sign.ValueMember = "Value";
+
+                var itemsType = new[] {
+                    new {Text = company.companyType.name, Value = company.companyType.id},
+                };
+
+                var itemsSign = new[] {
+                    new {Text = company.companySign.name, Value = company.companySign.id},
+
+                };
+                NameOrg.Enabled = false;
+                Inn.Enabled = false;
+                Kpp.Enabled = false;
+                AdressRegistration.Enabled = false;
+                Type.Enabled = false;
+                Sign.Enabled = false;
+                BTNUpdate.Hide();
+                Type.DataSource = itemsType;
+                Sign.DataSource = itemsSign;
+
             }
             NameOrg.Text = company.name;
             Inn.Text = company.inn.ToString();

@@ -50,10 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capture\CapturePlan.cs" />
     <Compile Include="Capture\Company.cs" />
     <Compile Include="Capture\CompanySign.cs" />
     <Compile Include="Capture\CompanyType.cs" />
     <Compile Include="Controllers\AuthorizeController.cs" />
+    <Compile Include="Controllers\CapturePlanController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="DataBase\DB.cs" />
     <Compile Include="Export\ExcelExport.cs" />

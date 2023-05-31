@@ -31,8 +31,8 @@ namespace CatchGraphPlan
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Sort = new System.Windows.Forms.ComboBox();
+            this.Filter = new System.Windows.Forms.ComboBox();
             this.BTNExportExcel = new System.Windows.Forms.Button();
             this.BTNUpdate = new System.Windows.Forms.Button();
             this.BTNDelete = new System.Windows.Forms.Button();
@@ -45,9 +45,12 @@ namespace CatchGraphPlan
             this.реестрОрганизацийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.month = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mynicipality = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BTNAccept = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -72,21 +75,21 @@ namespace CatchGraphPlan
             this.label1.TabIndex = 23;
             this.label1.Text = "Фильтры";
             // 
-            // comboBox2
+            // Sort
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(161, 89);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 22;
+            this.Sort.FormattingEnabled = true;
+            this.Sort.Location = new System.Drawing.Point(161, 89);
+            this.Sort.Name = "Sort";
+            this.Sort.Size = new System.Drawing.Size(121, 21);
+            this.Sort.TabIndex = 22;
             // 
-            // comboBox1
+            // Filter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 89);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 21;
+            this.Filter.FormattingEnabled = true;
+            this.Filter.Location = new System.Drawing.Point(15, 89);
+            this.Filter.Name = "Filter";
+            this.Filter.Size = new System.Drawing.Size(121, 21);
+            this.Filter.TabIndex = 21;
             // 
             // BTNExportExcel
             // 
@@ -96,6 +99,7 @@ namespace CatchGraphPlan
             this.BTNExportExcel.TabIndex = 20;
             this.BTNExportExcel.Text = "Экспорт Excel";
             this.BTNExportExcel.UseVisualStyleBackColor = true;
+            this.BTNExportExcel.Click += new System.EventHandler(this.BTNExportExcel_Click);
             // 
             // BTNUpdate
             // 
@@ -115,6 +119,7 @@ namespace CatchGraphPlan
             this.BTNDelete.TabIndex = 18;
             this.BTNDelete.Text = "Удалить";
             this.BTNDelete.UseVisualStyleBackColor = true;
+            this.BTNDelete.Click += new System.EventHandler(this.BTNDelete_Click);
             // 
             // BTNAdd
             // 
@@ -186,13 +191,22 @@ namespace CatchGraphPlan
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.year,
             this.month,
-            this.mynicipality});
+            this.mynicipality,
+            this.date});
             this.dataGridView1.Location = new System.Drawing.Point(81, 139);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(423, 150);
             this.dataGridView1.TabIndex = 26;
+            // 
+            // id
+            // 
+            this.id.Frozen = true;
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
             // 
             // year
             // 
@@ -216,17 +230,35 @@ namespace CatchGraphPlan
             this.mynicipality.ReadOnly = true;
             this.mynicipality.Width = 180;
             // 
+            // date
+            // 
+            this.date.Frozen = true;
+            this.date.HeaderText = "date";
+            this.date.Name = "date";
+            this.date.Visible = false;
+            // 
+            // BTNAccept
+            // 
+            this.BTNAccept.Location = new System.Drawing.Point(356, 84);
+            this.BTNAccept.Name = "BTNAccept";
+            this.BTNAccept.Size = new System.Drawing.Size(102, 28);
+            this.BTNAccept.TabIndex = 38;
+            this.BTNAccept.Text = "Применить";
+            this.BTNAccept.UseVisualStyleBackColor = true;
+            this.BTNAccept.Click += new System.EventHandler(this.BTNAccept_Click);
+            // 
             // FormCapturePlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 301);
+            this.Controls.Add(this.BTNAccept);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Sort);
+            this.Controls.Add(this.Filter);
             this.Controls.Add(this.BTNExportExcel);
             this.Controls.Add(this.BTNUpdate);
             this.Controls.Add(this.BTNDelete);
@@ -245,8 +277,8 @@ namespace CatchGraphPlan
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Sort;
+        private System.Windows.Forms.ComboBox Filter;
         private System.Windows.Forms.Button BTNExportExcel;
         private System.Windows.Forms.Button BTNUpdate;
         private System.Windows.Forms.Button BTNDelete;
@@ -256,11 +288,14 @@ namespace CatchGraphPlan
         private System.Windows.Forms.ToolStripMenuItem реестрПлановГрафиковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрАктовОтловаToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn year;
-        private System.Windows.Forms.DataGridViewTextBoxColumn month;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mynicipality;
         private System.Windows.Forms.ToolStripMenuItem карточкаОтловленногоЖивотногоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрОрганизацийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрМуниципальныхКонтрактовToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn year;
+        private System.Windows.Forms.DataGridViewTextBoxColumn month;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mynicipality;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.Button BTNAccept;
     }
 }

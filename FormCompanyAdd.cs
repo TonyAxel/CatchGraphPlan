@@ -33,15 +33,13 @@ namespace CatchGraphPlan
                 var itemsType = new[] {
                     new {Text = "Исполнительный орган гос. власти", Value = 1},
                     new {Text = "Орган местного самоуправления", Value = 2},
-                    new {Text = "Ветеринарная клиника: государственная", Value = 3},
+                    new {Text = "Ветеринарная клиника: государственная", Value = 7},
                 };
-
                 var itemsSign = new[] {
-                    new {Text = "Физ. лицо", Value = 2},
-                    new {Text = "Юр. лицо", Value = 3},
+                    new {Text = "Физ. лицо", Value = 1},
+                    new {Text = "Юр. лицо", Value = 2},
 
                 };
-
                 Type.DataSource = itemsType;
                 Sign.DataSource = itemsSign;
             }
@@ -54,29 +52,22 @@ namespace CatchGraphPlan
                 Sign.ValueMember = "Value";
 
                 var itemsType = new[] {
-                    new {Text = "Приют", Value = 2},
+                    new {Text = "Приют", Value = 3},
+                    new {Text = "Организация по отлову", Value = 4},
+                    new {Text = "Организация по отлову и приют", Value = 5},
+                    new {Text = "Организация по транспортировке", Value = 6},
+                    new {Text = "Ветеринарная клиника: государственная", Value = 7},
+                    new {Text = "Ветеринарная клиника: частная", Value = 9},
+                    new {Text = "Благотворительный фонд", Value = 10},
+                    new {Text = "Организация по продаже товаров и предоставлению услуг для животных", Value = 11},
                 };
-
                 var itemsSign = new[] {
-                    new {Text = "Физ. лицо", Value = 2},
-                    new {Text = "Юр. лицо", Value = 3},
-
+                    new {Text = "Физ. лицо", Value = 1},
+                    new {Text = "Юр. лицо", Value = 2},
                 };
-
                 Type.DataSource = itemsType;
                 Sign.DataSource = itemsSign;
-
-
-                //Type.Items.Add(new {Text = "Приют", Value = 1});
-                /*Type.Items.Add("Организация по отлову");
-                Type.Items.Add("Организация по отлову и приют");
-                Type.Items.Add("Организация по транспортировке");
-                Type.Items.Add("Ветеринарная клиника: государственная");
-                Type.Items.Add("Ветеринарная клиника: частная");
-                Type.Items.Add("Благотворительный фонд");
-                Type.Items.Add("Огранизация по продаже товаров и предоставлению \n услуг для животных");*/
             }
-
         }
 
         private void BTNAdd_Click(object sender, EventArgs e)

@@ -245,7 +245,7 @@ namespace CatchGraphPlan
             this.BTNUpdate.Name = "BTNUpdate";
             this.BTNUpdate.Size = new System.Drawing.Size(85, 28);
             this.BTNUpdate.TabIndex = 31;
-            this.BTNUpdate.Text = "Изменить";
+            this.BTNUpdate.Text = "Открыть";
             this.BTNUpdate.UseVisualStyleBackColor = true;
             this.BTNUpdate.Click += new System.EventHandler(this.BTNUpdate_Click);
             // 

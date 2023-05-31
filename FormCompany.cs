@@ -28,8 +28,8 @@ namespace CatchGraphPlan
 
             var itemsFilter = new[] {
                     new {Text = "Нет", Value = ""},
-                    new {Text = "Физ. лица", Value = "company_sign = 2"},
-                    new {Text = "Юр. лица", Value = "company_sign = 3"},
+                    new {Text = "Физ. лица", Value = "company_sign = 1"},
+                    new {Text = "Юр. лица", Value = "company_sign = 2"},
                 };
 
             var itemsSort = new[] {
@@ -45,7 +45,6 @@ namespace CatchGraphPlan
                 this.role = "Просмотр";
                 BTNAdd.Enabled = false;
                 BTNDelete.Enabled = false;
-                BTNUpdate.Enabled = false;
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
                 List <Company> listCompany = companyController.getCompany(filter: filter, sort: sort);
@@ -61,7 +60,6 @@ namespace CatchGraphPlan
 
                 BTNAdd.Enabled = false;
                 BTNDelete.Enabled = false;
-                BTNUpdate.Enabled = false;
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
                 List<Company> listCompany = companyController.getCompany(pm, filter, sort);
@@ -70,7 +68,7 @@ namespace CatchGraphPlan
                     dataGridView1.Rows.Add(company.id, company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
                 }
             }
-            else
+            if(pm.canEditRegister(new Company()) == "Оператор ВетСлужбы" || pm.canEditRegister(new Company()) == "Оператор ОМСУ")
             {
                 this.role = "all";
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
@@ -210,7 +208,7 @@ namespace CatchGraphPlan
                     dataGridView1.Rows.Add(company.id, company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
                 }
             }
-            else
+            if (pm.canEditRegister(new Company()) == "Оператор ВетСлужбы" || pm.canEditRegister(new Company()) == "Оператор ОМСУ")
             {
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();

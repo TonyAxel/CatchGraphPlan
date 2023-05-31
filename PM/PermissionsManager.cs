@@ -32,10 +32,26 @@ namespace CatchGraphPlan.PM
                     return "Просмотр";
                 }
             }
+            if (obj is CapturePlan)
+            {
+                if (Account.role.name == "Оператор по отлову")
+                {
+                    return "Оператор по отлову";
+                }
+                if (Account.role.name == "Оператор ОМСУ")
+                {
+                    return "Оператор ОМСУ";
+                }
+                else
+                {
+                    return "Просмотр";
+                }
+            }
             else
             {
                 return null;
             }
         }
+        
     }
 }

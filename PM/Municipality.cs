@@ -8,8 +8,8 @@ namespace CatchGraphPlan.PM
 {
     public class Municipality
     {
-        int id;
-        string name;
+        public int id;
+        public string name;
         public Municipality(int id, string name)
         {
             this.id = id;
