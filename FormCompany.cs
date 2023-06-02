@@ -37,47 +37,39 @@ namespace CatchGraphPlan
 
             Filter.DataSource = itemsFilter;
             Sort.DataSource = itemsSort;
-
+            List<Company> listCompany = new List<Company>();
             if (pm.canEditRegister(new Company()))
             {
-                this.role = "Просмотр";
+                if (pm.Account.role.name == "Оператор ОМСУ" || pm.Account.role.name == "Оператор ВетСлужбы")
+                {
+                    this.role = "0";
+                    string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
+                    string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
+                    listCompany = companyController.getCompany(filter: filter, sort: sort);
+                }
+                else if (pm.Account.role.name == "Куратор ОМСУ" || pm.Account.role.name == "Подписант ОМСУ")
+                {
+                    this.role = "1";
+                    BTNAdd.Enabled = false;
+                    BTNDelete.Enabled = false;
+                    string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
+                    string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
+                    listCompany = companyController.getCompany(pm, filter, sort);
+                }
+            }
+            else
+            {
+                this.role = "2";
                 BTNAdd.Enabled = false;
                 BTNDelete.Enabled = false;
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List <Company> listCompany = companyController.getCompany(filter: filter, sort: sort);
-                foreach(Company company in listCompany)
-                {
-                    dataGridView1.Rows.Add(company.id,company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
-                }
-
+                listCompany = companyController.getCompany(filter: filter, sort: sort);
             }
-            if(pm.canEditRegister(new Company()))
+            foreach (Company company in listCompany)
             {
-                this.role = "Куратор ОМСУ";
-
-                BTNAdd.Enabled = false;
-                BTNDelete.Enabled = false;
-                string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
-                string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<Company> listCompany = companyController.getCompany(pm, filter, sort);
-                foreach (Company company in listCompany)
-                {
-                    dataGridView1.Rows.Add(company.id, company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
-                }
-            }
-            if(pm.canEditRegister(new Company()) || pm.canEditRegister(new Company()))
-            {
-                this.role = "all";
-                string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
-                string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<Company> listCompany = companyController.getCompany(filter: filter, sort: sort);
-                foreach (Company company in listCompany)
-                {
-                    dataGridView1.Rows.Add(company.id, company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
-                }
-            }
-
+                dataGridView1.Rows.Add(company.id, company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
+            }         
         }
 
         private void реестрПлановГрафиковToolStripMenuItem_Click(object sender, EventArgs e)
@@ -187,7 +179,7 @@ namespace CatchGraphPlan
         private void BTNAccept_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            if (role == "Просмотр")
+            if (role == "0")
             {
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
@@ -197,9 +189,8 @@ namespace CatchGraphPlan
                     dataGridView1.Rows.Add(company.id, company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
 
                 }
-
             }
-            if (role == "Куратор ОМСУ")
+            if (role == "1")
             {
 
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
@@ -210,7 +201,7 @@ namespace CatchGraphPlan
                     dataGridView1.Rows.Add(company.id, company.name, company.inn, company.kpp, company.registrationAdress, company.companyType.name, company.companySign.name);
                 }
             }
-            if (pm.canEditRegister(new Company()) || pm.canEditRegister(new Company()))
+            if (role=="2")
             {
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();

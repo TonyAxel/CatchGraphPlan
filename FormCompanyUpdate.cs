@@ -40,31 +40,23 @@ namespace CatchGraphPlan
                 Sign.DisplayMember = "Text";
                 Sign.ValueMember = "Value";
 
-                var itemsType = new[] {
-                    new {Text = "Исполнительный орган гос. власти", Value = 1},
-                    new {Text = "Орган местного самоуправления", Value = 2},
-                    new {Text = "Ветеринарная клиника: государственная", Value = 7},
-                };
-
                 var itemsSign = new[] {
                     new {Text = "Физ. лица", Value = 1},
                     new {Text = "Юр. лица", Value = 2},
 
                 };
-
-                Type.DataSource = itemsType;
-                Sign.DataSource = itemsSign;
-                BTNBack.Hide();
-            }
-            if (pm.canEditRegister(new Company()))
-            {
-                Type.DisplayMember = "Text";
-                Type.ValueMember = "Value";
-
-                Sign.DisplayMember = "Text";
-                Sign.ValueMember = "Value";
-
-                var itemsType = new[] {
+                if (pm.Account.role.name == "Куратор ОМСУ" || pm.Account.role.name == "Подписант ОМСУ")
+                {
+                    var itemsType = new[] {
+                    new {Text = "Исполнительный орган гос. власти", Value = 1},
+                    new {Text = "Орган местного самоуправления", Value = 2},
+                    new {Text = "Ветеринарная клиника: государственная", Value = 7},
+                    };
+                    Type.DataSource = itemsType;
+                }
+                if (pm.Account.role.name == "Оператор ОМСУ" || pm.Account.role.name == "Оператор ВетСлужбы")
+                {
+                    var itemsType = new[] {
                     new {Text = "Приют", Value = 3},
                     new {Text = "Организация по отлову", Value = 4},
                     new {Text = "Организация по отлову и приют", Value = 5},
@@ -73,20 +65,13 @@ namespace CatchGraphPlan
                     new {Text = "Ветеринарная клиника: частная", Value = 9},
                     new {Text = "Благотворительный фонд", Value = 10},
                     new {Text = "Организация по продаже товаров и предоставлению услуг для животных", Value = 11},
-                };
-
-                var itemsSign = new[] {
-                    new {Text = "Физ. лицо", Value = 1},
-                    new {Text = "Юр. лицо", Value = 2},
-
-                };
-
-                Type.DataSource = itemsType;
+                    };
+                    Type.DataSource = itemsType;
+                }
                 Sign.DataSource = itemsSign;
                 BTNBack.Hide();
-
             }
-            if(pm.canEditRegister(new Company()) || pm.canEditRegister(new Company()))
+            else
             {
                 Type.DisplayMember = "Text";
                 Type.ValueMember = "Value";
