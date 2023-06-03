@@ -52,6 +52,7 @@ namespace CatchGraphPlan
                     this.role = "1";
                     BTNAdd.Enabled = false;
                     BTNDelete.Enabled = false;
+                    BTNUpdate.Enabled = false;
                     string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                     string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
                     listCompany = companyController.getCompany(pm, filter, sort);
@@ -62,6 +63,7 @@ namespace CatchGraphPlan
                 this.role = "2";
                 BTNAdd.Enabled = false;
                 BTNDelete.Enabled = false;
+                BTNUpdate.Enabled = false;
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
                 listCompany = companyController.getCompany(filter: filter, sort: sort);

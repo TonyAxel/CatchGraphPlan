@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CatchGraphPlan.Role;
 
 namespace CatchGraphPlan
 {
     public partial class FormCaptyreAct : Form
     {
+        PermissionsManager pm = PermManFactory.getInstance();
+
+
         public FormCaptyreAct()
         {
             InitializeComponent();
