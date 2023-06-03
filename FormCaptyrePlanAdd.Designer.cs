@@ -37,6 +37,8 @@ namespace CatchGraphPlan
             // mynicipality
             // 
             this.mynicipality.FormattingEnabled = true;
+            this.mynicipality.Items.AddRange(new object[] {
+            "Выберите значение"});
             this.mynicipality.Location = new System.Drawing.Point(75, 100);
             this.mynicipality.Name = "mynicipality";
             this.mynicipality.Size = new System.Drawing.Size(200, 21);

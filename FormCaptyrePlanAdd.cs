@@ -24,7 +24,7 @@ namespace CatchGraphPlan
                 mynicipality.ValueMember = "Value";
 
                 var itemsType = new[] {
-                    new {Text = "", Value = 0},
+                    new {Text = "Выберите значение", Value = 0},
                 };
                 foreach (var item in capturePlanController.getMunicipality())
                 {

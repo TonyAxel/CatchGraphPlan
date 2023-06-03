@@ -30,6 +30,10 @@ namespace CatchGraphPlan
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Sort = new System.Windows.Forms.ComboBox();
@@ -71,7 +75,7 @@ namespace CatchGraphPlan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(186, 89);
+            this.label1.Location = new System.Drawing.Point(152, 89);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
@@ -82,26 +86,26 @@ namespace CatchGraphPlan
             // 
             this.Sort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Sort.FormattingEnabled = true;
-            this.Sort.Location = new System.Drawing.Point(15, 130);
+            this.Sort.Location = new System.Drawing.Point(11, 111);
             this.Sort.Margin = new System.Windows.Forms.Padding(2);
             this.Sort.Name = "Sort";
-            this.Sort.Size = new System.Drawing.Size(156, 25);
+            this.Sort.Size = new System.Drawing.Size(123, 25);
             this.Sort.TabIndex = 22;
             // 
             // Filter
             // 
             this.Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Filter.FormattingEnabled = true;
-            this.Filter.Location = new System.Drawing.Point(193, 130);
+            this.Filter.Location = new System.Drawing.Point(156, 112);
             this.Filter.Margin = new System.Windows.Forms.Padding(2);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(156, 25);
+            this.Filter.Size = new System.Drawing.Size(111, 25);
             this.Filter.TabIndex = 21;
             // 
             // BTNExportExcel
             // 
             this.BTNExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BTNExportExcel.Location = new System.Drawing.Point(327, 40);
+            this.BTNExportExcel.Location = new System.Drawing.Point(331, 40);
             this.BTNExportExcel.Margin = new System.Windows.Forms.Padding(2);
             this.BTNExportExcel.Name = "BTNExportExcel";
             this.BTNExportExcel.Size = new System.Drawing.Size(116, 28);
@@ -113,22 +117,22 @@ namespace CatchGraphPlan
             // BTNUpdate
             // 
             this.BTNUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BTNUpdate.Location = new System.Drawing.Point(226, 40);
+            this.BTNUpdate.Location = new System.Drawing.Point(190, 40);
             this.BTNUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.BTNUpdate.Name = "BTNUpdate";
-            this.BTNUpdate.Size = new System.Drawing.Size(88, 23);
+            this.BTNUpdate.Size = new System.Drawing.Size(97, 28);
             this.BTNUpdate.TabIndex = 19;
-            this.BTNUpdate.Text = "Изменить";
+            this.BTNUpdate.Text = "Открыть";
             this.BTNUpdate.UseVisualStyleBackColor = true;
             this.BTNUpdate.Click += new System.EventHandler(this.BTNUpdate_Click);
             // 
             // BTNDelete
             // 
             this.BTNDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BTNDelete.Location = new System.Drawing.Point(117, 40);
+            this.BTNDelete.Location = new System.Drawing.Point(99, 40);
             this.BTNDelete.Margin = new System.Windows.Forms.Padding(2);
             this.BTNDelete.Name = "BTNDelete";
-            this.BTNDelete.Size = new System.Drawing.Size(88, 23);
+            this.BTNDelete.Size = new System.Drawing.Size(84, 28);
             this.BTNDelete.TabIndex = 18;
             this.BTNDelete.Text = "Удалить";
             this.BTNDelete.UseVisualStyleBackColor = true;
@@ -140,7 +144,7 @@ namespace CatchGraphPlan
             this.BTNAdd.Location = new System.Drawing.Point(11, 40);
             this.BTNAdd.Margin = new System.Windows.Forms.Padding(2);
             this.BTNAdd.Name = "BTNAdd";
-            this.BTNAdd.Size = new System.Drawing.Size(88, 23);
+            this.BTNAdd.Size = new System.Drawing.Size(84, 28);
             this.BTNAdd.TabIndex = 17;
             this.BTNAdd.Text = "Добавить";
             this.BTNAdd.UseVisualStyleBackColor = true;
@@ -208,14 +212,16 @@ namespace CatchGraphPlan
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -223,11 +229,29 @@ namespace CatchGraphPlan
             this.month,
             this.mynicipality,
             this.date});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(0, 168);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Size = new System.Drawing.Size(545, 185);
             this.dataGridView1.TabIndex = 26;
             // 
@@ -281,10 +305,10 @@ namespace CatchGraphPlan
             // BTNAccept
             // 
             this.BTNAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BTNAccept.Location = new System.Drawing.Point(367, 130);
+            this.BTNAccept.Location = new System.Drawing.Point(284, 112);
             this.BTNAccept.Margin = new System.Windows.Forms.Padding(2);
             this.BTNAccept.Name = "BTNAccept";
-            this.BTNAccept.Size = new System.Drawing.Size(97, 25);
+            this.BTNAccept.Size = new System.Drawing.Size(97, 27);
             this.BTNAccept.TabIndex = 38;
             this.BTNAccept.Text = "Применить";
             this.BTNAccept.UseVisualStyleBackColor = true;

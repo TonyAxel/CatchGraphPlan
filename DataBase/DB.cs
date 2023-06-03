@@ -320,7 +320,7 @@ namespace CatchGraphPlan.DataBase
 
         public void addCapturePlan(CapturePlan capturePlan)
         {
-            MySqlCommand command = new MySqlCommand($"INSERT INTO captureplan(date, mynicipality) VALUES ('{capturePlan.date.Year}-{capturePlan.date.Month}-{capturePlan.date.Day}', {capturePlan.municipality.id})", connection());
+            MySqlCommand command = new MySqlCommand($"INSERT INTO captureplan(date, municipality) VALUES ('{capturePlan.date.Year}-{capturePlan.date.Month}-{capturePlan.date.Day}', '{capturePlan.municipality.id}')", connection());
             connection().Close();
             command.ExecuteNonQuery();
         }
@@ -334,7 +334,7 @@ namespace CatchGraphPlan.DataBase
 
         public void updateCapturePlan(CapturePlan capturePlan)
         {
-            MySqlCommand command = new MySqlCommand($"UPDATE captureplan SET date = '{capturePlan.date}', municipality = '{capturePlan.municipality}', file = '{capturePlan.file}' WHERE id = {capturePlan.id};", connection());
+            MySqlCommand command = new MySqlCommand($"UPDATE captureplan SET date = '{capturePlan.date.Year}-{capturePlan.date.Month}-{capturePlan.date.Day}', municipality = '{capturePlan.municipality.id}' WHERE id = {capturePlan.id};", connection());
             connection().Close();
             command.ExecuteNonQuery();
         }

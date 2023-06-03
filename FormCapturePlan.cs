@@ -6,6 +6,7 @@ using CatchGraphPlan.PM;
 using CatchGraphPlan.Controllers;
 using CatchGraphPlan.Capture;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Linq;
 
 namespace CatchGraphPlan
 {
@@ -26,57 +27,54 @@ namespace CatchGraphPlan
 
             var itemsFilter = new[] {
                     new {Text = "Нет", Value = ""},
-                    new {Text = "Дата", Value = "company_sign = 1"},
-                    new {Text = "Юр. лица", Value = "company_sign = 2"},
                 };
+            foreach (var item in capturePlanController.getMunicipality())
+            {
+                var val = new[] { new { Text = item.name.ToString(), Value = $"municipality = {item.id}" } };
 
+                itemsFilter = itemsFilter.Concat(val).ToArray();
+            }
             var itemsSort = new[] {
                     new {Text = "Нет", Value = ""},
-                    new {Text = "По названию", Value = "name ASC"},
+                    new {Text = "Дата", Value = "date ASC"},
                 };
 
             Filter.DataSource = itemsFilter;
             Sort.DataSource = itemsSort;
-
-            if (!pm.canEditRegister(new CapturePlan()))
+            List<CapturePlan> listCapturePlan = new List<CapturePlan>();
+            if (pm.canEditRegister(new CapturePlan()))
+            {
+                if (pm.Account.role.name == "Оператор ОМСУ")
+                {
+                    this.role = "Оператор ОМСУ";
+                    BTNAdd.Enabled = false;
+                    BTNDelete.Enabled = false;
+                    string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
+                    string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
+                    listCapturePlan = capturePlanController.getCapturePlan(filter, sort);
+                }
+                if (pm.Account.role.name == "Оператор по отлову")
+                {
+                    this.role = "Оператор по отлову";
+                    string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
+                    string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
+                    listCapturePlan = capturePlanController.getCapturePlan(filter: filter, sort: sort);
+                }
+            }
+            else
             {
                 this.role = "Просмотр";
                 BTNAdd.Enabled = false;
                 BTNDelete.Enabled = false;
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(filter: filter, sort: sort);
-                foreach (CapturePlan capturePlan in listCapturePlan)
-                {
-                    dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year, capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);
-                }
-
+                listCapturePlan = capturePlanController.getCapturePlan(filter: filter, sort: sort);
             }
-            if (pm.canEditRegister(new CapturePlan()))
+            foreach (CapturePlan capturePlan in listCapturePlan)
             {
-                this.role = "Оператор ОМСУ";
-
-                BTNAdd.Enabled = false;
-                BTNDelete.Enabled = false;
-                string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
-                string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(filter, sort);
-                foreach (CapturePlan capturePlan in listCapturePlan)
-                {
-                    dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year,capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);
-                }
+                dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year, capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);
             }
-            if (pm.canEditRegister(new CapturePlan()))
-            {
-                this.role = "Оператор по отлову";
-                string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
-                string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(filter: filter, sort: sort);
-                foreach (CapturePlan capturePlan in listCapturePlan)
-                {
-                    dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year, capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);
-                }
-            }
+            
         }
 
         private void BTNAdd_Click(object sender, EventArgs e)
@@ -92,7 +90,7 @@ namespace CatchGraphPlan
         {
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
 
-            var form = new FormCaptyrePlanUpdate();
+            var form = new FormCaptyrePlanUpdate(id);
 
             this.Hide();
 
@@ -179,38 +177,28 @@ namespace CatchGraphPlan
         private void BTNAccept_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+            List<CapturePlan> listCapturePlan = new List<CapturePlan>();
             if (role == "Просмотр")
             {
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(filter: filter, sort: sort);
-                foreach (CapturePlan capturePlan in listCapturePlan)
-                {
-                    dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year, capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);
-
-                }
-
+                listCapturePlan = capturePlanController.getCapturePlan(filter: filter, sort: sort);
             }
             if (role == "Оператор ОМСУ")
-            {
-
+            { 
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(filter, sort);
-                foreach (CapturePlan capturePlan in listCapturePlan)
-                {
-                    dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year, capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);
-                }
+                listCapturePlan = capturePlanController.getCapturePlan(filter, sort);
             }
             if (role == "Оператор по отлову")
             {
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
-                List<CapturePlan> listCapturePlan = capturePlanController.getCapturePlan(filter: filter, sort: sort);
-                foreach (CapturePlan capturePlan in listCapturePlan)
-                {
-                    dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year, capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);
-                }
+                listCapturePlan = capturePlanController.getCapturePlan(filter: filter, sort: sort);
+            }
+            foreach (CapturePlan capturePlan in listCapturePlan)
+            {
+                dataGridView1.Rows.Add(capturePlan.id, capturePlan.date.Year, capturePlan.date.Month, capturePlan.municipality.name, capturePlan.date);
             }
         }
     }

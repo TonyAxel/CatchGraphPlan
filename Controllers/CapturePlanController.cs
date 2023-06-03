@@ -18,21 +18,10 @@ namespace CatchGraphPlan.Controllers
         public List<CapturePlan> getCapturePlan(string filter = null, string sort = null)
         {
             List<CapturePlan> listCompany = new List<CapturePlan>();
-            if (pm == null)
+            var reader = db.getCapturePlan(filter: filter, sort: sort);
+            while (reader.Read())
             {
-                var reader = db.getCapturePlan(filter: filter, sort: sort);
-                while (reader.Read())
-                {
-                    listCompany.Add(db.getCapturePlanId(Convert.ToInt32(reader.GetString("id"))));
-                }
-            }
-            else
-            {
-                var reader = db.getCapturePlan(pm.Account.company.id, filter, sort);
-                while (reader.Read())
-                {
-                    listCompany.Add(db.getCapturePlanId(Convert.ToInt32(reader.GetString("id"))));
-                }
+                listCompany.Add(db.getCapturePlanId(Convert.ToInt32(reader.GetString("id"))));
             }
             return listCompany;
         }
