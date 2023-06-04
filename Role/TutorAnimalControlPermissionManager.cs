@@ -18,7 +18,7 @@ namespace CatchGraphPlan.Role
             {
                 return false;
             }
-            if (obj is CaptureAnimalControl)
+            if (obj is CaptureAct)
             {
                 return false;
             }

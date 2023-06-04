@@ -52,13 +52,14 @@
   <ItemGroup>
     <Compile Include="Capture\CaptureAct.cs" />
     <Compile Include="Capture\CaptureAnimalCard.cs" />
-    <Compile Include="Capture\CaptureAnimalControl.cs" />
     <Compile Include="Capture\CaptureMunicipalContract.cs" />
     <Compile Include="Capture\CapturePlan.cs" />
     <Compile Include="Capture\Company.cs" />
     <Compile Include="Capture\CompanySign.cs" />
     <Compile Include="Capture\CompanyType.cs" />
     <Compile Include="Controllers\AuthorizeController.cs" />
+    <Compile Include="Controllers\CaptureAnimalCartController.cs" />
+    <Compile Include="Controllers\CaptureMunicipalContractController.cs" />
     <Compile Include="Controllers\CapturePlanController.cs" />
     <Compile Include="Controllers\CaptyreActController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />

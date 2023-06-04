@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace CatchGraphPlan.Capture
 {
-    internal class CaptureMunicipalContract
+    public class CaptureMunicipalContract
     {
+        public int id;
+        public DateTime sign_date;
+        public DateTime action_date;
+        public Company contractor_company;
+        public Company customer;
+        public CaptureMunicipalContract()
+        {
+
+        }
+        public CaptureMunicipalContract(int id, DateTime sign_date, DateTime action_date, Company contractor_company, Company customer)
+        {
+            this.id = id;
+            this.sign_date = sign_date;
+            this.action_date = action_date;
+            this.contractor_company = contractor_company;
+            this.customer = customer;
+        }
     }
 }

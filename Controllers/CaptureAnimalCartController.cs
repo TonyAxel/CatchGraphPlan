@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CatchGraphPlan.Capture
+namespace CatchGraphPlan.Controllers
 {
-    internal class CaptureAnimalControl
+    class CaptureAnimalCartController
     {
-
     }
 }

@@ -46,6 +46,7 @@ namespace CatchGraphPlan
             {
                 if (pm.Account.role.name == "Оператор ОМСУ")
                 {
+                    карточкаОтловленногоЖивотногоToolStripMenuItem.Enabled = false;
                     this.role = "Оператор ОМСУ";
                     BTNAdd.Enabled = false;
                     BTNDelete.Enabled = false;
@@ -55,6 +56,7 @@ namespace CatchGraphPlan
                 }
                 if (pm.Account.role.name == "Оператор по отлову")
                 {
+
                     this.role = "Оператор по отлову";
                     string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                     string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
@@ -63,6 +65,7 @@ namespace CatchGraphPlan
             }
             else
             {
+                карточкаОтловленногоЖивотногоToolStripMenuItem.Enabled = false;
                 this.role = "Просмотр";
                 BTNAdd.Enabled = false;
                 BTNDelete.Enabled = false;
@@ -108,6 +111,7 @@ namespace CatchGraphPlan
 
         private void карточкаОтловленногоЖивотногоToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             var form = new FormCaptyreAnimal();
 
             this.Hide();
