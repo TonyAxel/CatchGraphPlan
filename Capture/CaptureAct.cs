@@ -19,10 +19,9 @@ namespace CatchGraphPlan.Capture
         public string capture_goal;
         public Company company;
         public CaptureMunicipalContract captureMunicipalContract;
-        public Municipality municipality;
 
         public CaptureAct() { }
-        public CaptureAct(int number_id, int dogs_count, int cats_count, int animals_count, DateTime capture_Date, string capture_goal, Company company, CaptureMunicipalContract captureMunicipalContract, Municipality municipality) {
+        public CaptureAct(int number_id, int dogs_count, int cats_count, int animals_count, DateTime capture_Date, string capture_goal, Company company, CaptureMunicipalContract captureMunicipalContract) {
             this.number_id = number_id;
             this.dogs_count = dogs_count;
             this.cats_count = cats_count;
@@ -31,7 +30,6 @@ namespace CatchGraphPlan.Capture
             this.capture_goal = capture_goal;
             this.company = company;
             this.captureMunicipalContract = captureMunicipalContract;
-            this.municipality = municipality;
         }
 
 

@@ -45,6 +45,7 @@ namespace CatchGraphPlan
             this.реестрОрганизацийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sign_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.action_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +106,7 @@ namespace CatchGraphPlan
             this.BTNUpdate.Name = "BTNUpdate";
             this.BTNUpdate.Size = new System.Drawing.Size(85, 28);
             this.BTNUpdate.TabIndex = 40;
-            this.BTNUpdate.Text = "Изменить";
+            this.BTNUpdate.Text = "Открыть";
             this.BTNUpdate.UseVisualStyleBackColor = true;
             this.BTNUpdate.Click += new System.EventHandler(this.BTNUpdate_Click);
             // 
@@ -186,8 +187,11 @@ namespace CatchGraphPlan
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.Number,
             this.sign_date,
             this.action_date,
@@ -195,13 +199,23 @@ namespace CatchGraphPlan
             this.customer});
             this.dataGridView1.Location = new System.Drawing.Point(0, 116);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(543, 215);
             this.dataGridView1.TabIndex = 46;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // Number
             // 
             this.Number.HeaderText = "Номер";
             this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
             // 
             // sign_date
             // 
@@ -270,6 +284,7 @@ namespace CatchGraphPlan
         private System.Windows.Forms.ToolStripMenuItem реестрОрганизацийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрМуниципальныхКонтрактовToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn sign_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn action_date;

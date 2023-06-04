@@ -10,7 +10,7 @@ namespace CatchGraphPlan.PM
     {
         int id;
         string name;
-        Municipality municipality;
+        public Municipality municipality;
         public Omsy (int id, string name, Municipality municipality)
         {
             this.id = id;

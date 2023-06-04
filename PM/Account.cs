@@ -13,7 +13,7 @@ namespace CatchGraphPlan.PM
         string login;
         string password;
         public Role role;
-        Omsy omsy;
+        public Omsy omsy;
         public Company company;
 
         public Account(int id, string login, string password, Role role, Omsy omsy, Company company)

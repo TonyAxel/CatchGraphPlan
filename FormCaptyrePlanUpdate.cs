@@ -13,7 +13,6 @@ namespace CatchGraphPlan
     public partial class FormCaptyrePlanUpdate : Form
     {
         PermissionsManager pm = PermManFactory.getInstance();
-        DB db = new DB();
         int id;
         CapturePlanController capturePlanController = new CapturePlanController();
         public FormCaptyrePlanUpdate()
@@ -25,7 +24,7 @@ namespace CatchGraphPlan
         {
             InitializeComponent();
             this.id = id;
-            CapturePlan capturePlan = db.getCapturePlanId(id);
+            CapturePlan capturePlan = DB.query().getCapturePlanId(id);
 
             if (pm.canEditRegister(new CapturePlan()))
             {

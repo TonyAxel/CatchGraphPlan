@@ -58,16 +58,17 @@ namespace CatchGraphPlan
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(234, 60);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 16);
+            this.label6.Size = new System.Drawing.Size(70, 16);
             this.label6.TabIndex = 51;
             this.label6.Text = "Заказчик";
             // 
             // customer
             // 
+            this.customer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.customer.FormattingEnabled = true;
             this.customer.Location = new System.Drawing.Point(235, 79);
             this.customer.Name = "customer";
-            this.customer.Size = new System.Drawing.Size(122, 21);
+            this.customer.Size = new System.Drawing.Size(202, 21);
             this.customer.TabIndex = 50;
             // 
             // label5
@@ -76,16 +77,17 @@ namespace CatchGraphPlan
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(5, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 16);
+            this.label5.Size = new System.Drawing.Size(94, 16);
             this.label5.TabIndex = 49;
             this.label5.Text = "Исполнитель";
             // 
             // contractor_company
             // 
+            this.contractor_company.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.contractor_company.FormattingEnabled = true;
             this.contractor_company.Location = new System.Drawing.Point(8, 79);
             this.contractor_company.Name = "contractor_company";
-            this.contractor_company.Size = new System.Drawing.Size(122, 21);
+            this.contractor_company.Size = new System.Drawing.Size(198, 21);
             this.contractor_company.TabIndex = 48;
             // 
             // label3
@@ -94,7 +96,7 @@ namespace CatchGraphPlan
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(-80, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 16);
+            this.label3.Size = new System.Drawing.Size(35, 16);
             this.label3.TabIndex = 45;
             this.label3.Text = "КПП";
             // 
@@ -104,7 +106,7 @@ namespace CatchGraphPlan
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(234, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 16);
+            this.label2.Size = new System.Drawing.Size(103, 16);
             this.label2.TabIndex = 43;
             this.label2.Text = "Дата действия";
             // 
@@ -114,7 +116,7 @@ namespace CatchGraphPlan
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 16);
+            this.label1.Size = new System.Drawing.Size(123, 16);
             this.label1.TabIndex = 41;
             this.label1.Text = "Дата Заключения";
             // 

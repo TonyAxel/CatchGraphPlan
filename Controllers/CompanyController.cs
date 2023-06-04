@@ -13,24 +13,23 @@ namespace CatchGraphPlan.Controllers
 {
     class CompanyController
     {
-        DB db = new DB();
         public List<Company> getCompany(PermissionsManager pm = null, string filter = null, string sort = null)
         {
             List < Company > listCompany = new List<Company>();
             if (pm == null)
             {
-                var reader = db.getCompany(filter:filter, sort:sort);
+                var reader = DB.query().getCompany(filter:filter, sort:sort);
                 while (reader.Read())
                 {
-                    listCompany.Add(db.getCompanyId(Convert.ToInt32(reader.GetString("id"))));
+                    listCompany.Add(DB.query().getCompanyId(Convert.ToInt32(reader.GetString("id"))));
                 }
             }
             else
             {
-                var reader = db.getCompany(pm.Account.company.id, filter, sort);
+                var reader = DB.query().getCompany(pm.Account.company.id, filter, sort);
                 while (reader.Read())
                 {
-                    listCompany.Add(db.getCompanyId(Convert.ToInt32(reader.GetString("id"))));
+                    listCompany.Add(DB.query().getCompanyId(Convert.ToInt32(reader.GetString("id"))));
                 }
             }
             return listCompany;
@@ -44,7 +43,7 @@ namespace CatchGraphPlan.Controllers
             }
             else
             {
-                db.addCompany(company);
+                DB.query().addCompany(company);
                 return company;
             }
 
@@ -59,7 +58,7 @@ namespace CatchGraphPlan.Controllers
             }
             else
             {
-                db.deleteCompany(company);
+                DB.query().deleteCompany(company);
                 return company;
             }
         }
@@ -72,7 +71,7 @@ namespace CatchGraphPlan.Controllers
             }
             else
             {
-                db.updateCompany(company);
+                DB.query().updateCompany(company);
                 return company;
             }
         }
@@ -85,11 +84,5 @@ namespace CatchGraphPlan.Controllers
             }
             return true;
         }
-
-        public void exportExel(string filter = null, string sort = null, string filePath = null)
-        {
-
-        }
-       
     }
 }

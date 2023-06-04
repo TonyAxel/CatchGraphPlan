@@ -63,6 +63,7 @@
     <Compile Include="Controllers\CapturePlanController.cs" />
     <Compile Include="Controllers\CaptyreActController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="DataBase\DataBase.cs" />
     <Compile Include="DataBase\DB.cs" />
     <Compile Include="Export\ExcelExport.cs" />
     <Compile Include="FormCaptyreAnimal.cs">

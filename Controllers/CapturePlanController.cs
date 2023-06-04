@@ -12,16 +12,15 @@ namespace CatchGraphPlan.Controllers
 {
     class CapturePlanController
     {
-        DB db = new DB();
         PermissionsManager pm = PermManFactory.getInstance();
 
         public List<CapturePlan> getCapturePlan(string filter = null, string sort = null)
         {
             List<CapturePlan> listCompany = new List<CapturePlan>();
-            var reader = db.getCapturePlan(filter: filter, sort: sort);
+            var reader = DB.query().getCapturePlan(filter: filter, sort: sort);
             while (reader.Read())
             {
-                listCompany.Add(db.getCapturePlanId(Convert.ToInt32(reader.GetString("id"))));
+                listCompany.Add(DB.query().getCapturePlanId(Convert.ToInt32(reader.GetString("id"))));
             }
             return listCompany;
         }
@@ -34,7 +33,7 @@ namespace CatchGraphPlan.Controllers
             }
             else
             {
-                db.addCapturePlan(capturePlan);
+                DB.query().addCapturePlan(capturePlan);
                 return capturePlan;
             }
 
@@ -49,7 +48,7 @@ namespace CatchGraphPlan.Controllers
             }
             else
             {
-                db.deleteCapturePlan(capturePlan);
+                DB.query().deleteCapturePlan(capturePlan);
                 return capturePlan;
             }
         }
@@ -62,7 +61,7 @@ namespace CatchGraphPlan.Controllers
             }
             else
             {
-                db.updateCapturePlan(capturePlan);
+                DB.query().updateCapturePlan(capturePlan);
                 return capturePlan;
             }
         }
@@ -78,10 +77,10 @@ namespace CatchGraphPlan.Controllers
         public List<Municipality> getMunicipality()
         {
             List<Municipality> listMunicipality = new List<Municipality>();
-            var reader = db.getAllMunicipality();
+            var reader = DB.query().getAllMunicipality();
             while (reader.Read())
             {
-                listMunicipality.Add(db.getMunicipality(Convert.ToInt32(reader.GetString("id"))));
+                listMunicipality.Add(DB.query().getMunicipality(Convert.ToInt32(reader.GetString("id"))));
             }          
             return listMunicipality;
         }

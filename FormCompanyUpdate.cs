@@ -18,7 +18,6 @@ namespace CatchGraphPlan
     public partial class FormCompanyUpdate : Form
     {
         PermissionsManager pm = PermManFactory.getInstance();
-        DB db = new DB();
         int id;
         CompanyController companyController = new CompanyController();
         public FormCompanyUpdate()
@@ -30,7 +29,7 @@ namespace CatchGraphPlan
         {
             InitializeComponent();
             this.id = id;
-            Company company = db.getCompanyId(id);
+            Company company = DB.query().getCompanyId(id);
 
             if (pm.canEditRegister(new Company()))
             {

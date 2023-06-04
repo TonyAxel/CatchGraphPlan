@@ -62,7 +62,7 @@ namespace CatchGraphPlan
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(9, 159);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 20);
+            this.label6.Size = new System.Drawing.Size(88, 16);
             this.label6.TabIndex = 51;
             this.label6.Text = "ИП/Юр. лицо";
             // 
@@ -74,7 +74,7 @@ namespace CatchGraphPlan
             this.Sign.FormattingEnabled = true;
             this.Sign.Location = new System.Drawing.Point(10, 178);
             this.Sign.Name = "Sign";
-            this.Sign.Size = new System.Drawing.Size(442, 28);
+            this.Sign.Size = new System.Drawing.Size(442, 24);
             this.Sign.TabIndex = 50;
             // 
             // label5
@@ -83,7 +83,7 @@ namespace CatchGraphPlan
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(9, 111);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 20);
+            this.label5.Size = new System.Drawing.Size(121, 16);
             this.label5.TabIndex = 49;
             this.label5.Text = "Тип организации";
             // 
@@ -95,7 +95,7 @@ namespace CatchGraphPlan
             this.Type.FormattingEnabled = true;
             this.Type.Location = new System.Drawing.Point(10, 130);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(442, 28);
+            this.Type.Size = new System.Drawing.Size(442, 24);
             this.Type.TabIndex = 48;
             // 
             // label4
@@ -104,7 +104,7 @@ namespace CatchGraphPlan
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(238, 61);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 20);
+            this.label4.Size = new System.Drawing.Size(134, 16);
             this.label4.TabIndex = 47;
             this.label4.Text = "Адрес регистрации";
             // 
@@ -113,7 +113,7 @@ namespace CatchGraphPlan
             this.AdressRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AdressRegistration.Location = new System.Drawing.Point(241, 80);
             this.AdressRegistration.Name = "AdressRegistration";
-            this.AdressRegistration.Size = new System.Drawing.Size(211, 26);
+            this.AdressRegistration.Size = new System.Drawing.Size(211, 22);
             this.AdressRegistration.TabIndex = 46;
             // 
             // label3
@@ -122,7 +122,7 @@ namespace CatchGraphPlan
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(7, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 20);
+            this.label3.Size = new System.Drawing.Size(35, 16);
             this.label3.TabIndex = 45;
             this.label3.Text = "КПП";
             // 
@@ -131,7 +131,7 @@ namespace CatchGraphPlan
             this.Kpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Kpp.Location = new System.Drawing.Point(10, 80);
             this.Kpp.Name = "Kpp";
-            this.Kpp.Size = new System.Drawing.Size(211, 26);
+            this.Kpp.Size = new System.Drawing.Size(211, 22);
             this.Kpp.TabIndex = 44;
             // 
             // label2
@@ -140,7 +140,7 @@ namespace CatchGraphPlan
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(238, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.Size = new System.Drawing.Size(37, 16);
             this.label2.TabIndex = 43;
             this.label2.Text = "ИНН";
             // 
@@ -149,7 +149,7 @@ namespace CatchGraphPlan
             this.Inn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Inn.Location = new System.Drawing.Point(241, 33);
             this.Inn.Name = "Inn";
-            this.Inn.Size = new System.Drawing.Size(211, 26);
+            this.Inn.Size = new System.Drawing.Size(211, 22);
             this.Inn.TabIndex = 42;
             // 
             // label1
@@ -158,7 +158,7 @@ namespace CatchGraphPlan
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(7, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(268, 20);
+            this.label1.Size = new System.Drawing.Size(213, 16);
             this.label1.TabIndex = 41;
             this.label1.Text = "Полное название организации";
             // 
@@ -167,7 +167,7 @@ namespace CatchGraphPlan
             this.NameOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameOrg.Location = new System.Drawing.Point(10, 33);
             this.NameOrg.Name = "NameOrg";
-            this.NameOrg.Size = new System.Drawing.Size(211, 26);
+            this.NameOrg.Size = new System.Drawing.Size(211, 22);
             this.NameOrg.TabIndex = 40;
             // 
             // BTNBack

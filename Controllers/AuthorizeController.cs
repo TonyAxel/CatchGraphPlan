@@ -10,11 +10,10 @@ namespace CatchGraphPlan.Controllers
 {
     class AuthorizeController
     {
-        DB db = new DB();
         Account account;
         public Account autorization(string login, string password)
         {
-            var reader = db.getUser(login, password);
+            var reader = DB.query().getUser(login, password);
             if (reader.HasRows)
             {
                 while (reader.Read())
@@ -23,9 +22,9 @@ namespace CatchGraphPlan.Controllers
                     account = new Account(Convert.ToInt32(reader.GetString("id")),
                         reader.GetString("login"),
                         reader.GetString("password"),
-                        db.getRole(Convert.ToInt32(reader.GetString("role_id"))),
-                        db.getOmsy(Convert.ToInt32(reader.GetString("omsy"))),
-                        db.getCompanyId(Convert.ToInt32(reader.GetString("company")))
+                        DB.query().getRole(Convert.ToInt32(reader.GetString("role_id"))),
+                        DB.query().getOmsy(Convert.ToInt32(reader.GetString("omsy"))),
+                        DB.query().getCompanyId(Convert.ToInt32(reader.GetString("company")))
                         );                   
                 }
                 return account;
