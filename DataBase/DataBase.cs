@@ -243,7 +243,35 @@ namespace CatchGraphPlan.DataBase
 
         public  MySqlDataReader getCapturePlan(int id = 0, string filter = null, string sort = null)
         {
-            if (id == 0)
+            PermissionsManager pm = PermManFactory.getInstance();
+            if (pm.Account.role.name == "Оператор ОМСУ")
+            {
+                if (filter != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureplan WHERE municipality  = '{pm.Account.omsy.municipality.id}' AND  {filter}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                if (sort != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureplan WHERE municipality  = '{pm.Account.omsy.municipality.id}' ORDER BY {sort}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                if (filter != null && sort != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureplan WHERE municipality  = '{pm.Account.omsy.municipality.id}' AND {filter} ORDER BY {sort}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                else
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureplan WHERE municipality  = '{pm.Account.omsy.municipality.id}'", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+            }
+            else
             {
                 if (filter != null)
                 {
@@ -269,33 +297,7 @@ namespace CatchGraphPlan.DataBase
                     connection().Close();
                     return command.ExecuteReader();
                 }
-            }
-            else
-            {
-                if (filter != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureplan WHERE id = '{id}' AND WHERE {filter}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                if (sort != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureplan WHERE id = '{id}' ORDER BY {sort}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                if (filter != null && sort != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureplan WHERE id = '{id}' AND WHERE {filter} ORDER BY {sort}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                else
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureplan WHERE id = '{id}'", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
+                //
             }
         }
         public  CapturePlan getCapturePlanId(int id)
@@ -346,7 +348,35 @@ namespace CatchGraphPlan.DataBase
 
         public  MySqlDataReader getCaptureAct(int id = 0, string filter = null, string sort = null)
         {
-            if (id == 0)
+            PermissionsManager pm = PermManFactory.getInstance();
+            if (pm.Account.role.name == "Оператор по отлову" || pm.Account.role.name == "Куратор по отлову")
+            {
+                if (filter != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureact WHERE company = '{pm.Account.company.id}' AND {filter}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                if (sort != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureact WHERE company = '{pm.Account.company.id}' ORDER BY {sort}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                if (filter != null && sort != null)
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureact WHERE company = '{pm.Account.company.id}' AND {filter} ORDER BY {sort}", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+                else
+                {
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureact WHERE company = '{pm.Account.company.id}'", connection());
+                    connection().Close();
+                    return command.ExecuteReader();
+                }
+            }
+            else
             {
                 if (filter != null)
                 {
@@ -372,33 +402,7 @@ namespace CatchGraphPlan.DataBase
                     connection().Close();
                     return command.ExecuteReader();
                 }
-            }
-            else
-            {
-                if (filter != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureact WHERE number_id = '{id}' AND WHERE {filter}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                if (sort != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureact WHERE number_id = '{id}' ORDER BY {sort}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                if (filter != null && sort != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureact WHERE number_id = '{id}' AND WHERE {filter} ORDER BY {sort}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                else
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureact WHERE number_id = '{id}'", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
+                //
             }
         }
         public  CaptureAct getCaptureActId(int id)
@@ -615,32 +619,33 @@ namespace CatchGraphPlan.DataBase
         }
         public  MySqlDataReader getCaptureAnimalCard(int id = 0, string filter = null, string sort = null)
         {
-            if (id == 0)
+            if (filter != null)
             {
-                if (filter != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE {filter}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                if (sort != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard ORDER BY {sort}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                if (filter != null && sort != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE {filter} ORDER BY {sort}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                else
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
+                MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE {filter}", connection());
+                connection().Close();
+                return command.ExecuteReader();
+            }
+            if (sort != null)
+            {
+                MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard ORDER BY {sort}", connection());
+                connection().Close();
+                return command.ExecuteReader();
+            }
+            if (filter != null && sort != null)
+            {
+                MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE {filter} ORDER BY {sort}", connection());
+                connection().Close();
+                return command.ExecuteReader();
+            }
+            else
+            {
+                MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard", connection());
+                connection().Close();
+                return command.ExecuteReader();
+            }
+            /*if (id == 0)
+            {
+                
             }
             else
             {
@@ -668,7 +673,7 @@ namespace CatchGraphPlan.DataBase
                     connection().Close();
                     return command.ExecuteReader();
                 }
-            }
+            }*/
         }
         public  void addCaptureAnimalCard(CaptureAnimalCard captureAnimalCard)
         {
