@@ -32,8 +32,6 @@ namespace CatchGraphPlan
             this.BTNAdd = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.mynicipality = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.CaptyreGoal = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +44,7 @@ namespace CatchGraphPlan
             this.CountCats = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.CountDogs = new System.Windows.Forms.NumericUpDown();
+            this.BTNBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CountCats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountDogs)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +64,7 @@ namespace CatchGraphPlan
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(174, 153);
+            this.label8.Location = new System.Drawing.Point(13, 154);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(166, 15);
             this.label8.TabIndex = 32;
@@ -74,28 +73,10 @@ namespace CatchGraphPlan
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(177, 172);
+            this.comboBox2.Location = new System.Drawing.Point(16, 182);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 31;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(13, 153);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 16);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Заявка на отлов";
-            // 
-            // mynicipality
-            // 
-            this.mynicipality.FormattingEnabled = true;
-            this.mynicipality.Location = new System.Drawing.Point(16, 172);
-            this.mynicipality.Name = "mynicipality";
-            this.mynicipality.Size = new System.Drawing.Size(121, 21);
-            this.mynicipality.TabIndex = 29;
             // 
             // label6
             // 
@@ -165,7 +146,6 @@ namespace CatchGraphPlan
             // 
             this.CountAnimals.Location = new System.Drawing.Point(346, 49);
             this.CountAnimals.Name = "CountAnimals";
-            this.CountAnimals.ReadOnly = true;
             this.CountAnimals.Size = new System.Drawing.Size(246, 20);
             this.CountAnimals.TabIndex = 21;
             // 
@@ -203,16 +183,26 @@ namespace CatchGraphPlan
             this.CountDogs.Size = new System.Drawing.Size(120, 20);
             this.CountDogs.TabIndex = 17;
             // 
+            // BTNBack
+            // 
+            this.BTNBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTNBack.Location = new System.Drawing.Point(255, 201);
+            this.BTNBack.Name = "BTNBack";
+            this.BTNBack.Size = new System.Drawing.Size(114, 31);
+            this.BTNBack.TabIndex = 34;
+            this.BTNBack.Text = "Назад";
+            this.BTNBack.UseVisualStyleBackColor = true;
+            this.BTNBack.Click += new System.EventHandler(this.BTNBack_Click);
+            // 
             // FormCaptyreActUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 241);
+            this.Controls.Add(this.BTNBack);
             this.Controls.Add(this.BTNAdd);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.mynicipality);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.CaptyreGoal);
             this.Controls.Add(this.label5);
@@ -239,8 +229,6 @@ namespace CatchGraphPlan
         private System.Windows.Forms.Button BTNAdd;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox mynicipality;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox CaptyreGoal;
         private System.Windows.Forms.Label label5;
@@ -253,5 +241,6 @@ namespace CatchGraphPlan
         private System.Windows.Forms.NumericUpDown CountCats;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown CountDogs;
+        private System.Windows.Forms.Button BTNBack;
     }
 }

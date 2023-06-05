@@ -21,6 +21,9 @@ namespace CatchGraphPlan.Capture
         public CaptureMunicipalContract captureMunicipalContract;
 
         public CaptureAct() { }
+        public CaptureAct(int id) {
+            this.number_id = id;
+        }
         public CaptureAct(int number_id, int dogs_count, int cats_count, int animals_count, DateTime capture_Date, string capture_goal, Company company, CaptureMunicipalContract captureMunicipalContract) {
             this.number_id = number_id;
             this.dogs_count = dogs_count;

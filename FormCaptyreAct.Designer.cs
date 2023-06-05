@@ -31,8 +31,8 @@ namespace CatchGraphPlan
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Sort = new System.Windows.Forms.ComboBox();
+            this.Filter = new System.Windows.Forms.ComboBox();
             this.BTNExportExcel = new System.Windows.Forms.Button();
             this.BTNUpdate = new System.Windows.Forms.Button();
             this.BTNDelete = new System.Windows.Forms.Button();
@@ -45,6 +45,7 @@ namespace CatchGraphPlan
             this.реестрОрганизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BTNAccept = new System.Windows.Forms.Button();
             this.number_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dogs_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cats_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +53,6 @@ namespace CatchGraphPlan
             this.company = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.captyre_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.captyre_goal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mynicipality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mynicipal_contract = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,21 +78,21 @@ namespace CatchGraphPlan
             this.label1.TabIndex = 31;
             this.label1.Text = "Фильтры";
             // 
-            // comboBox2
+            // Sort
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(158, 89);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 30;
+            this.Sort.FormattingEnabled = true;
+            this.Sort.Location = new System.Drawing.Point(158, 89);
+            this.Sort.Name = "Sort";
+            this.Sort.Size = new System.Drawing.Size(121, 21);
+            this.Sort.TabIndex = 30;
             // 
-            // comboBox1
+            // Filter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 89);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 29;
+            this.Filter.FormattingEnabled = true;
+            this.Filter.Location = new System.Drawing.Point(12, 89);
+            this.Filter.Name = "Filter";
+            this.Filter.Size = new System.Drawing.Size(121, 21);
+            this.Filter.TabIndex = 29;
             // 
             // BTNExportExcel
             // 
@@ -102,6 +102,7 @@ namespace CatchGraphPlan
             this.BTNExportExcel.TabIndex = 28;
             this.BTNExportExcel.Text = "Экспорт Excel";
             this.BTNExportExcel.UseVisualStyleBackColor = true;
+            this.BTNExportExcel.Click += new System.EventHandler(this.BTNExportExcel_Click);
             // 
             // BTNUpdate
             // 
@@ -109,7 +110,7 @@ namespace CatchGraphPlan
             this.BTNUpdate.Name = "BTNUpdate";
             this.BTNUpdate.Size = new System.Drawing.Size(85, 28);
             this.BTNUpdate.TabIndex = 27;
-            this.BTNUpdate.Text = "Изменить";
+            this.BTNUpdate.Text = "Открыть";
             this.BTNUpdate.UseVisualStyleBackColor = true;
             this.BTNUpdate.Click += new System.EventHandler(this.BTNUpdate_Click);
             // 
@@ -121,6 +122,7 @@ namespace CatchGraphPlan
             this.BTNDelete.TabIndex = 26;
             this.BTNDelete.Text = "Удалить";
             this.BTNDelete.UseVisualStyleBackColor = true;
+            this.BTNDelete.Click += new System.EventHandler(this.BTNDelete_Click);
             // 
             // BTNAdd
             // 
@@ -138,7 +140,7 @@ namespace CatchGraphPlan
             this.реестрыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1020, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(926, 24);
             this.menuStrip1.TabIndex = 33;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -190,6 +192,8 @@ namespace CatchGraphPlan
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.number_id,
@@ -199,12 +203,22 @@ namespace CatchGraphPlan
             this.company,
             this.captyre_date,
             this.captyre_goal,
-            this.mynicipality,
             this.mynicipal_contract});
             this.dataGridView1.Location = new System.Drawing.Point(0, 139);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1020, 311);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(925, 311);
             this.dataGridView1.TabIndex = 34;
+            // 
+            // BTNAccept
+            // 
+            this.BTNAccept.Location = new System.Drawing.Point(353, 84);
+            this.BTNAccept.Name = "BTNAccept";
+            this.BTNAccept.Size = new System.Drawing.Size(102, 28);
+            this.BTNAccept.TabIndex = 35;
+            this.BTNAccept.Text = "Применить";
+            this.BTNAccept.UseVisualStyleBackColor = true;
+            this.BTNAccept.Click += new System.EventHandler(this.BTNAccept_Click);
             // 
             // number_id
             // 
@@ -255,13 +269,6 @@ namespace CatchGraphPlan
             this.captyre_goal.Name = "captyre_goal";
             this.captyre_goal.ReadOnly = true;
             // 
-            // mynicipality
-            // 
-            this.mynicipality.Frozen = true;
-            this.mynicipality.HeaderText = "Заявка на отлов";
-            this.mynicipality.Name = "mynicipality";
-            this.mynicipality.ReadOnly = true;
-            // 
             // mynicipal_contract
             // 
             this.mynicipal_contract.Frozen = true;
@@ -274,13 +281,14 @@ namespace CatchGraphPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 450);
+            this.ClientSize = new System.Drawing.Size(926, 450);
+            this.Controls.Add(this.BTNAccept);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Sort);
+            this.Controls.Add(this.Filter);
             this.Controls.Add(this.BTNExportExcel);
             this.Controls.Add(this.BTNUpdate);
             this.Controls.Add(this.BTNDelete);
@@ -299,8 +307,8 @@ namespace CatchGraphPlan
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Sort;
+        private System.Windows.Forms.ComboBox Filter;
         private System.Windows.Forms.Button BTNExportExcel;
         private System.Windows.Forms.Button BTNUpdate;
         private System.Windows.Forms.Button BTNDelete;
@@ -310,6 +318,10 @@ namespace CatchGraphPlan
         private System.Windows.Forms.ToolStripMenuItem реестрПлановГрафиковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрАктовОтловаToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem карточкиОтловленныхЖивотныхToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem реестрОрганизацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem реестрМуниципальныхКонтрактовToolStripMenuItem;
+        private System.Windows.Forms.Button BTNAccept;
         private System.Windows.Forms.DataGridViewTextBoxColumn number_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn dogs_count;
         private System.Windows.Forms.DataGridViewTextBoxColumn cats_count;
@@ -317,10 +329,6 @@ namespace CatchGraphPlan
         private System.Windows.Forms.DataGridViewTextBoxColumn company;
         private System.Windows.Forms.DataGridViewTextBoxColumn captyre_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn captyre_goal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mynicipality;
         private System.Windows.Forms.DataGridViewTextBoxColumn mynicipal_contract;
-        private System.Windows.Forms.ToolStripMenuItem карточкиОтловленныхЖивотныхToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem реестрОрганизацияToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem реестрМуниципальныхКонтрактовToolStripMenuItem;
     }
 }

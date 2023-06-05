@@ -40,6 +40,10 @@ namespace CatchGraphPlan
             List<Company> listCompany = new List<Company>();
             if (pm.canEditRegister(new Company()))
             {
+                if( pm.Account.role.name != "Оператор по отлову")
+                {
+                    карточкаОтловленногоЖивотногоToolStripMenuItem.Enabled = false;
+                }
                 if (pm.Account.role.name == "Оператор ОМСУ" || pm.Account.role.name == "Оператор ВетСлужбы")
                 {
                     this.role = "0";

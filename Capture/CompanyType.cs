@@ -10,6 +10,7 @@ namespace CatchGraphPlan.Capture
     {
         public int id;
         public string name;
+        public CompanyType() { }
         public CompanyType(int id, string name)
         {
             this.id = id;

@@ -12,14 +12,13 @@ namespace CatchGraphPlan.DataBase
 {
     public class DataBase
     {
-        private static  MySqlConnection connection()
+        private MySqlConnection connection()
         {
-            MySqlConnection connect = new MySqlConnection("Server=localhost; database=projectrtippo; uID=root; pwd=;");
-
+            MySqlConnection connect = new MySqlConnection("Server=localhost; database=projectrtippo; uID=root; pwd=; Pooling=false");
             connect.Open();
-
             return connect;
         }
+
 
         public  MySqlDataReader getUser(string login, string password)
         {
@@ -130,7 +129,9 @@ namespace CatchGraphPlan.DataBase
                 return new Omsy('0', null, null);
             }
         }
-        public  Company getCompanyId(int id)
+
+        //company
+        public Company getCompanyId(int id)
         {
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM company WHERE id={id}", connection());
@@ -140,6 +141,7 @@ namespace CatchGraphPlan.DataBase
             {
                 while (reader.Read())
                 {
+                    connection().Close();
                     return new Company(Convert.ToInt32(reader.GetString("id")),
                         reader.GetString("name"),
                         Convert.ToInt32(reader.GetString("inn")),
@@ -148,12 +150,13 @@ namespace CatchGraphPlan.DataBase
                         getCompType(Convert.ToInt32(reader.GetString("company_type"))),
                         getCompSign(Convert.ToInt32(reader.GetString("company_sign"))));
                 }
-                return new Company(0, null, 0, 0, null, null, null);
+                return new Company();
             }
             else
             {
-                return new Company(0, null, 0, 0, null, null, null);
+                return new Company();
             }
+
         }
 
         public  MySqlDataReader getCompany(int id = 0, string filter = null, string sort = null)
@@ -215,8 +218,6 @@ namespace CatchGraphPlan.DataBase
 
         }
 
-
-        //company
         public  void addCompany(Company company)
         {
             MySqlCommand command = new MySqlCommand($"INSERT INTO company(name, inn, kpp, registation_adress, company_type, company_sign) VALUES ('{company.name}', '{company.inn}', '{company.kpp}', '{company.registrationAdress}', {company.companyType.id}, {company.companySign.id})", connection());
@@ -414,7 +415,7 @@ namespace CatchGraphPlan.DataBase
                             Convert.ToInt32(reader.GetString("number_id")),
                             Convert.ToInt32(reader.GetString("dogs_count")),
                             Convert.ToInt32(reader.GetString("cats_count")),
-                            Convert.ToInt32(reader.GetString("animal_count")),
+                            Convert.ToInt32(reader.GetString("animals_count")),
                             Convert.ToDateTime(reader.GetString("capture_date")),
                             reader.GetString("capture_goal"),
                             getCompanyId(Convert.ToInt32(reader.GetString("company"))),
@@ -431,8 +432,8 @@ namespace CatchGraphPlan.DataBase
 
         public  void addCaptureAct(CaptureAct captureAct)
         {
-            MySqlCommand command = new MySqlCommand($"INSERT INTO captureact(dogs_count,cats_count,animals_count,capture_date,caprute_goal,company,municipal_contract) " +
-                $"VALUES ({captureAct.dogs_count}, {captureAct.cats_count}, {captureAct.animals_count},{captureAct.capture_Date.Year}-{captureAct.capture_Date.Month}-{captureAct.capture_Date.Day},{captureAct.capture_goal},{captureAct.company.id}, {captureAct.captureMunicipalContract.id})", connection());
+            MySqlCommand command = new MySqlCommand($"INSERT INTO captureact(dogs_count,cats_count,animals_count,capture_date,capture_goal,company,municipal_contract) " +
+                $"VALUES ('{captureAct.dogs_count}', '{captureAct.cats_count}', '{captureAct.animals_count}','{captureAct.capture_Date.Year}-{captureAct.capture_Date.Month}-{captureAct.capture_Date.Day}','{captureAct.capture_goal}',{captureAct.company.id}, {captureAct.captureMunicipalContract.id})", connection());
             connection().Close();
             command.ExecuteNonQuery();
         }
@@ -449,10 +450,10 @@ namespace CatchGraphPlan.DataBase
             MySqlCommand command = new MySqlCommand($"UPDATE captureact SET dogs_count = {captureAct.dogs_count}," +
                 $" cats_count = {captureAct.cats_count}," +
                 $" animals_count = {captureAct.animals_count}," +
-                $" capture_date ={captureAct.capture_Date.Year}-{captureAct.capture_Date.Month}-{captureAct.capture_Date.Day}," +
-                $"caprute_goal={captureAct.capture_goal}," +
+                $" capture_date ='{captureAct.capture_Date.Year}-{captureAct.capture_Date.Month}-{captureAct.capture_Date.Day}'," +
+                $"capture_goal='{captureAct.capture_goal}'," +
                 $"company ={captureAct.company.id}," +
-                $"municipal_contract = {captureAct.captureMunicipalContract.id}," +
+                $"municipal_contract = {captureAct.captureMunicipalContract.id} " +
                 $"WHERE number_id = {captureAct.number_id};", connection());
             connection().Close();
             command.ExecuteNonQuery();
@@ -465,8 +466,8 @@ namespace CatchGraphPlan.DataBase
         {
             MySqlDataReader reader;
             MySqlCommand command = new MySqlCommand($"SELECT * FROM municipalcontract WHERE id={id}", connection());
-            connection().Close();
             reader = command.ExecuteReader();
+            connection().Close();
             if (reader.HasRows)
             {
                 while (reader.Read())
@@ -521,7 +522,7 @@ namespace CatchGraphPlan.DataBase
                 int id = PermManFactory.getInstance().Account.omsy.municipality.id;
                 if (filter != null)
                 {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM municipalcontract WHERE municipality = '{id}' AND WHERE {filter}", connection());
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM municipalcontract WHERE municipality = '{id}' AND  {filter}", connection());
                     connection().Close();
                     return command.ExecuteReader();
                 }
@@ -533,7 +534,7 @@ namespace CatchGraphPlan.DataBase
                 }
                 if (filter != null && sort != null)
                 {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM municipalcontract WHERE municipality = '{id}' AND WHERE {filter} ORDER BY {sort}", connection());
+                    MySqlCommand command = new MySqlCommand($"SELECT * FROM municipalcontract WHERE municipality = '{id}' AND  {filter} ORDER BY {sort}", connection());
                     connection().Close();
                     return command.ExecuteReader();
                 }

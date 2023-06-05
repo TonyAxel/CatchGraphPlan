@@ -20,6 +20,10 @@ namespace CatchGraphPlan.Capture
         {
 
         }
+        public CaptureMunicipalContract(int id)
+        {
+            this.id = id;
+        }
         public CaptureMunicipalContract(int id, DateTime sign_date, DateTime action_date, Company contractor_company, Company customer, Municipality municipality)
         {
             this.id = id;

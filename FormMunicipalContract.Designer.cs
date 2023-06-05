@@ -31,8 +31,8 @@ namespace CatchGraphPlan
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Sort = new System.Windows.Forms.ComboBox();
+            this.Filter = new System.Windows.Forms.ComboBox();
             this.BTNExportExcel = new System.Windows.Forms.Button();
             this.BTNUpdate = new System.Windows.Forms.Button();
             this.BTNDelete = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@ namespace CatchGraphPlan
             this.action_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contractor_company = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BTNAccept = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -75,21 +76,21 @@ namespace CatchGraphPlan
             this.label1.TabIndex = 44;
             this.label1.Text = "Фильтры";
             // 
-            // comboBox2
+            // Sort
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(156, 89);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 43;
+            this.Sort.FormattingEnabled = true;
+            this.Sort.Location = new System.Drawing.Point(156, 89);
+            this.Sort.Name = "Sort";
+            this.Sort.Size = new System.Drawing.Size(121, 21);
+            this.Sort.TabIndex = 43;
             // 
-            // comboBox1
+            // Filter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 89);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 42;
+            this.Filter.FormattingEnabled = true;
+            this.Filter.Location = new System.Drawing.Point(10, 89);
+            this.Filter.Name = "Filter";
+            this.Filter.Size = new System.Drawing.Size(121, 21);
+            this.Filter.TabIndex = 42;
             // 
             // BTNExportExcel
             // 
@@ -99,6 +100,7 @@ namespace CatchGraphPlan
             this.BTNExportExcel.TabIndex = 41;
             this.BTNExportExcel.Text = "Экспорт Excel";
             this.BTNExportExcel.UseVisualStyleBackColor = true;
+            this.BTNExportExcel.Click += new System.EventHandler(this.BTNExportExcel_Click);
             // 
             // BTNUpdate
             // 
@@ -118,6 +120,7 @@ namespace CatchGraphPlan
             this.BTNDelete.TabIndex = 39;
             this.BTNDelete.Text = "Удалить";
             this.BTNDelete.UseVisualStyleBackColor = true;
+            this.BTNDelete.Click += new System.EventHandler(this.BTNDelete_Click);
             // 
             // BTNAdd
             // 
@@ -241,16 +244,27 @@ namespace CatchGraphPlan
             this.customer.Name = "customer";
             this.customer.ReadOnly = true;
             // 
+            // BTNAccept
+            // 
+            this.BTNAccept.Location = new System.Drawing.Point(351, 82);
+            this.BTNAccept.Name = "BTNAccept";
+            this.BTNAccept.Size = new System.Drawing.Size(102, 28);
+            this.BTNAccept.TabIndex = 47;
+            this.BTNAccept.Text = "Применить";
+            this.BTNAccept.UseVisualStyleBackColor = true;
+            this.BTNAccept.Click += new System.EventHandler(this.BTNAccept_Click);
+            // 
             // FormMunicipalContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 331);
+            this.Controls.Add(this.BTNAccept);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Sort);
+            this.Controls.Add(this.Filter);
             this.Controls.Add(this.BTNExportExcel);
             this.Controls.Add(this.BTNUpdate);
             this.Controls.Add(this.BTNDelete);
@@ -270,8 +284,8 @@ namespace CatchGraphPlan
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Sort;
+        private System.Windows.Forms.ComboBox Filter;
         private System.Windows.Forms.Button BTNExportExcel;
         private System.Windows.Forms.Button BTNUpdate;
         private System.Windows.Forms.Button BTNDelete;
@@ -290,5 +304,6 @@ namespace CatchGraphPlan
         private System.Windows.Forms.DataGridViewTextBoxColumn action_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn contractor_company;
         private System.Windows.Forms.DataGridViewTextBoxColumn customer;
+        private System.Windows.Forms.Button BTNAccept;
     }
 }

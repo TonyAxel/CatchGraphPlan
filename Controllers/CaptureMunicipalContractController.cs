@@ -1,5 +1,6 @@
 ﻿using CatchGraphPlan.Capture;
 using CatchGraphPlan.DataBase;
+using CatchGraphPlan.PM;
 using CatchGraphPlan.Role;
 using System;
 using System.Collections.Generic;
@@ -49,11 +50,33 @@ namespace CatchGraphPlan.Controllers
                 return municipalContract;
             }
         }
+        public object deleteMunicipalContract(CaptureMunicipalContract municipalContract)
+        {
+            if (!isValid(municipalContract))
+            {
+                throw new ArgumentException();
+            }
+            else
+            {
+                DB.query().deleteCaptureMunicipalContract(municipalContract);
+                return municipalContract;
+            }
+        }
 
         private bool isValid(CaptureMunicipalContract municipalContract)
         {
             if (municipalContract == null) return false;
             return true;
+        }
+        public List<Company> getCompany()
+        {
+            List<Company> listMunicipality = new List<Company>();
+            var reader = DB.query().getCompany();
+            while (reader.Read())
+            {
+                listMunicipality.Add(DB.query().getCompanyId(Convert.ToInt32(reader.GetString("id"))));
+            }
+            return listMunicipality;
         }
     }
 }
