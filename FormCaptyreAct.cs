@@ -51,7 +51,6 @@ namespace CatchGraphPlan
             List<CaptureAct> listCapturePlan = new List<CaptureAct>();
             if (pm.canEditRegister(new CaptureAct()))
             {
-                карточкиОтловленныхЖивотныхToolStripMenuItem.Enabled = false;
                 string filter = Filter.SelectedValue.ToString() == "" ? null : Filter.SelectedValue.ToString();
                 string sort = Sort.SelectedValue.ToString() == "" ? null : Sort.SelectedValue.ToString();
                 listCapturePlan = controller.getCaptureAct(filter: filter, sort: sort);
@@ -185,6 +184,11 @@ namespace CatchGraphPlan
             {
                 MessageBox.Show("Не удалось удалить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -48,11 +48,7 @@ namespace CatchGraphPlan
             Sort.DataSource = itemsSort;
             if (pm.canEditRegister(new CaptureMunicipalContract()))
             {
-                if (pm.Account.role.name == "Оператор ОМСУ")
-                {
-                    карточкаОтловленногоЖивотногоToolStripMenuItem.Enabled = false;
-                }
-                    List<CaptureMunicipalContract> mynicipalities = controller.getMunicipalContract();
+                List<CaptureMunicipalContract> mynicipalities = controller.getMunicipalContract();
                 
                 foreach(CaptureMunicipalContract value in mynicipalities)
                 {

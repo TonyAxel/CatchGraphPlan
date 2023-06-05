@@ -33,7 +33,6 @@ namespace CatchGraphPlan
             this.реестрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрПлановГрафиковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрАктовОтловаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрОрганизацийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.реестрМуниципальныхКонтрактовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,11 +63,12 @@ namespace CatchGraphPlan
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.реестрыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1254, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1672, 28);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,44 +77,37 @@ namespace CatchGraphPlan
             this.реестрыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.реестрПлановГрафиковToolStripMenuItem,
             this.реестрАктовОтловаToolStripMenuItem,
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem,
             this.реестрОрганизацийToolStripMenuItem,
             this.реестрМуниципальныхКонтрактовToolStripMenuItem});
             this.реестрыToolStripMenuItem.Name = "реестрыToolStripMenuItem";
-            this.реестрыToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.реестрыToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.реестрыToolStripMenuItem.Text = "Реестры";
             // 
             // реестрПлановГрафиковToolStripMenuItem
             // 
             this.реестрПлановГрафиковToolStripMenuItem.Name = "реестрПлановГрафиковToolStripMenuItem";
-            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрПлановГрафиковToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.реестрПлановГрафиковToolStripMenuItem.Text = "Реестр планов - графиков";
             this.реестрПлановГрафиковToolStripMenuItem.Click += new System.EventHandler(this.реестрПлановГрафиковToolStripMenuItem_Click);
             // 
             // реестрАктовОтловаToolStripMenuItem
             // 
             this.реестрАктовОтловаToolStripMenuItem.Name = "реестрАктовОтловаToolStripMenuItem";
-            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрАктовОтловаToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.реестрАктовОтловаToolStripMenuItem.Text = "Реестр актов - отлова";
             this.реестрАктовОтловаToolStripMenuItem.Click += new System.EventHandler(this.реестрАктовОтловаToolStripMenuItem_Click);
-            // 
-            // карточкиОтловленныхЖивотныхToolStripMenuItem
-            // 
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Name = "карточкиОтловленныхЖивотныхToolStripMenuItem";
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.карточкиОтловленныхЖивотныхToolStripMenuItem.Text = "Карточки отловленных животных";
             // 
             // реестрОрганизацийToolStripMenuItem
             // 
             this.реестрОрганизацийToolStripMenuItem.Name = "реестрОрганизацийToolStripMenuItem";
-            this.реестрОрганизацийToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрОрганизацийToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.реестрОрганизацийToolStripMenuItem.Text = "Реестр организаций";
             this.реестрОрганизацийToolStripMenuItem.Click += new System.EventHandler(this.реестрОрганизацийToolStripMenuItem_Click);
             // 
             // реестрМуниципальныхКонтрактовToolStripMenuItem
             // 
             this.реестрМуниципальныхКонтрактовToolStripMenuItem.Name = "реестрМуниципальныхКонтрактовToolStripMenuItem";
-            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.реестрМуниципальныхКонтрактовToolStripMenuItem.Size = new System.Drawing.Size(338, 26);
             this.реестрМуниципальныхКонтрактовToolStripMenuItem.Text = "Реестр муниципальных контрактов";
             this.реестрМуниципальныхКонтрактовToolStripMenuItem.Click += new System.EventHandler(this.реестрМуниципальныхКонтрактовToolStripMenuItem_Click);
             // 
@@ -122,9 +115,10 @@ namespace CatchGraphPlan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(156, 66);
+            this.label2.Location = new System.Drawing.Point(208, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.Size = new System.Drawing.Size(122, 25);
             this.label2.TabIndex = 34;
             this.label2.Text = "Сортировка";
             // 
@@ -132,42 +126,47 @@ namespace CatchGraphPlan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(10, 66);
+            this.label1.Location = new System.Drawing.Point(13, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(101, 25);
             this.label1.TabIndex = 33;
             this.label1.Text = "Фильтры";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(160, 89);
+            this.comboBox2.Location = new System.Drawing.Point(213, 110);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(160, 24);
             this.comboBox2.TabIndex = 32;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(14, 89);
+            this.comboBox1.Location = new System.Drawing.Point(19, 110);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 31;
             // 
             // BTNExportExcel
             // 
-            this.BTNExportExcel.Location = new System.Drawing.Point(355, 27);
+            this.BTNExportExcel.Location = new System.Drawing.Point(473, 33);
+            this.BTNExportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTNExportExcel.Name = "BTNExportExcel";
-            this.BTNExportExcel.Size = new System.Drawing.Size(102, 28);
+            this.BTNExportExcel.Size = new System.Drawing.Size(136, 34);
             this.BTNExportExcel.TabIndex = 30;
             this.BTNExportExcel.Text = "Экспорт Excel";
             this.BTNExportExcel.UseVisualStyleBackColor = true;
             // 
             // BTNUpdate
             // 
-            this.BTNUpdate.Location = new System.Drawing.Point(196, 27);
+            this.BTNUpdate.Location = new System.Drawing.Point(261, 33);
+            this.BTNUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTNUpdate.Name = "BTNUpdate";
-            this.BTNUpdate.Size = new System.Drawing.Size(85, 28);
+            this.BTNUpdate.Size = new System.Drawing.Size(113, 34);
             this.BTNUpdate.TabIndex = 29;
             this.BTNUpdate.Text = "Изменить";
             this.BTNUpdate.UseVisualStyleBackColor = true;
@@ -175,18 +174,20 @@ namespace CatchGraphPlan
             // 
             // BTNDelete
             // 
-            this.BTNDelete.Location = new System.Drawing.Point(105, 27);
+            this.BTNDelete.Location = new System.Drawing.Point(140, 33);
+            this.BTNDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTNDelete.Name = "BTNDelete";
-            this.BTNDelete.Size = new System.Drawing.Size(85, 28);
+            this.BTNDelete.Size = new System.Drawing.Size(113, 34);
             this.BTNDelete.TabIndex = 28;
             this.BTNDelete.Text = "Удалить";
             this.BTNDelete.UseVisualStyleBackColor = true;
             // 
             // BTNAdd
             // 
-            this.BTNAdd.Location = new System.Drawing.Point(14, 27);
+            this.BTNAdd.Location = new System.Drawing.Point(19, 33);
+            this.BTNAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTNAdd.Name = "BTNAdd";
-            this.BTNAdd.Size = new System.Drawing.Size(85, 28);
+            this.BTNAdd.Size = new System.Drawing.Size(113, 34);
             this.BTNAdd.TabIndex = 27;
             this.BTNAdd.Text = "Добавить";
             this.BTNAdd.UseVisualStyleBackColor = true;
@@ -209,22 +210,27 @@ namespace CatchGraphPlan
             this.electronic_chip_number,
             this.municipality,
             this.captyre_act});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 137);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 169);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1254, 150);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1672, 185);
             this.dataGridView1.TabIndex = 35;
             // 
             // category
             // 
             this.category.Frozen = true;
             this.category.HeaderText = "Категория животного";
+            this.category.MinimumWidth = 6;
             this.category.Name = "category";
             this.category.ReadOnly = true;
+            this.category.Width = 125;
             // 
             // gender
             // 
             this.gender.Frozen = true;
             this.gender.HeaderText = "Пол";
+            this.gender.MinimumWidth = 6;
             this.gender.Name = "gender";
             this.gender.ReadOnly = true;
             this.gender.Width = 50;
@@ -233,13 +239,16 @@ namespace CatchGraphPlan
             // 
             this.breed.Frozen = true;
             this.breed.HeaderText = "Порода";
+            this.breed.MinimumWidth = 6;
             this.breed.Name = "breed";
             this.breed.ReadOnly = true;
+            this.breed.Width = 125;
             // 
             // size
             // 
             this.size.Frozen = true;
             this.size.HeaderText = "Размер";
+            this.size.MinimumWidth = 6;
             this.size.Name = "size";
             this.size.ReadOnly = true;
             this.size.Width = 80;
@@ -248,20 +257,25 @@ namespace CatchGraphPlan
             // 
             this.hair.Frozen = true;
             this.hair.HeaderText = "Шерсть";
+            this.hair.MinimumWidth = 6;
             this.hair.Name = "hair";
             this.hair.ReadOnly = true;
+            this.hair.Width = 125;
             // 
             // color
             // 
             this.color.Frozen = true;
             this.color.HeaderText = "Цвет шерсти";
+            this.color.MinimumWidth = 6;
             this.color.Name = "color";
             this.color.ReadOnly = true;
+            this.color.Width = 125;
             // 
             // ears
             // 
             this.ears.Frozen = true;
             this.ears.HeaderText = "Уши";
+            this.ears.MinimumWidth = 6;
             this.ears.Name = "ears";
             this.ears.ReadOnly = true;
             this.ears.Width = 80;
@@ -270,20 +284,25 @@ namespace CatchGraphPlan
             // 
             this.tail.Frozen = true;
             this.tail.HeaderText = "Хвост";
+            this.tail.MinimumWidth = 6;
             this.tail.Name = "tail";
             this.tail.ReadOnly = true;
+            this.tail.Width = 125;
             // 
             // specials_signs
             // 
             this.specials_signs.Frozen = true;
             this.specials_signs.HeaderText = "Особые приметы";
+            this.specials_signs.MinimumWidth = 6;
             this.specials_signs.Name = "specials_signs";
             this.specials_signs.ReadOnly = true;
+            this.specials_signs.Width = 125;
             // 
             // identification_label
             // 
             this.identification_label.Frozen = true;
             this.identification_label.HeaderText = "Идентификационная метка";
+            this.identification_label.MinimumWidth = 6;
             this.identification_label.Name = "identification_label";
             this.identification_label.ReadOnly = true;
             this.identification_label.Width = 120;
@@ -292,29 +311,34 @@ namespace CatchGraphPlan
             // 
             this.electronic_chip_number.Frozen = true;
             this.electronic_chip_number.HeaderText = "Номер электронного чипа";
+            this.electronic_chip_number.MinimumWidth = 6;
             this.electronic_chip_number.Name = "electronic_chip_number";
             this.electronic_chip_number.ReadOnly = true;
+            this.electronic_chip_number.Width = 125;
             // 
             // municipality
             // 
             this.municipality.Frozen = true;
             this.municipality.HeaderText = "Населённый пункт";
+            this.municipality.MinimumWidth = 6;
             this.municipality.Name = "municipality";
             this.municipality.ReadOnly = true;
+            this.municipality.Width = 125;
             // 
             // captyre_act
             // 
             this.captyre_act.Frozen = true;
             this.captyre_act.HeaderText = "Акт отлова";
+            this.captyre_act.MinimumWidth = 6;
             this.captyre_act.Name = "captyre_act";
             this.captyre_act.ReadOnly = true;
             this.captyre_act.Width = 80;
             // 
             // FormCaptyreAnimal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1254, 450);
+            this.ClientSize = new System.Drawing.Size(1672, 554);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -325,6 +349,7 @@ namespace CatchGraphPlan
             this.Controls.Add(this.BTNDelete);
             this.Controls.Add(this.BTNAdd);
             this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormCaptyreAnimal";
             this.Text = "Карточки отловленных животных";
             this.menuStrip1.ResumeLayout(false);
@@ -363,7 +388,6 @@ namespace CatchGraphPlan
         private System.Windows.Forms.DataGridViewTextBoxColumn electronic_chip_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn municipality;
         private System.Windows.Forms.DataGridViewTextBoxColumn captyre_act;
-        private System.Windows.Forms.ToolStripMenuItem карточкиОтловленныхЖивотныхToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрОрганизацийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрМуниципальныхКонтрактовToolStripMenuItem;
     }

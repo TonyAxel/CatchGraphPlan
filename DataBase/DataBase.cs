@@ -617,63 +617,11 @@ namespace CatchGraphPlan.DataBase
                 return new CaptureAnimalCard();
             }
         }
-        public  MySqlDataReader getCaptureAnimalCard(int id = 0, string filter = null, string sort = null)
+        public  MySqlDataReader getCaptureAnimalCard()
         {
-            if (filter != null)
-            {
-                MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE {filter}", connection());
-                connection().Close();
-                return command.ExecuteReader();
-            }
-            if (sort != null)
-            {
-                MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard ORDER BY {sort}", connection());
-                connection().Close();
-                return command.ExecuteReader();
-            }
-            if (filter != null && sort != null)
-            {
-                MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE {filter} ORDER BY {sort}", connection());
-                connection().Close();
-                return command.ExecuteReader();
-            }
-            else
-            {
-                MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard", connection());
-                connection().Close();
-                return command.ExecuteReader();
-            }
-            /*if (id == 0)
-            {
-                
-            }
-            else
-            {
-                if (filter != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE id = '{id}' AND WHERE {filter}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                if (sort != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE id = '{id}' ORDER BY {sort}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                if (filter != null && sort != null)
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE id = '{id}' AND WHERE {filter} ORDER BY {sort}", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-                else
-                {
-                    MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE id = '{id}'", connection());
-                    connection().Close();
-                    return command.ExecuteReader();
-                }
-            }*/
+            MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard", connection());
+            connection().Close();
+            return command.ExecuteReader();
         }
         public  void addCaptureAnimalCard(CaptureAnimalCard captureAnimalCard)
         {

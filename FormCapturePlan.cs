@@ -46,7 +46,6 @@ namespace CatchGraphPlan
             {
                 if (pm.Account.role.name == "Оператор ОМСУ")
                 {
-                    карточкаОтловленногоЖивотногоToolStripMenuItem.Enabled = false;
                     this.role = "Оператор ОМСУ";
                     BTNAdd.Enabled = false;
                     BTNDelete.Enabled = false;
@@ -65,7 +64,6 @@ namespace CatchGraphPlan
             }
             else
             {
-                карточкаОтловленногоЖивотногоToolStripMenuItem.Enabled = false;
                 this.role = "Просмотр";
                 BTNAdd.Enabled = false;
                 BTNDelete.Enabled = false;
