@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using CatchGraphPlan.Capture;
 using CatchGraphPlan.Controllers;
@@ -42,6 +44,17 @@ namespace CatchGraphPlan
                 }
                 mynicipality.DataSource = itemsType;
                 BTNBack.Hide();
+
+                if (capturePlan.file == "None")
+                {
+                    label1.Text = "Нет файла";
+                    BTNDeleteFile.Hide();
+                }
+                else
+                {
+                    label1.Text = "Файл: " + capturePlan.file;
+                    BTNAddFile.Hide();
+                }
             }
             else
             {
@@ -53,8 +66,11 @@ namespace CatchGraphPlan
                 date.Enabled = false;
                 mynicipality.Enabled = false;
                 mynicipality.DataSource = itemsType;
-
+                label1.Hide();
+                BTNAddFile.Hide();
+                BTNDeleteFile.Hide();
             }
+
             date.Value = capturePlan.date;
             mynicipality.SelectedValue = capturePlan.municipality.id;
         }
@@ -85,6 +101,56 @@ namespace CatchGraphPlan
             this.Hide();
 
             form.Show();
+        }
+
+        private void BTNAddFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Text files | *.pdf"; // file types, that will be allowed to upload
+            dialog.Multiselect = false; // allow/deny user to upload more than one file at a time
+            if (dialog.ShowDialog() == DialogResult.OK) // if user clicked OK
+            {
+                String path = dialog.FileName; // get name of file
+
+                string pathName = path.Split('\\').Last();
+
+                try
+                {
+                    capturePlanController.setFile(new CapturePlan(id, pathName));
+
+                    label1.Text = pathName;
+                    BTNDeleteFile.Show();
+                    BTNAddFile.Hide();
+
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось добавить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+                
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNDeleteFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                capturePlanController.deleteFile(new CapturePlan(id));
+
+                label1.Text = "Нет файла";
+                BTNDeleteFile.Hide();
+                BTNAddFile.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось удалить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

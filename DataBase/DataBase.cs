@@ -3,10 +3,6 @@ using CatchGraphPlan.PM;
 using CatchGraphPlan.Role;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CatchGraphPlan.DataBase
 {
@@ -423,7 +419,8 @@ namespace CatchGraphPlan.DataBase
                             Convert.ToDateTime(reader.GetString("capture_date")),
                             reader.GetString("capture_goal"),
                             getCompanyId(Convert.ToInt32(reader.GetString("company"))),
-                            getMunicipalContractId(Convert.ToInt32(reader.GetString("municipal_contract")))
+                            getMunicipalContractId(Convert.ToInt32(reader.GetString("municipal_contract"))),
+                            reader.GetString("file")
                         );
                 }
                 return new CaptureAct();
@@ -482,7 +479,8 @@ namespace CatchGraphPlan.DataBase
                         Convert.ToDateTime(reader.GetString("action_date")),
                         getCompanyId(Convert.ToInt32(reader.GetString("contractor_company"))),
                         getCompanyId(Convert.ToInt32(reader.GetString("customer"))),
-                        getMunicipality(Convert.ToInt32(reader.GetString("municipality")))
+                        getMunicipality(Convert.ToInt32(reader.GetString("municipality"))),
+                        reader.GetString("file")
                         );
                 }
                 return new CaptureMunicipalContract();
@@ -664,6 +662,59 @@ namespace CatchGraphPlan.DataBase
                 $"WHERE id = {captureAnimalCard.id};", connection());
             connection().Close();
             command.ExecuteNonQuery();
+        }
+
+        public void setFile(object obj)
+        {
+            if (obj is CapturePlan)
+            {
+                string file = (obj as CapturePlan).file;
+                int id = (obj as CapturePlan).id;
+                MySqlCommand command = new MySqlCommand($"UPDATE captureplan SET file = '{file}' WHERE id = {id}", connection());
+                connection().Close();
+                command.ExecuteNonQuery();
+            }
+            if (obj is CaptureAct)
+            {
+                string file = (obj as CaptureAct).file;
+                int id = (obj as CaptureAct).number_id;
+                MySqlCommand command = new MySqlCommand($"UPDATE captureact SET file = '{file}' WHERE number_id = {id}", connection());
+                connection().Close();
+                command.ExecuteNonQuery();
+            }
+            if (obj is CaptureMunicipalContract)
+            {
+                string file = (obj as CaptureMunicipalContract).file;
+                int id = (obj as CaptureMunicipalContract).id;
+                MySqlCommand command = new MySqlCommand($"UPDATE municipalcontract SET file = '{file}' WHERE id = {id}", connection());
+                connection().Close();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void deleteFile(object obj)
+        {
+            if (obj is CapturePlan)
+            {
+                int id = (obj as CapturePlan).id;
+                MySqlCommand command = new MySqlCommand($"UPDATE captureplan SET file = 'None' WHERE id = {id}", connection());
+                connection().Close();
+                command.ExecuteNonQuery();
+            }
+            if (obj is CaptureAct)
+            {
+                int id = (obj as CaptureAct).number_id;
+                MySqlCommand command = new MySqlCommand($"UPDATE captureact SET file = 'None' WHERE number_id = {id}", connection());
+                connection().Close();
+                command.ExecuteNonQuery();
+            }
+            if (obj is CaptureMunicipalContract)
+            {
+                int id = (obj as CaptureMunicipalContract).id;
+                MySqlCommand command = new MySqlCommand($"UPDATE municipalcontract SET file = 'None' WHERE id = {id}", connection());
+                connection().Close();
+                command.ExecuteNonQuery();
+            }
         }
 
     }

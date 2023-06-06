@@ -18,6 +18,17 @@ namespace CatchGraphPlan.Capture
         {
         }
 
+        public CapturePlan(int id, string file)
+        {
+            this.id = id;
+            this.file = file;
+        }
+
+        public CapturePlan(int id)
+        {
+            this.id = id;
+        }
+
         public CapturePlan(int id, DateTime date, Municipality municipality, string file=null)
         {
             this.id = id;

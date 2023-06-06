@@ -19,12 +19,19 @@ namespace CatchGraphPlan.Capture
         public string capture_goal;
         public Company company;
         public CaptureMunicipalContract captureMunicipalContract;
+        public string file;
 
         public CaptureAct() { }
         public CaptureAct(int id) {
             this.number_id = id;
         }
-        public CaptureAct(int number_id, int dogs_count, int cats_count, int animals_count, DateTime capture_Date, string capture_goal, Company company, CaptureMunicipalContract captureMunicipalContract) {
+        public CaptureAct(int id, string file)
+        {
+            this.number_id = id;
+            this.file = file;
+        }
+        public CaptureAct(int number_id, int dogs_count, int cats_count, int animals_count, DateTime capture_Date, string capture_goal, Company company, CaptureMunicipalContract captureMunicipalContract, string file = null)
+        {
             this.number_id = number_id;
             this.dogs_count = dogs_count;
             this.cats_count = cats_count;
@@ -33,6 +40,7 @@ namespace CatchGraphPlan.Capture
             this.capture_goal = capture_goal;
             this.company = company;
             this.captureMunicipalContract = captureMunicipalContract;
+            this.file = file;
         }
 
 

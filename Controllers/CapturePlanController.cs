@@ -84,5 +84,14 @@ namespace CatchGraphPlan.Controllers
             }          
             return listMunicipality;
         }
+        public void setFile(CapturePlan capturePlan)
+        {
+            DB.query().setFile(capturePlan);
+        }
+
+        public void deleteFile(CapturePlan capturePlan)
+        {
+            DB.query().deleteFile(capturePlan);
+        }
     }
 }

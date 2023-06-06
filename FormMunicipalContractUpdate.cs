@@ -60,6 +60,17 @@ namespace CatchGraphPlan
 
                 contractor_company.DataSource = list1;
                 customer.DataSource = list2;
+
+                if (municipalityContract.file == "None")
+                {
+                    label1.Text = "Нет файла";
+                    BTNDeleteFile.Hide();
+                }
+                else
+                {
+                    label1.Text = "Файл: " + municipalityContract.file;
+                    BTNAddFile.Hide();
+                }
             }
             else
             {
@@ -100,6 +111,10 @@ namespace CatchGraphPlan
                 action_date.Enabled = false;
                 contractor_company.Enabled = false;
                 customer.Enabled = false;
+
+                label1.Hide();
+                BTNAddFile.Hide();
+                BTNDeleteFile.Hide();
             }
             sign_date.Value = municipalityContract.sign_date;
             action_date.Value = municipalityContract.action_date;
@@ -134,6 +149,51 @@ namespace CatchGraphPlan
             this.Hide();
 
             form.Show();
+        }
+
+        private void BTNAddFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Text files | *.pdf"; // file types, that will be allowed to upload
+            dialog.Multiselect = false; // allow/deny user to upload more than one file at a time
+            if (dialog.ShowDialog() == DialogResult.OK) // if user clicked OK
+            {
+                String path = dialog.FileName; // get name of file
+
+                string pathName = path.Split('\\').Last();
+
+                try
+                {
+                    captureMunicipalContractController.setFile(new CaptureMunicipalContract(id, pathName));
+
+                    label1.Text = pathName;
+                    BTNDeleteFile.Show();
+                    BTNAddFile.Hide();
+
+                }
+                catch
+                {
+                    MessageBox.Show("Не удалось добавить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            }
+        }
+
+        private void BTNDeleteFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                captureMunicipalContractController.deleteFile(new CaptureMunicipalContract(id));
+
+                label1.Text = "Нет файла";
+                BTNDeleteFile.Hide();
+                BTNAddFile.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось удалить", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

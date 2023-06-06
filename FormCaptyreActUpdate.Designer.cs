@@ -42,11 +42,14 @@ namespace CatchGraphPlan
             this.CountAnimals = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.CountCats = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label0 = new System.Windows.Forms.Label();
             this.CountDogs = new System.Windows.Forms.NumericUpDown();
             this.BTNBack = new System.Windows.Forms.Button();
             this.BTNAddAnimal = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.BTNDeleteFile = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BTNAddFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CountCats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountDogs)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +89,7 @@ namespace CatchGraphPlan
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(346, 98);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 16);
+            this.label6.Size = new System.Drawing.Size(89, 16);
             this.label6.TabIndex = 28;
             this.label6.Text = "Цель отлова";
             // 
@@ -105,7 +108,7 @@ namespace CatchGraphPlan
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(174, 98);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 16);
+            this.label5.Size = new System.Drawing.Size(89, 16);
             this.label5.TabIndex = 26;
             this.label5.Text = "Дата отлова";
             // 
@@ -122,7 +125,7 @@ namespace CatchGraphPlan
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(13, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 16);
+            this.label4.Size = new System.Drawing.Size(94, 16);
             this.label4.TabIndex = 24;
             this.label4.Text = "Организация";
             // 
@@ -140,7 +143,7 @@ namespace CatchGraphPlan
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(343, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(249, 16);
+            this.label3.Size = new System.Drawing.Size(248, 16);
             this.label3.TabIndex = 22;
             this.label3.Text = "Колличество отловленных животных";
             // 
@@ -157,7 +160,7 @@ namespace CatchGraphPlan
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(175, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 16);
+            this.label2.Size = new System.Drawing.Size(135, 16);
             this.label2.TabIndex = 20;
             this.label2.Text = "Колличество кошек";
             // 
@@ -168,15 +171,15 @@ namespace CatchGraphPlan
             this.CountCats.Size = new System.Drawing.Size(120, 20);
             this.CountCats.TabIndex = 19;
             // 
-            // label1
+            // label0
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(14, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 16);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Колличество собак";
+            this.label0.AutoSize = true;
+            this.label0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label0.Location = new System.Drawing.Point(14, 28);
+            this.label0.Name = "label0";
+            this.label0.Size = new System.Drawing.Size(134, 16);
+            this.label0.TabIndex = 18;
+            this.label0.Text = "Колличество собак";
             // 
             // CountDogs
             // 
@@ -218,11 +221,43 @@ namespace CatchGraphPlan
             this.listBox1.TabIndex = 35;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
+            // BTNDeleteFile
+            // 
+            this.BTNDeleteFile.Location = new System.Drawing.Point(17, 242);
+            this.BTNDeleteFile.Name = "BTNDeleteFile";
+            this.BTNDeleteFile.Size = new System.Drawing.Size(200, 23);
+            this.BTNDeleteFile.TabIndex = 39;
+            this.BTNDeleteFile.Text = "Удалить файл";
+            this.BTNDeleteFile.UseVisualStyleBackColor = true;
+            this.BTNDeleteFile.Click += new System.EventHandler(this.BTNDeleteFile_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "label7";
+            // 
+            // BTNAddFile
+            // 
+            this.BTNAddFile.Location = new System.Drawing.Point(17, 242);
+            this.BTNAddFile.Name = "BTNAddFile";
+            this.BTNAddFile.Size = new System.Drawing.Size(200, 23);
+            this.BTNAddFile.TabIndex = 37;
+            this.BTNAddFile.Text = "Добавить файл";
+            this.BTNAddFile.UseVisualStyleBackColor = true;
+            this.BTNAddFile.Click += new System.EventHandler(this.BTNAddFile_Click);
+            // 
             // FormCaptyreActUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 346);
+            this.Controls.Add(this.BTNDeleteFile);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BTNAddFile);
             this.Controls.Add(this.BTNAddAnimal);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.BTNBack);
@@ -239,7 +274,7 @@ namespace CatchGraphPlan
             this.Controls.Add(this.CountAnimals);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CountCats);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label0);
             this.Controls.Add(this.CountDogs);
             this.Name = "FormCaptyreActUpdate";
             this.Text = "Обновление акта - отлова";
@@ -265,10 +300,13 @@ namespace CatchGraphPlan
         private System.Windows.Forms.TextBox CountAnimals;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown CountCats;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label0;
         private System.Windows.Forms.NumericUpDown CountDogs;
         private System.Windows.Forms.Button BTNBack;
         private System.Windows.Forms.Button BTNAddAnimal;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button BTNDeleteFile;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BTNAddFile;
     }
 }

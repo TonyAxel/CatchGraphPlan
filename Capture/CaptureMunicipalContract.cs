@@ -15,6 +15,7 @@ namespace CatchGraphPlan.Capture
         public Company contractor_company;
         public Company customer;
         public Municipality municipality;
+        public string file;
 
         public CaptureMunicipalContract()
         {
@@ -24,7 +25,12 @@ namespace CatchGraphPlan.Capture
         {
             this.id = id;
         }
-        public CaptureMunicipalContract(int id, DateTime sign_date, DateTime action_date, Company contractor_company, Company customer, Municipality municipality)
+        public CaptureMunicipalContract(int id, string file)
+        {
+            this.id = id;
+            this.file = file;
+        }
+        public CaptureMunicipalContract(int id, DateTime sign_date, DateTime action_date, Company contractor_company, Company customer, Municipality municipality, string file = null)
         {
             this.id = id;
             this.sign_date = sign_date;
@@ -32,6 +38,7 @@ namespace CatchGraphPlan.Capture
             this.contractor_company = contractor_company;
             this.customer = customer;
             this.municipality = municipality;
+            this.file = file;
         }
     }
 }
