@@ -66,12 +66,6 @@
     <Compile Include="DataBase\DataBase.cs" />
     <Compile Include="DataBase\DB.cs" />
     <Compile Include="Export\ExcelExport.cs" />
-    <Compile Include="FormCaptyreAnimal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCaptyreAnimal.Designer.cs">
-      <DependentUpon>FormCaptyreAnimal.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAuth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,9 +177,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCaptureAnimalAdd.resx">
       <DependentUpon>FormCaptureAnimalAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCaptyreAnimal.resx">
-      <DependentUpon>FormCaptyreAnimal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAuth.resx">
       <DependentUpon>FormAuth.cs</DependentUpon>

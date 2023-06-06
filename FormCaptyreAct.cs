@@ -98,14 +98,6 @@ namespace CatchGraphPlan
             form.Show();
         }
 
-        private void карточкиОтловленныхЖивотныхToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var form = new FormCaptyreAnimal();
-
-            this.Hide();
-
-            form.Show();
-        }
 
         private void реестрОрганизацияToolStripMenuItem_Click(object sender, EventArgs e)
         {

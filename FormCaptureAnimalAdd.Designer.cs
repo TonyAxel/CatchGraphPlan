@@ -34,7 +34,6 @@ namespace CatchGraphPlan
             this.label2 = new System.Windows.Forms.Label();
             this.Gender = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Breed = new System.Windows.Forms.ComboBox();
             this.SizeAnimal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,9 +52,8 @@ namespace CatchGraphPlan
             this.ElectronicChipNumber = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.Municipality = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.captyre_act = new System.Windows.Forms.ComboBox();
             this.BTNAdd = new System.Windows.Forms.Button();
+            this.Breed = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CategoryAnimal
@@ -72,7 +70,7 @@ namespace CatchGraphPlan
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 16);
+            this.label1.Size = new System.Drawing.Size(149, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Категория животного";
             // 
@@ -82,7 +80,7 @@ namespace CatchGraphPlan
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(12, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 16);
+            this.label2.Size = new System.Drawing.Size(34, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Пол";
             // 
@@ -100,17 +98,9 @@ namespace CatchGraphPlan
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(12, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.Size = new System.Drawing.Size(58, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Порода";
-            // 
-            // Breed
-            // 
-            this.Breed.FormattingEnabled = true;
-            this.Breed.Location = new System.Drawing.Point(15, 153);
-            this.Breed.Name = "Breed";
-            this.Breed.Size = new System.Drawing.Size(146, 21);
-            this.Breed.TabIndex = 4;
             // 
             // SizeAnimal
             // 
@@ -125,7 +115,7 @@ namespace CatchGraphPlan
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(12, 188);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
+            this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Размер";
             // 
@@ -135,7 +125,7 @@ namespace CatchGraphPlan
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(190, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 16);
+            this.label5.Size = new System.Drawing.Size(56, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Шерсть";
             // 
@@ -152,7 +142,7 @@ namespace CatchGraphPlan
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(190, 77);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 16);
+            this.label6.Size = new System.Drawing.Size(90, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Цвет шерсти";
             // 
@@ -169,7 +159,7 @@ namespace CatchGraphPlan
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(190, 135);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 16);
+            this.label7.Size = new System.Drawing.Size(34, 16);
             this.label7.TabIndex = 13;
             this.label7.Text = "Уши";
             // 
@@ -186,7 +176,7 @@ namespace CatchGraphPlan
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(190, 188);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 16);
+            this.label8.Size = new System.Drawing.Size(46, 16);
             this.label8.TabIndex = 15;
             this.label8.Text = "Хвост";
             // 
@@ -211,7 +201,7 @@ namespace CatchGraphPlan
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(381, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 16);
+            this.label9.Size = new System.Drawing.Size(118, 16);
             this.label9.TabIndex = 17;
             this.label9.Text = "Особые приметы";
             // 
@@ -221,7 +211,7 @@ namespace CatchGraphPlan
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(381, 134);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(187, 16);
+            this.label10.Size = new System.Drawing.Size(188, 16);
             this.label10.TabIndex = 19;
             this.label10.Text = "Идентификационная метка";
             // 
@@ -238,7 +228,7 @@ namespace CatchGraphPlan
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.Location = new System.Drawing.Point(381, 188);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(187, 16);
+            this.label11.Size = new System.Drawing.Size(188, 16);
             this.label11.TabIndex = 21;
             this.label11.Text = "Номер элекстронного чипа";
             // 
@@ -255,7 +245,7 @@ namespace CatchGraphPlan
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.Location = new System.Drawing.Point(653, 21);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 16);
+            this.label12.Size = new System.Drawing.Size(131, 16);
             this.label12.TabIndex = 23;
             this.label12.Text = "Населенный пункт";
             // 
@@ -266,24 +256,6 @@ namespace CatchGraphPlan
             this.Municipality.Name = "Municipality";
             this.Municipality.Size = new System.Drawing.Size(146, 21);
             this.Municipality.TabIndex = 22;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(653, 76);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 16);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Акт отлова";
-            // 
-            // captyre_act
-            // 
-            this.captyre_act.FormattingEnabled = true;
-            this.captyre_act.Location = new System.Drawing.Point(656, 95);
-            this.captyre_act.Name = "captyre_act";
-            this.captyre_act.Size = new System.Drawing.Size(146, 21);
-            this.captyre_act.TabIndex = 24;
             // 
             // BTNAdd
             // 
@@ -296,14 +268,20 @@ namespace CatchGraphPlan
             this.BTNAdd.UseVisualStyleBackColor = true;
             this.BTNAdd.Click += new System.EventHandler(this.BTNAdd_Click);
             // 
+            // Breed
+            // 
+            this.Breed.Location = new System.Drawing.Point(15, 154);
+            this.Breed.Name = "Breed";
+            this.Breed.Size = new System.Drawing.Size(146, 20);
+            this.Breed.TabIndex = 27;
+            // 
             // FormCaptureAnimalAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 295);
+            this.Controls.Add(this.Breed);
             this.Controls.Add(this.BTNAdd);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.captyre_act);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.Municipality);
             this.Controls.Add(this.label11);
@@ -323,7 +301,6 @@ namespace CatchGraphPlan
             this.Controls.Add(this.label4);
             this.Controls.Add(this.SizeAnimal);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Breed);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Gender);
             this.Controls.Add(this.label1);
@@ -342,7 +319,6 @@ namespace CatchGraphPlan
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox Gender;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox Breed;
         private System.Windows.Forms.TextBox SizeAnimal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -361,8 +337,7 @@ namespace CatchGraphPlan
         private System.Windows.Forms.TextBox ElectronicChipNumber;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox Municipality;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox captyre_act;
         private System.Windows.Forms.Button BTNAdd;
+        private System.Windows.Forms.TextBox Breed;
     }
 }

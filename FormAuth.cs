@@ -21,12 +21,23 @@ namespace CatchGraphPlan
         {
             string Login = login.Text;
             string Password = password.Text;
-            Account acc = AuthContoller.autorization(Login, Password); //проверить на пустоту
-            pmfact.getUserPermissions(acc);
 
-            this.Hide();
-            var form = new FormCapturePlan();
-            form.Show();
+            Account acc = AuthContoller.autorization(Login, Password); //проверить на пустоту
+            if (acc != null)
+            {
+                pmfact.getUserPermissions(acc);
+
+                this.Hide();
+                var form = new FormCapturePlan();
+                form.Show();
+            }
+            else
+            { 
+                MessageBox.Show("Логин или пароль неверны!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                login.Clear();
+                password.Clear();
+            }
+            
         }
     }
 }

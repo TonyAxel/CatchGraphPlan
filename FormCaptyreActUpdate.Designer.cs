@@ -45,6 +45,8 @@ namespace CatchGraphPlan
             this.label1 = new System.Windows.Forms.Label();
             this.CountDogs = new System.Windows.Forms.NumericUpDown();
             this.BTNBack = new System.Windows.Forms.Button();
+            this.BTNAddAnimal = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.CountCats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountDogs)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +54,7 @@ namespace CatchGraphPlan
             // BTNAdd
             // 
             this.BTNAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BTNAdd.Location = new System.Drawing.Point(255, 201);
+            this.BTNAdd.Location = new System.Drawing.Point(197, 307);
             this.BTNAdd.Name = "BTNAdd";
             this.BTNAdd.Size = new System.Drawing.Size(114, 31);
             this.BTNAdd.TabIndex = 33;
@@ -186,7 +188,7 @@ namespace CatchGraphPlan
             // BTNBack
             // 
             this.BTNBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BTNBack.Location = new System.Drawing.Point(255, 201);
+            this.BTNBack.Location = new System.Drawing.Point(197, 307);
             this.BTNBack.Name = "BTNBack";
             this.BTNBack.Size = new System.Drawing.Size(114, 31);
             this.BTNBack.TabIndex = 34;
@@ -194,11 +196,35 @@ namespace CatchGraphPlan
             this.BTNBack.UseVisualStyleBackColor = true;
             this.BTNBack.Click += new System.EventHandler(this.BTNBack_Click);
             // 
+            // BTNAddAnimal
+            // 
+            this.BTNAddAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTNAddAnimal.Location = new System.Drawing.Point(346, 307);
+            this.BTNAddAnimal.Margin = new System.Windows.Forms.Padding(2);
+            this.BTNAddAnimal.Name = "BTNAddAnimal";
+            this.BTNAddAnimal.Size = new System.Drawing.Size(154, 31);
+            this.BTNAddAnimal.TabIndex = 36;
+            this.BTNAddAnimal.Text = "Добавить животное";
+            this.BTNAddAnimal.UseVisualStyleBackColor = true;
+            this.BTNAddAnimal.Click += new System.EventHandler(this.BTNAddAnimal_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(346, 208);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(246, 95);
+            this.listBox1.TabIndex = 35;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // FormCaptyreActUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 241);
+            this.ClientSize = new System.Drawing.Size(619, 346);
+            this.Controls.Add(this.BTNAddAnimal);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.BTNBack);
             this.Controls.Add(this.BTNAdd);
             this.Controls.Add(this.label8);
@@ -242,5 +268,7 @@ namespace CatchGraphPlan
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown CountDogs;
         private System.Windows.Forms.Button BTNBack;
+        private System.Windows.Forms.Button BTNAddAnimal;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

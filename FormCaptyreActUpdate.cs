@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using CatchGraphPlan.Capture;
@@ -13,12 +14,22 @@ namespace CatchGraphPlan
     {
         PermissionsManager pm = PermManFactory.getInstance();
         CaptyreActController controller = new CaptyreActController();
+        CaptureAnimalCartController controllerAnimal = new CaptureAnimalCartController();
+        List<CaptureAnimalCard> listAnimalCard = new List<CaptureAnimalCard>();
+
         int id;
         public FormCaptyreActUpdate(int id)
         {
             this.id = id;
             InitializeComponent();
             CaptureAct captureAct = DB.query().getCaptureActId(id);
+            listAnimalCard = controllerAnimal.GetCaptureAnimalsAct(id);
+            listBox1.DisplayMember = "Text";
+            listBox1.ValueMember = "Value";
+            foreach (var item in listAnimalCard)
+            {
+                listBox1.Items.Add(item.id +":"+item.animal_category + " " + item.gender + " " + item.breed);
+            }
             comboBox1.DisplayMember = "Text";
             comboBox1.ValueMember = "Value";
             comboBox2.DisplayMember = "Text";
@@ -58,6 +69,8 @@ namespace CatchGraphPlan
                 comboBox2.Enabled = false;
                 dateTimePicker1.Enabled = false;
                 CaptyreGoal.Enabled = false;
+                listBox1.Enabled = false;
+                BTNAddAnimal.Hide();
                 var itemsType = new[] {
                     new {Text = captureAct.company.name, Value = captureAct.company.id},
                 };
@@ -106,6 +119,22 @@ namespace CatchGraphPlan
             form.Show();
         }
 
+        private void BTNAddAnimal_Click(object sender, EventArgs e)
+        {
+            var form = new FormCaptureAnimalAdd(id);
 
+            this.Hide();
+
+            form.Show();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var form = new FormCaptyreAnimalUpdate(Convert.ToInt32(listBox1.Text.ToString().Split(':')[0]), id);
+
+            this.Hide();
+
+            form.Show();
+        }
     }
 }

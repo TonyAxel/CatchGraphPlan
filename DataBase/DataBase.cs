@@ -598,6 +598,7 @@ namespace CatchGraphPlan.DataBase
                         Convert.ToInt32(reader.GetString("id")),
                         reader.GetString("anuimal_category"),
                         reader.GetString("gender"),
+                        reader.GetString("breed"),
                         reader.GetString("size"),
                         reader.GetString("hair"),
                         reader.GetString("hair_color"),
@@ -623,10 +624,16 @@ namespace CatchGraphPlan.DataBase
             connection().Close();
             return command.ExecuteReader();
         }
+        public MySqlDataReader getCaptureAnimalCardAct(int id)
+        {
+            MySqlCommand command = new MySqlCommand($"SELECT * FROM captureanimalcard WHERE capture_act={id}", connection());
+            connection().Close();
+            return command.ExecuteReader();
+        }
         public  void addCaptureAnimalCard(CaptureAnimalCard captureAnimalCard)
         {
-            MySqlCommand command = new MySqlCommand($"INSERT INTO captureanimalcard(anuimal_category,gender,size,hair,hair_color,ears,tail,special_signs,identification_label,electronic_chip_number,municipality,capture_act) " +
-                $"VALUES ({captureAnimalCard.animal_category}, {captureAnimalCard.gender},{captureAnimalCard.size},{captureAnimalCard.hair}, {captureAnimalCard.hair_color}, {captureAnimalCard.ears},{captureAnimalCard.tail}, {captureAnimalCard.special_signs},{captureAnimalCard.identification_label}, {captureAnimalCard.electronic_chip_number}, {captureAnimalCard.municipality.id}, {captureAnimalCard.captureAct.number_id})", connection());
+            MySqlCommand command = new MySqlCommand($"INSERT INTO captureanimalcard(anuimal_category,gender,breed,size,hair,hair_color,ears,tail,special_signs,identification_label,electronic_chip_number,municipality,capture_act) " +
+                $"VALUES ('{captureAnimalCard.animal_category}', '{captureAnimalCard.gender}','{captureAnimalCard.breed}','{captureAnimalCard.size}','{captureAnimalCard.hair}', '{captureAnimalCard.hair_color}', '{captureAnimalCard.ears}','{captureAnimalCard.tail}', '{captureAnimalCard.special_signs}','{captureAnimalCard.identification_label}', {captureAnimalCard.electronic_chip_number}, {captureAnimalCard.municipality.id}, {captureAnimalCard.captureAct.number_id})", connection());
             connection().Close();
             command.ExecuteNonQuery();
         }
@@ -643,6 +650,7 @@ namespace CatchGraphPlan.DataBase
             MySqlCommand command = new MySqlCommand($"UPDATE captureanimalcard SET" +
                 $"anuimal_category ={captureAnimalCard.animal_category}," +
                 $"gender = {captureAnimalCard.gender}," +
+                $"breed = {captureAnimalCard.breed}," +
                 $"size = {captureAnimalCard.size}," +
                 $"hair = {captureAnimalCard.hair}," +
                 $"hair_color ={captureAnimalCard.hair_color}," +

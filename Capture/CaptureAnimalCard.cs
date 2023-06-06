@@ -12,6 +12,7 @@ namespace CatchGraphPlan.Capture
         public int id;
         public string animal_category;
         public string gender;
+        public string breed;
         public string size;
         public string hair;
         public string hair_color;
@@ -24,10 +25,11 @@ namespace CatchGraphPlan.Capture
         public CaptureAct captureAct;
 
         public CaptureAnimalCard() { }
-        public CaptureAnimalCard(int id, string animal_category, string gender, string size, string hair, string hair_color, string ears, string tail, string special_signs, string identification_label, int electronic_chip_number, Municipality municipality, CaptureAct captureAct ) {
+        public CaptureAnimalCard(int id, string animal_category, string gender, string breed, string size, string hair, string hair_color, string ears, string tail, string special_signs, string identification_label, int electronic_chip_number, Municipality municipality, CaptureAct captureAct ) {
             this.id = id;
             this.animal_category = animal_category;
             this.gender = gender;
+            this.breed = breed;
             this.size = size;
             this.hair = hair;
             this.hair_color = hair_color;
